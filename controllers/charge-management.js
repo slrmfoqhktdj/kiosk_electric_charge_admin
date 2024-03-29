@@ -2,7 +2,7 @@ const dbc = require('../db/dbc')
 const axios = require('axios')
 require('dotenv').config({ path:'../.env'});
 
-const getdevicelist = async (request, response, next) => { 
+const getdevicelist = async (request, response, next) => {  
     console.log('c_getdevicelist')
 
     let result = []
