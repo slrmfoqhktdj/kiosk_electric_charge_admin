@@ -10,7 +10,7 @@ const getdevicelist = async (request, response, next) => {
     const rows = await dbc.getdevicelist()
 
     for(i = 0; i < rows.length; i ++){
-        const sendDeviceListData ={
+        const sendDeviceListData ={ 
             id: rows[i].id,
             latitude: rows[i].latitude,
             longitude:rows[i].longitude,
