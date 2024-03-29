@@ -14,17 +14,25 @@
     "@mui/icons-material": "^5.15.13",
     "@mui/material": "^5.15.13",
     "@mui/x-data-grid": "^6.19.6",
+    "@nivo/axes": "^0.85.1",
     "@nivo/bar": "^0.85.1",
     "@nivo/core": "^0.85.1",
     "@nivo/geo": "^0.85.1",
+    "@nivo/legends": "^0.85.1",
     "@nivo/line": "^0.85.1",
     "@nivo/pie": "^0.85.1",
+    "@nivo/scales": "^0.85.1",
+    "@nivo/tooltip": "^0.85.1",
     "@react-google-maps/api": "^2.19.3",
     "@reduxjs/toolkit": "^2.2.1",
     "chart.js": "^4.4.2",
+    "d3-shape": "^3.2.0",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
     "formik": "^2.4.5",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
+    "react-datepicker": "^6.5.0",
     "react-dom": "^18.2.0",
     "react-pro-sidebar": "^0.7.1",
     "react-redux": "^8.0.2",
@@ -57,5 +65,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

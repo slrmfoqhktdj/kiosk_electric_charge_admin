@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
 import { useEffect } from 'react';
 import { useState } from 'react';
+import {fetchGet} from "../../communication/handlefetch"
 
 const Contacts = () => {
   const theme = useTheme();
@@ -72,11 +73,7 @@ const Contacts = () => {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:5005/pricelist",{credentials: 'include'})
-      .then((res) => 
-        
-        res.json()
-      )
+    fetchGet("/pricelist")
       .then((data) => {        
         setData(data)
       });

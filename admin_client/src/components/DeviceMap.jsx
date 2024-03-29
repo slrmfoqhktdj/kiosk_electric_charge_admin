@@ -7,8 +7,10 @@ import React from 'react'
 import { GoogleMap, LoadScript , InfoWindow , Marker} from '@react-google-maps/api';
 // import RoomIcon from '@mui/icons-material/Room';
 import { useState } from "react";
+import { useEffect } from 'react';
+import {fetchGet} from "../communication/handlefetch"
 
-
+const APIKEY = process.env.REACT_APP_GOOGLE_MAP_API_KEY
 const containerStyle = {
     width: '100%',
     height: '100%'
@@ -20,42 +22,33 @@ const center = {
     lng: 127.77
 };
 
-const markers = [
-    // {
-    //   id: 1,
-    //   name: "Chicago, Illinois",
-    //   position: { lat: 41.881832, lng: -87.623177 }
-    // },
-    // {
-    //   id: 2,
-    //   name: "Denver, Colorado",
-    //   position: { lat: 39.739235, lng: -104.99025 }
-    // },
-    // {
-    //   id: 3,
-    //   name: "Los Angeles, California",
-    //   position: { lat: 34.052235, lng: -118.243683 }
-    // },
-    // {
-    //   id: 4,
-    //   name: "New York, New York",
-    //   position: { lat: 40.712776, lng: -74.005974 }
-    // }
+// const markers = [
 
-    {
-        id : "device_01",
-        position:{lat:35.18772696,lng:126.91088663}
-    },
-    {
-        id: "device_02",
-        position:{lat:35.2885323,lng:126.9955906}
-    }
-  ];
+//     {
+//         id : "device_01",
+//         position:{lat:35.18772696,lng:126.91088663},
+//         addr:"광주광역시북구오치동"
+//     },
+//     {
+//         id: "device_02",
+//         position:{lat:35.2885323,lng:126.9955906},
+//         addr:"담양군무정면"
+//     }
+//   ];
   
 function DeviceMap() {
     // const theme = useTheme();
     // const colors = tokens(theme.palette.mode);
     const [activeMarker, setActiveMarker] = useState(null);
+    const [Data, setData] = useState([]);
+
+    useEffect(() => {
+        fetchGet("/mapdata")
+        .then((data) => {        
+            setData(data)
+        });
+      }, []);
+
 
     const handleActiveMarker = (marker) => {
         if (marker === activeMarker) {
@@ -64,25 +57,28 @@ function DeviceMap() {
         setActiveMarker(marker);
       };
     
-      const handleOnLoad = (map) => {
-        const bounds = new window.google.maps.LatLngBounds();
-        markers.forEach(({ position }) => bounds.extend(position));
-        map.fitBounds(bounds);
-      };
+      //로드 될때 위치 잡기
+    //   const handleOnLoad = (map) => {
+    //     const bounds = new window.google.maps.LatLngBounds();
+    //     markers.forEach(({ position }) => bounds.extend(position));
+    //     map.fitBounds(bounds);
+        
+    //   };
+
 
     return (
       <LoadScript
-        googleMapsApiKey="AIzaSyDGMSUSJ65bZGxscMv1gXQJAfYg_W5FM64"
+        googleMapsApiKey={APIKEY}
       >
         <GoogleMap
-            onLoad={handleOnLoad}
+            // onLoad={handleOnLoad}
             onClick={() => setActiveMarker(null)}
             mapContainerStyle={containerStyle}
             center={center}
             zoom={8}
         >
 
-        {markers.map(({ id, position }) => (
+        {Data.map(({ id, position, addr }) => (
             <Marker
             key={id}
             position={position}
@@ -90,7 +86,10 @@ function DeviceMap() {
             >
             {activeMarker === id ? (
                 <InfoWindow onCloseClick={() => setActiveMarker(null)}>
-                <div style={{color:'black'}}>{id}</div>
+                <div style={{color:'black'}}>{id}
+                    <div style={{color:'black'}}>{addr}
+                    </div>
+                </div>
                 </InfoWindow>
             ) : null}
             </Marker>

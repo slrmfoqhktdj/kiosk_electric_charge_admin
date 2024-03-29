@@ -35,7 +35,94 @@ const getcharge_amount_history = async (request, response, next) => {
     response.send(result);
 }
 
+const getcharge_daily_list = async (request, response, next) => {
+    console.log('c_getcharge_daily_list')
+
+    let result = []
+
+    const rows = await dbc.getcharge_daily_list()
+
+    for(i = 0; i < rows.length; i ++){
+        if(rows[i].day == null){
+            continue;
+        }
+
+        const sendcharge_daily_ListData ={
+            id: rows[i].day,
+            amount: rows[i].amount,
+            count:rows[i].count,
+            pay:rows[i].pay,
+        }
+
+        console.log(rows[i].day)
+
+        result.push(sendcharge_daily_ListData)
+    }
+
+    response.send(result);
+}
+
+const getcharge_daily_graph = async (request, response, next) => {
+    console.log('c_getcharge_daily_graph')
+
+    const StartTime = request.body.starttime
+    const EndTime = request.body.endtime
+    // const DeviceType = request.body.devicetype
+
+    let result = []
+
+    const rows = await dbc.getcharge_daily_graph(StartTime,EndTime)
+
+    for(i = 0; i < rows.length; i ++){
+        if(rows[i].time == null){
+            continue;
+        }
+
+        const sendcharge_daily_GraphData ={
+            time: rows[i].time,
+            amount: rows[i].amount,
+            count:rows[i].count,
+            pay:rows[i].pay,
+        }
+
+        // console.log(rows[i].time)
+
+        result.push(sendcharge_daily_GraphData)
+    }
+
+    response.send(result);
+}
+
+
+const getcharge_error_history = async (request, response, next) => {
+    console.log('c_getcharge_error_history')
+
+    let result = []
+
+    const rows = await dbc.getcharge_error_history()
+
+    for(i = 0; i < rows.length; i ++){
+        const sendcharge_error_historyListData ={
+            id: rows[i].id,
+            d_id: rows[i].d_id,
+            d_error:rows[i].d_error,
+            v_id:rows[i].v_id,
+            v_error:rows[i].v_error,
+            e_info:rows[i].e_info,
+            o_time:rows[i].o_time,
+
+        }
+
+        result.push(sendcharge_error_historyListData)
+    }
+
+    response.send(result);
+}
+
 
 module.exports = {
-    getcharge_amount_history
+    getcharge_amount_history,
+    getcharge_daily_list,
+    getcharge_daily_graph,
+    getcharge_error_history
 }

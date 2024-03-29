@@ -10,16 +10,8 @@ const port = process.env.PORT || 5005;
 const mysqlstore = require('express-mysql-session')(session)
 const option = require('./db/dboption')
 
-const sessionoption = {
-    host:option.DB_HOST,
-    port:option.DB_PORT,
-    user:option.DB_USER,
-    password:option.DB_PASSWORD,
-    database:option.DB_NAME,
- }
  
- 
- const mysqlsessionstore = new mysqlstore(sessionoption)
+ const mysqlsessionstore = new mysqlstore(option.sessionconfig)
  
  app.use(session({
     // secure: true, // https 환경에서만 session 정보를 주고받도록 처리
@@ -46,12 +38,17 @@ app.use(cors({
 }))
 
 
+const monitoring = require('./routes/monitoring')
 const auth_routes = require('./routes/auth')
 const charge_management = require('./routes/charge-management')
 const analysis = require('./routes/analysis')
+const setting = require('./routes/setting')
+
 app.use('',auth_routes)
-app.use('',charge_management)
-app.use('',analysis)
+app.use('',monitoring)  // 모니터링
+app.use('',charge_management)   // 충전관리
+app.use('',analysis)    // 정산/지표분석
+app.use('',setting)     // 환경설정
 
 
 // app.get("/", (req, res)=>{

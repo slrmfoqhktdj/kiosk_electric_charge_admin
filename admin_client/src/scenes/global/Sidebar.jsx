@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 // import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import TvIcon from '@mui/icons-material/Tv';
-// import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+// // import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+// import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
+// import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
+// import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+// import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
@@ -20,6 +20,11 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import RoomIcon from '@mui/icons-material/Room';
 import DeviceUnknownIcon from '@mui/icons-material/DeviceUnknown';
+import CardMembershipIcon from '@mui/icons-material/CardMembership';
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import FeaturedVideoIcon from '@mui/icons-material/FeaturedVideoOutlined';
+import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotionOutlined';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -30,7 +35,10 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       style={{
         color: colors.grey[100],
       }}
-      onClick={() => setSelected(title)}
+      onClick={() => {
+        setSelected(title)
+        // window.sessionStorage.setItem("title",title);
+      }}
       icon={icon}
     >
       <Typography>{title}</Typography>
@@ -43,7 +51,11 @@ const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  // const [selected, setSelected] = useState(window.sessionStorage.getItem('title'));
   const [selected, setSelected] = useState("대시보드");
+
+  // setSelected(window.sessionStorage.getItem('title'))
+  // console.log("path = "+window.sessionStorage.getItem('title')===null? "is null ": window.sessionStorage.getItem('title'))
 
   return (
     <Box
@@ -184,7 +196,7 @@ const Sidebar = () => {
             <Item
               title="충전요금 단가 관리"
               to="/pricelist"
-              icon={<ContactsOutlinedIcon />}
+              icon={<CardMembershipIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -200,7 +212,7 @@ const Sidebar = () => {
             <Item
               title="광고물 관리"
               to="/invoices"
-              icon={<ReceiptOutlinedIcon />}
+              icon={<FeaturedVideoIcon/>}
               selected={selected}
               setSelected={setSelected}
             />
@@ -208,7 +220,7 @@ const Sidebar = () => {
             <Item
               title="충전기별 광고 관리"
               to="/form"
-              icon={<PersonOutlinedIcon />}
+              icon={<AutoAwesomeMotionIcon/>}
               selected={selected}
               setSelected={setSelected}
             />
@@ -225,14 +237,14 @@ const Sidebar = () => {
             <Item 
               title="충전량 및 이력 조회"
               to="/chargehistory"
-              icon={<HelpOutlineOutlinedIcon />}
+              icon={<ManageSearchIcon/>}
               selected={selected}
               setSelected={setSelected}
             />
 
             <Item
               title="일자별 충전량 조회"
-              to="/calendar"
+              to="/chargedaily"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -240,7 +252,7 @@ const Sidebar = () => {
 
             <Item
               title="충전기 그래프 조회"
-              to="/bar"
+              to="/chargebargraph"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -249,7 +261,7 @@ const Sidebar = () => {
             <Item 
               title="충전기 장애이력"
               to="/errorlist"
-              icon={<HelpOutlineOutlinedIcon />}
+              icon={<ErrorOutlineIcon/>}
               selected={selected}
               setSelected={setSelected}
             />
@@ -280,7 +292,7 @@ const Sidebar = () => {
             
             <Item
               title="공통코드"
-              to="/geography"
+              to="/publiccode"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

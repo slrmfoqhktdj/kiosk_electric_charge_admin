@@ -1,15 +1,19 @@
 import { useState } from 'react';
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {fetchPost} from "../../communication/handlefetch"
 
-function LoginView(props) {
+// function LoginView(props) {
+function LoginView() {
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+    
     
     return <>
       <div className='loging-bg'>
           <div className="login-div">
             <h2 className='login-title'>관리자</h2>
-            <p></p>
+            
             <div className="form">
               <input className="login-id-tv" type="text" name="username" placeholder="이메일"  onChange={event => {
                 setId(event.target.value.trim());
@@ -27,19 +31,14 @@ function LoginView(props) {
                     email: id,
                     password: password,
                   };
-                  fetch("http://localhost:5005/authenticate", { //auth 주소에서 받을 예정
-                    method: "post", // method :통신방법
-                    headers: {      // headers: API 응답에 대한 정보를 담음
-                      "content-type": "application/json",
-                    },
-                    credentials: 'include',
-                    body: JSON.stringify(userData), //userData라는 객체를 보냄
-                  })
-                    .then((res) => res.json())
-                    .then((json) => {            
+                  fetchPost("/authenticate",userData)
+                    .then((json) => {           
+                      console.log("login "+json.isLogin) 
                       if(json.isLogin===true){
-                        props.setMode(true);
-                        <Navigate  to = "/"/>
+                        // props.setMode(true);
+                        
+                        // <Navigate  to = "/"/>
+                        navigate("/")
                     }
                     else {
                       alert(json.errorMessage)

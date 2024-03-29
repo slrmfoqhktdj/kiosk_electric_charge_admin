@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
 import { useEffect } from 'react';
 import { useState } from 'react';
-
+import {fetchGet} from "../../communication/handlefetch"
 
 const FAQ = () => {
   const theme = useTheme();
@@ -121,14 +121,11 @@ const FAQ = () => {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:5005/charge_amount_history",{credentials: 'include'})
-      .then((res) => 
-        
-        res.json()
-      )
-      .then((data) => {        
-        setData(data)
-      });
+
+    fetchGet("/charge_amount_history")
+    .then((data) => {        
+      setData(data)
+    });
   }, []);
 
 

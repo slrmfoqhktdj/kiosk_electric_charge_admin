@@ -7,6 +7,8 @@ import Header from "../../components/Header";
 import { useEffect } from 'react';
 import { useState } from 'react';
 
+import {fetchGet} from "../../communication/handlefetch"
+
 const Team = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -21,6 +23,13 @@ const Team = () => {
       cellClassName: "name-column--cell",
     },
     {
+      field: "conn",
+      headerName: "서버연결여부",
+      flex: 1,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
       field: "state",
       headerName: "상태",
       flex: 1,
@@ -30,6 +39,7 @@ const Team = () => {
     {
       field: "state_e",
       headerName: "충전기 에러코드",
+      flex: 1,
       headerAlign: "center",
       align: "center",
     },
@@ -80,11 +90,8 @@ const Team = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5005/devicestatelist",{credentials: 'include'})
-      .then((res) => 
-        
-        res.json()
-      )
+    
+    fetchGet("/devicestatelist")
       .then((data) => {        
         setData(data)
       });

@@ -3,7 +3,9 @@
 
 const isAuthenticated = (request, response, next) => {
     if(!request.session.user){
-        return response.redirect(response.locals.base)
+        console.log("auth")
+        // return response.status(400)
+        return response.send(400)
     }
     next()
 }
@@ -21,20 +23,8 @@ const isAuthenticated = (request, response, next) => {
 // }
 
 
-// check if the user is guest
-const isGuest = (request, response) => {
-    const sendGuestData = {isGuest:false};
-
-    console.log('Check Login')
-    if(request.session.user){
-        sendGuestData.isGuest = true
-    }else{
-        sendGuestData.isGuest = false
-    }
-    return response.send(sendGuestData)
-}
 
 module.exports = {
     isAuthenticated,
-    isGuest
+
 }

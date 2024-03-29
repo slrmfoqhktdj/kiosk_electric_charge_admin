@@ -1,16 +1,9 @@
 const bcrypt = require('bcrypt')
 const dbc = require('../db/dbc')
+const axios = require('axios')
+require('dotenv').config({ path:'../.env'});
 
-// show register page
-const register = (request, response, next) =>{
-    console.log('c_auth register')
 
-    response.render('../views/auth/register',{
-        title:'Register',
-        name:'register',
-        layout:'../views/auth/auth_layout.ejs'
-    })
-}
 
 // sign up user
 const signup = async (request, response, next) =>{
@@ -43,16 +36,21 @@ const signup = async (request, response, next) =>{
     })    
 }
 
-// login page
-const login = (request, response, next) =>{
-    console.log('c_auth login')
-    response.render('../views/auth/login',{
-        title:'Login',
-        name:'login',
-        layout:'../views/auth/auth_layout.ejs'
-    })
-}
 
+
+// check if the user is guest
+const isGuest = (request, response) => {
+    const sendGuestData = {isGuest:false};
+
+    console.log('Check Login')
+    if(request.session.user){
+        
+        sendGuestData.isGuest = true
+    }else{
+        sendGuestData.isGuest = false
+    }
+    return response.send(sendGuestData)
+}
 
 // authenticate user
 const authenticate = async (request, response, next) => {
@@ -68,11 +66,35 @@ const authenticate = async (request, response, next) => {
 
     if(email && password){
         const rows = await dbc.getLogin(email,password);
+
+        // try{
+        //     comfirm = await axios({
+        //         method:'POST',
+        //         url:process.env.OCPPURL.concat('/devicelist'),
+        //         data: {
+        //             email: email,
+        //             pwd: password
+        //         } 
+        //     })
+        //     console.log(comfirm.data)
+        // }catch(e){
+        //     console.log("err : "+e);
+        // }
+
+
         if(rows.length>0){
+
             let userInfo = {
                 name:rows[0].name,
                 email:rows[0].email
             }
+
+
+            
+
+
+
+
             request.session.user = userInfo
             request.session.save()
             // response.redirect(response.locals.base + 'dashboard/demo-one/' + response.getLocale())
@@ -131,22 +153,11 @@ const signOut = (request, response, next) => {
     return response.redirect(response.locals.base)
 }
 
-// password reset page
-const passwordReset = (request, response, next) =>{
-    console.log('c_auth passwordReset')
 
-    response.render('../views/auth/password_reset',{
-        title:'Password Reset',
-        name:'password_reset',
-        layout:'../views/auth/auth_layout.ejs'
-    })
-}
 
 module.exports = {
-    register,
+    isGuest,
     signup,
-    login,
-    passwordReset,
     authenticate,
     signOut
 }
