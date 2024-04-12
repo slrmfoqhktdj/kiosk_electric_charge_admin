@@ -9,6 +9,7 @@ body,
   height: 100%;
   width: 100%;
   font-family: "Source Sans Pro", sans-serif;
+  
 }
 
 .app {
@@ -145,3 +146,12 @@ input:-ms-input-placeholder {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* .react-datepicker-wrapper {
+  display: none !important;
+} */
+
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+

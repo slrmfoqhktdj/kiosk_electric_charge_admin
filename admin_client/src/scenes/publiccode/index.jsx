@@ -27,7 +27,7 @@ const FAQ = () => {
     },
     { 
       field: "code", 
-      headerName: " 오류코드",
+      headerName: " 코드",
       headerAlign: "center",
       align: "center",
       flex: 1, 
@@ -52,8 +52,8 @@ const FAQ = () => {
 
   return (
     <Box m="20px">
-      <Header title="공통코드" subtitle="Frequently Asked Questions Page" />
-
+      <Header title="공통코드" subtitle="명령 및 오류코드의 설명을 합니다." />
+      <b>800번대 : 제조사 , 900번대 : 설정변경코드 , 1000번대 : 오류코드</b>
 
       <Box
         m="40px 0 0 0"

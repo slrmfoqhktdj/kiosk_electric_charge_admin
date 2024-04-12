@@ -1,5 +1,5 @@
 import { Box,  Typography, useTheme } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 
 import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
@@ -55,6 +55,7 @@ const Team = () => {
       headerAlign: "center",
       align: "center",
       cellClassName: "name-column--cell",
+      
     },
     {
       field: "latitude",
@@ -165,6 +166,7 @@ const Team = () => {
       sortable:false,             // 컬럼 정렬
       disableColumnMenu:true,     // 컬럼 메뉴
       flex: 0.5,
+      toolbar:false,
       renderCell:(params) =>{
         return(
           <IconButton
@@ -231,20 +233,7 @@ const Team = () => {
   return (
     <Box m="20px">
       <Header title="충전기 기본 정보" subtitle="충전기의 위치와 내장 정보 및 사용여부를 확인할 수 있습니다" />
-      <Box
-      m="0 40px 0 0"
-      display="flex"
-      justifyContent="flex-end"
-      >
-        <Button variant="outlined" color="secondary" onClick={openRegisterDialog} 
-        sx={
-          {
-            width:"5vw",
-            height:"3vh"
-          }
-        }
-        >추가</Button>
-      </Box>
+      <b>기본정보에 등록하지 않은 충전기는 작동하지 않습니다.</b>
       <Box
         m="20px 0 0 0"
         height="75vh"
@@ -272,9 +261,12 @@ const Team = () => {
           "& .MuiCheckbox-root": {
             color: `${colors.greenAccent[200]} !important`,
           },
+          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+            color: `${colors.grey[100]} !important`,
+          },
         }}
       >
-        <DataGrid  rows={Data} columns={columns} 
+        <DataGrid  rows={Data} columns={columns}  components={{ Toolbar: GridToolbar } }
         // onRowClick={(rows) => {
         //   console.log(rows);
         // }}
@@ -288,9 +280,28 @@ const Team = () => {
         //     // console.log(selectedIDs)
         //   }
         // }
+        initialState={{
+          sorting: {
+            sortModel: [{ field: 'i_time', sort: 'desc' }],
+          },
+        }}
+
         />
       </Box>
-      
+      <Box
+      m="20px 20px 0 0"
+      display="flex"
+      justifyContent="flex-end"
+      >
+        <Button variant="outlined" color="secondary" onClick={openRegisterDialog} 
+        sx={
+          {
+            width:"5vw",
+            height:"3vh"
+          }
+        }
+        >등록</Button>
+      </Box>
       
       <Menu
         id="demo-positioned-menu"
@@ -524,6 +535,7 @@ const Team = () => {
             fullWidth
             color="success"
             variant="standard"
+            disabled={true}
             defaultValue={SelectedItemId.id}
           />
           <TextField

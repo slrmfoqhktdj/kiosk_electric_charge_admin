@@ -9,6 +9,10 @@ import Dashboard from "./scenes/dashboard";
 import Login from "./scenes/login";
 import DeviceList from "./scenes/devicelist";
 import DeviceStateList from "./scenes/devicestatelist";
+import APKUpload from "./scenes/apkupload";
+import DeviceUpdate from "./scenes/apkupdate";
+import DeviceLogCmd from "./scenes/devicelogcmd";
+import DeviceLogList from "./scenes/deviceloglist";
 import Invoices from "./scenes/invoices";
 import PriceList from "./scenes/pricelist";
 import ChargeBarGraph from "./scenes/chargebargraph";
@@ -118,6 +122,10 @@ function App() {
                 <Route path="/devicelist" element={<DeviceList />} />
                 <Route path="/devicestatelist" element={<DeviceStateList />} />
                 <Route path="/pricelist" element={<PriceList />} />
+                <Route path="/apkup" element={<APKUpload />} />
+                <Route path='/deviceupdate' element={<DeviceUpdate/>}/>
+                <Route path='/logcmd' element={<DeviceLogCmd/>}/>
+                <Route path='/loglist' element={<DeviceLogList/>}/>
                 <Route path="/invoices" element={<Invoices />} />
                 <Route path="/form" element={<Form />} />
                 <Route path="/chargebargraph" element={<ChargeBarGraph />} />

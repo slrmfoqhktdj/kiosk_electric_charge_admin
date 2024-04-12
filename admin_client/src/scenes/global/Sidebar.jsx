@@ -25,6 +25,8 @@ import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import FeaturedVideoIcon from '@mui/icons-material/FeaturedVideoOutlined';
 import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotionOutlined';
+import FileUploadIcon from '@mui/icons-material/FileUploadOutlined';
+import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAltOutlined';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -200,8 +202,29 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              업데이트관리
+            </Typography>
 
+            <Item
+              title="프로그램 업로드"
+              to="/apkup"
+              icon={<FileUploadIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="충전기 업데이트"
+              to="/deviceupdate"
+              icon={<SystemUpdateAltIcon/>}
+              selected={selected}
+              setSelected={setSelected}
+            />
             <Typography
               variant="h6"
               color={colors.grey[300]}
@@ -225,6 +248,28 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              진단관리
+            </Typography>
+            <Item
+              title="진단파일 요청"
+              to="/logcmd"
+              icon={<AutoAwesomeMotionIcon/>}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="진단파일 관리"
+              to="/loglist"
+              icon={<AutoAwesomeMotionIcon/>}
+              selected={selected}
+              setSelected={setSelected}
+            />
           
 
             <Typography

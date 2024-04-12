@@ -33,6 +33,27 @@ export const fetchPost = async(url,requestBody) =>{
         
 }
 
+export const fetchFile = async(url,requestBody) =>{
+    
+
+    return await fetch(`${process.env.REACT_APP_BACKURL}${url}`, { 
+        method: "post", // method :통신방법
+        credentials: 'include',
+        body:requestBody, //userData라는 객체를 보냄
+    }).then(checkStatusAndParse)
+    // .catch(function(err){alert(err);})
+        
+}
+
+export const fetchDownFile = async(url) =>{
+    
+
+    return await fetch(`${process.env.REACT_APP_BACKURL}${url}`, { 
+        credentials: 'include',
+    })
+        
+} 
+
 
 
 export const ProtectedRoute = () => {

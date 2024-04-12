@@ -5,20 +5,60 @@ import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
 import { useEffect } from 'react';
 import { useState } from 'react';
-import {fetchGet} from "../../communication/handlefetch"
+import {fetchGet,fetchPost} from "../../communication/handlefetch"
+
+import  Button  from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import IconButton from '@mui/material/IconButton';
+
 
 const FAQ = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [Data, setData] = useState([]);
 
+  const [SelectedItemId,setSelectedItemId] = useState({id:"",device:"",pay:"",can_pay:"",pay_by:"",c_num:"",c_c_num:"",pay_day:"",c_pay_day:"",c_conn:"",c_time:"",c_amount:"", c_time_s:"", c_time_e:"", c_time_u:""});
+
+  const [TransactionDialog,setTransactionDialog] = useState(false);
+  const [Mounted,setMounted] = useState(1);
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const openPositionMenu = (event,id) => {
+    setSelectedItemId(id);
+    setAnchorEl(event.currentTarget);
+  };
+  const closePositionMenu = () => {
+    setAnchorEl(null);
+  };
+
+  function openStopTransactionDialog(){
+    setTransactionDialog(true)
+  }
+
+  function closeTransactionDialog(){
+    setTransactionDialog(false)
+  }
+
+  
+
   const columns = [
     { 
       field: "id",
-      headerName: "결제승인번호", 
+      headerName: "충전결제승인번호", 
       headerAlign: "center",
       align: "center",
-      flex: 0.5 
+      flex: 1 ,
+      cellClassName: "name-column--cell",
     },
     { 
       field: "device", 
@@ -118,7 +158,61 @@ const FAQ = () => {
       align: "center",
       flex: 1,
     },
+    {
+      field:"rowmenu",
+      headerName:"",
+      headerAlign: "center",
+      align: "center",
+      sortable:false,             // 컬럼 정렬
+      disableColumnMenu:true,     // 컬럼 메뉴
+      flex: 0.5,
+      toolbar:false,
+      renderCell:(params) =>{
+        return(
+          <IconButton
+        aria-label="more"
+        id="long-button"
+        aria-controls={open ? 'long-menu' : undefined}
+        aria-expanded={open ? 'true' : undefined}
+        aria-haspopup="true"
+        onClick={(event)=> openPositionMenu(event,params.row)}
+        >
+          <MoreVertIcon />
+        </IconButton>
+        )
+        
+      }
+    }
   ];
+
+
+  const stopremoteProps = {
+    
+    component: 'form',
+    onSubmit: (event) => {
+      event.preventDefault();
+      const formData = new FormData();
+      formData.append("device_id", SelectedItemId.device)
+      formData.append("TransactionId", SelectedItemId.id)
+      
+      const formJson = Object.fromEntries(formData.entries());
+
+      fetchPost("/cmd/rmstp",formJson)
+      .then((data) =>{
+        if(data.isStopped===true){
+          
+          closeTransactionDialog();
+
+          setMounted(Mounted+1)
+        }
+        else {
+          alert(data.errorMessage)
+        }
+      })
+
+
+    },
+  }
 
   useEffect(() => {
 
@@ -169,10 +263,59 @@ const FAQ = () => {
           },
         }}
       >
+        <Menu
+          id="demo-positioned-menu"
+          aria-labelledby="demo-positioned-button"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={closePositionMenu}
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
+        >
+
+          <MenuItem onClick={()=>{closePositionMenu(); openStopTransactionDialog()}} disabled={SelectedItemId.c_time_e}>원격충전중지</MenuItem>
+          
+        </Menu>
+
+        <Dialog
+          open={TransactionDialog}
+          onClose={closeTransactionDialog}
+          PaperProps={
+            stopremoteProps
+          }
+        >
+          
+          <DialogTitle>원격충전 중지</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              {SelectedItemId.device}의 충전을 원격으로 중지합니다. - {SelectedItemId.id}
+            </DialogContentText>
+            
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={closeTransactionDialog} color="secondary">취소</Button>
+            <Button type="submit" color="secondary">중지하기</Button>
+          </DialogActions>
+
+          
+        </Dialog>
+
+
         <DataGrid
           rows = {Data}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
+          initialState={{
+            sorting: {
+              sortModel: [{ field: 'c_time_s', sort: 'desc' }],
+            },
+          }}
         />
       </Box>
     </Box>

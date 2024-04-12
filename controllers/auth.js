@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt')
-const dbc = require('../db/dbc')
 const axios = require('axios')
 require('dotenv').config({ path:'../.env'});
 
@@ -65,48 +64,39 @@ const authenticate = async (request, response, next) => {
     };
 
     if(email && password){
-        const rows = await dbc.getLogin(email,password);
+        // const rows = await dbc.getLogin(email,password);
 
-        // try{
-        //     comfirm = await axios({
-        //         method:'POST',
-        //         url:process.env.OCPPURL.concat('/devicelist'),
-        //         data: {
-        //             email: email,
-        //             pwd: password
-        //         } 
-        //     })
-        //     console.log(comfirm.data)
-        // }catch(e){
-        //     console.log("err : "+e);
-        // }
+        try{
+            comfirm = await axios({
+                method:'POST',
+                url:process.env.OCPPURL.concat('/login'),
+                data: {
+                    email: email,
+                    pwd: password
+                } 
+            })
+        }catch(e){
+            console.log("err : "+e);
+        }
 
+        const data = comfirm.data.item
 
-        if(rows.length>0){
-
+        if(data != null && data.length>0){
             let userInfo = {
-                name:rows[0].name,
-                email:rows[0].email
+                name:data[0].name,
+                email:data[0].email
             }
-
-
-            
-
-
-
 
             request.session.user = userInfo
             request.session.save()
-            // response.redirect(response.locals.base + 'dashboard/demo-one/' + response.getLocale())
             sendAuthenticateData.isLogin = true
             response.send(sendAuthenticateData)
         }else{
-            // request.session.errorMessage = "일치하는 아이디가 없습니다"
             sendAuthenticateData.isLogin = false
             sendAuthenticateData.errorMessage = "일치하는 아이디가 없습니다"
             response.send(sendAuthenticateData)
-            // response.redirect(response.locals.base)
         }
+
         
         
     }else{
@@ -118,30 +108,6 @@ const authenticate = async (request, response, next) => {
     }
 
 
-
-
-
-
-
-    // let findUser = await User.findOne({ email:email })
-    // if(!findUser){
-    //     request.session.errorMessage = "Email doesn't belong to any account !"
-    //     response.redirect(response.locals.base)
-    // }else{
-    //     let matchPassword = await bcrypt.compare(password, findUser.password)
-    //     if(findUser && matchPassword){
-    //         let userInfo = {
-    //             name:findUser.name,
-    //             email:findUser.email
-    //         }
-    //         request.session.user = userInfo
-    //         request.session.save()
-    //         response.redirect(response.locals.base + 'dashboard/demo-one/' + response.getLocale())
-    //     }else{        
-    //         request.session.errorMessage = "Wrong Credentials !"
-    //         response.redirect(response.locals.base)
-    //     } 
-    // }
        
 }
 

@@ -8,15 +8,15 @@ const DB_NAME = process.env.DATABASE_NAME
 const SS_SECRET = process.env.SESSION_SECRET
 
 
-const dbconfig = {
-        host:DB_HOST,
-        port:DB_PORT,
-        user:DB_USER,
-        password:DB_PASSWORD,
-        database:DB_NAME,
-        dateStrings:true,    //dateStrings: 날짜 유형(TIMESTAMP, DATETIME, DATE)을 JavaScript Date 객체로 확장하는 대신 문자열로 반환하도록 합니다. (기본값: 거짓)
-        connectionLimit:5
-}
+// const dbconfig = {
+//         host:DB_HOST,
+//         port:DB_PORT,
+//         user:DB_USER,
+//         password:DB_PASSWORD,
+//         database:DB_NAME,
+//         dateStrings:true,    //dateStrings: 날짜 유형(TIMESTAMP, DATETIME, DATE)을 JavaScript Date 객체로 확장하는 대신 문자열로 반환하도록 합니다. (기본값: 거짓)
+//         connectionLimit:5
+// }
 
 const sessionconfig = {
         host:DB_HOST,
@@ -24,6 +24,7 @@ const sessionconfig = {
         user:DB_USER,
         password:DB_PASSWORD,
         database:DB_NAME,
+        connectionLimit:5
 }
 
 module.exports = {
@@ -33,6 +34,6 @@ module.exports = {
         // DB_PASSWORD, 
         // DB_NAME,
         SS_SECRET,
-        dbconfig,
+        // dbconfig,
         sessionconfig
 }
