@@ -32,7 +32,7 @@ import IconButton from '@mui/material/IconButton';
 
 // import { height } from "@mui/system";
 
-const Team = () => {
+const Team = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -232,11 +232,21 @@ const Team = () => {
 
   return (
     <Box m="20px">
-      <Header title="충전기 기본 정보" subtitle="충전기의 위치와 내장 정보 및 사용여부를 확인할 수 있습니다" />
-      <b>기본정보에 등록하지 않은 충전기는 작동하지 않습니다.</b>
+      {
+        isDashboard?
+        null
+        :
+        <Box>
+          <Header title="충전기 기본 정보" subtitle="충전기의 위치와 내장 정보 및 사용여부를 확인할 수 있습니다" />
+          <b>기본정보에 등록하지 않은 충전기는 작동하지 않습니다.</b>
+        </Box>
+
+
+      }
+      
       <Box
         m="20px 0 0 0"
-        height="75vh"
+        height={isDashboard ? "17vh": "75vh"}
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -266,7 +276,7 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid  rows={Data} columns={columns}  components={{ Toolbar: GridToolbar } }
+        <DataGrid  rows={Data} columns={columns}  components={{ Toolbar: isDashboard? null:GridToolbar }} hideFooter={isDashboard}
         // onRowClick={(rows) => {
         //   console.log(rows);
         // }}
@@ -288,20 +298,26 @@ const Team = () => {
 
         />
       </Box>
-      <Box
-      m="20px 20px 0 0"
-      display="flex"
-      justifyContent="flex-end"
-      >
-        <Button variant="outlined" color="secondary" onClick={openRegisterDialog} 
-        sx={
-          {
-            width:"5vw",
-            height:"3vh"
-          }
-        }
-        >등록</Button>
-      </Box>
+      {
+        isDashboard?
+        null
+        :
+        <Box
+          m="20px 20px 0 0"
+          display="flex"
+          justifyContent="flex-end"
+          >
+            <Button variant="outlined" color="secondary" onClick={openRegisterDialog} 
+            sx={
+              {
+                width:"5vw",
+                height:"3vh"
+              }
+            }
+            >등록</Button>
+        </Box>
+      }
+      
       
       <Menu
         id="demo-positioned-menu"
@@ -629,7 +645,9 @@ const Team = () => {
             defaultValue={SelectedItemId.h_w_m}
           />
           <p></p>
-          <FormLabel id="demo-controlled-radio-buttons-group">기기사용가능여부*</FormLabel>
+          <FormLabel id="demo-controlled-radio-buttons-group">기기사용가능여부* </FormLabel>
+          <p>- 보류 상태에서 다른 상태로 수정하고 '충전기 상태정보' - '충전기 보고요청' - '시작 보고' 를 보내야 기기에 반영이 됩니다.</p>
+          <p>- 그 외 상태를 수정하고 '충전기 상태정보' - '충전기 재시작'을 보내야 기기에 반영이 됩니다.</p>
           <RadioGroup
             row
             aaria-labelledby="demo-row-radio-buttons-group-label"

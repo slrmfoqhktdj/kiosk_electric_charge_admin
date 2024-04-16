@@ -89,7 +89,7 @@ function CustomTooltip({ timeValue, amountValue, countValue , payValue }) {
 
 
 
-const BarChart = ({ isDashboard = false , StartTime,EndTime}) => {
+const BarChart = ({ isDashboard = false , StartTime,EndTime,Device}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -108,6 +108,7 @@ const BarChart = ({ isDashboard = false , StartTime,EndTime}) => {
     const userData = {
       starttime: StartTime,
       endtime:EndTime,
+      device_id:Device,
       // devicetype:DeviceType
     };
 
@@ -115,7 +116,7 @@ const BarChart = ({ isDashboard = false , StartTime,EndTime}) => {
     .then((data) => {        
         setData(data)
     });
-  }, [StartTime,EndTime]);
+  }, [StartTime,EndTime,Device]);
 
 
   // 라인 그리기

@@ -13,12 +13,12 @@ import APKUpload from "./scenes/apkupload";
 import DeviceUpdate from "./scenes/apkupdate";
 import DeviceLogCmd from "./scenes/devicelogcmd";
 import DeviceLogList from "./scenes/deviceloglist";
-import Invoices from "./scenes/invoices";
+import ADUpload from "./scenes/adupload";
 import PriceList from "./scenes/pricelist";
 import ChargeBarGraph from "./scenes/chargebargraph";
-import Form from "./scenes/form";
-import Line from "./scenes/line";
-import Pie from "./scenes/pie";
+import ADMng from "./scenes/admng";
+// import Line from "./scenes/line";
+// import Pie from "./scenes/pie";
 import ChargeHistory from "./scenes/chargehistory";
 import ErrorList from "./scenes/errorlist";
 import DeviceMap from "./scenes/devicemap";
@@ -126,11 +126,11 @@ function App() {
                 <Route path='/deviceupdate' element={<DeviceUpdate/>}/>
                 <Route path='/logcmd' element={<DeviceLogCmd/>}/>
                 <Route path='/loglist' element={<DeviceLogList/>}/>
-                <Route path="/invoices" element={<Invoices />} />
-                <Route path="/form" element={<Form />} />
+                <Route path="/adupload" element={<ADUpload/>} />
+                <Route path="/admng" element={<ADMng/>} />
                 <Route path="/chargebargraph" element={<ChargeBarGraph />} />
-                <Route path="/pie" element={<Pie />} />
-                <Route path="/line" element={<Line />} />
+                {/* <Route path="/pie" element={<Pie />} />
+                <Route path="/line" element={<Line />} /> */}
                 <Route path="/chargehistory" element={<ChargeHistory />} />
                 <Route path="/errorlist" element={<ErrorList />} />
                 <Route path="/chargedaily" element={<ChargeDaily />} />

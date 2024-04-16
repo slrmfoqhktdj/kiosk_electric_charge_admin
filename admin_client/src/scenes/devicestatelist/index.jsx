@@ -33,7 +33,7 @@ import IconButton from '@mui/material/IconButton';
 
 import moment from 'moment';
 
-const Team = () => {
+const Team = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [Data, setData] = useState([]);
@@ -49,6 +49,7 @@ const Team = () => {
   const [NVCatSettingsDialog,setNVCatSettingsDialog] = useState(false);
   const [NVCatRestartDialog,setNVCatRestartDialog] = useState(false);
   const [ConnectorEnabledDialog,setConnectorEnabledDialog] = useState(false);
+  const [TriggerDialog,setTriggerDialog] = useState(false);
 
   const [Mounted,setMounted] = useState(1);
 
@@ -57,6 +58,9 @@ const Team = () => {
   const [SelectedSettings,setSelectedSettings] = useState();
 
   const [anchorEl, setAnchorEl] = useState(null);
+
+  const [TriggerRadio, setTriggerRadio] = useState(null);
+
   const open = Boolean(anchorEl);
 
   const openPositionMenu = (event,id) => {
@@ -123,6 +127,14 @@ const Team = () => {
 
   function closeConnectorEnabledDialog(){
     setConnectorEnabledDialog(false)
+  }
+
+  function openTriggerDialog(){
+    setTriggerDialog(true)
+  }
+
+  function closeTriggerDialog(){
+    setTriggerDialog(false)
   }
 
   function openSetConfigurationDialog(){
@@ -505,6 +517,34 @@ const Team = () => {
   
   }
 
+
+  const triggerProps = {
+    
+    component: 'form',
+    onSubmit: (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      formData.append("device_id", SelectedItemId.id)
+      const formJson = Object.fromEntries(formData.entries());
+
+      fetchPost("/cmd/tgmg",formJson)
+      .then((data) =>{
+        if(data.isReceived===true){
+          
+          closeTriggerDialog();
+
+          setMounted(Mounted+1)
+        }
+        else {
+          alert(data.errorMessage)
+        }
+      })
+
+
+    },
+  
+  }
+
   useEffect(() => {
     
     fetchGet("/devicestatelist")
@@ -517,10 +557,16 @@ const Team = () => {
 
   return (
     <Box m="20px">
-      <Header title="충전기 상태 정보" subtitle="충전기의 상태와 에러코드 및 현황을 볼 수 있습니다" />
+      {
+        isDashboard?
+        null
+        :
+        <Header title="충전기 상태 정보" subtitle="충전기의 상태와 에러코드 및 현황을 볼 수 있습니다" />
+      }
+      
       <Box
-        m="40px 0 0 0"
-        height="75vh"
+        m={isDashboard ?"20px 0 0 0":"40px 0 0 0"}
+        height={isDashboard ? "17vh": "75vh"}
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -573,6 +619,7 @@ const Team = () => {
         <MenuItem onClick={()=>{closePositionMenu(); openNVCatRestartDialog()}}>결제기재시작</MenuItem>
         <MenuItem onClick={()=>{closePositionMenu(); openCacheDeleteDialog()}}>인증캐쉬삭제</MenuItem>
         <MenuItem onClick={()=>{closePositionMenu(); openStartTransactionDialog()}}>원격충전시작</MenuItem>
+        <MenuItem onClick={()=>{closePositionMenu(); openTriggerDialog()}}>충전기보고요청</MenuItem>
         <MenuItem onClick={()=>{      /// 설정가지고오기 메뉴
           if(SelectedItemId.conn === true){
             const formJson = {
@@ -1038,8 +1085,80 @@ const Team = () => {
         
       </Dialog>
 
+
+      <Dialog
+        open={TriggerDialog}
+        onClose={closeTriggerDialog}
+        PaperProps={
+           triggerProps
+        }
+      >
+        
+        <DialogTitle>충전기 보고 요청</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {SelectedItemId.id}에게 다음과 같은 보고를 요청할 수 있습니다.
+          </DialogContentText>
+
+          <p></p>
+          <FormLabel id="demo-controlled-radio-buttons-group">요청 타입*</FormLabel>
+          <RadioGroup
+            row = {false}
+            aaria-labelledby="demo-row-radio-buttons-group-label"
+            name="requestedMessage"
+            defaultValue={"Heartbeat"}
+            required
+            onChange={(e)=>{
+              if(e.target.defaultValue==="MeterValues"){
+                setTriggerRadio(true)
+              }else{
+                setTriggerRadio(false)
+              }
+              
+            }}  
+          >
+            <FormControlLabel value="Heartbeat" control={<Radio />} label="하트비트" />
+            <FormControlLabel value="BootNotification" control={<Radio />} label="시작보고 - 기기이용가능여부가 대기에서 수정됬을때 상태를 업데이트합니다." />
+            <FormControlLabel value="DiagnosticsStatusNotification" control={<Radio />} label="진단파일업로드현황" />
+            <FormControlLabel value="FirmwareStatusNotification" control={<Radio/>} label="소프트웨어업데이트현황" />
+            <FormControlLabel value="MeterValues" control={<Radio />} label="충전중일때 : 현재 충전중인 데이터값 현황" />
+            <FormControlLabel value="StatusNotification" control={<Radio />} label="현 기기 상태 현황" />
+          </RadioGroup>
+          <p></p>
+
+          {
+            TriggerRadio?
+            <TextField
+              required
+              margin="dense"
+              label="커넥터ID"
+              name="ConnectorId"
+              fullWidth
+              color="success"
+              variant="standard"
+              type={"number"}
+              defaultValue={1}
+              helperText="요청을 받을 충전기의 라인 Id입니다. 보통 충전기 왼쪽부터 1,2... 순으로 배정됩니다."
+            />
+            :
+            null
+          }
+          
+
+          
+          
+          
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={closeTriggerDialog} color="secondary">취소</Button>
+          <Button type="submit" color="secondary">요청하기</Button>
+        </DialogActions>
+
+        
+      </Dialog>
+
         {/* <DataGrid checkboxSelection rows={Data} columns={columns} components={{ Toolbar: GridToolbar }} /> */}
-        <DataGrid  rows={Data} columns={columns} components={{ Toolbar: GridToolbar }}  />
+        <DataGrid  rows={Data} columns={columns} components={{ Toolbar: isDashboard? null:GridToolbar }} hideFooter={isDashboard} />
       </Box>
     </Box>
   );

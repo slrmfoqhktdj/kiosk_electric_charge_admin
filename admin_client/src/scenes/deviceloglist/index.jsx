@@ -101,7 +101,6 @@ const Team = () => {
     
     fetchGet("/loglistpage",{credentials: 'include'})
     .then((data) => {       
-      console.log(data) 
       setData(data)
     });
     

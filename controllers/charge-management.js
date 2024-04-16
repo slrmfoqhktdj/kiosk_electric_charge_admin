@@ -963,6 +963,80 @@ const connectorEnabled = async (request, response, next) =>{
 }
 
 
+const triggerMessage = async (request, response, next) =>{
+    console.log('c_triggerMessage')
+
+    const id = request.body.device_id
+    const ConnectorId = request.body.ConnectorId
+    const requestedMessage = request.body.requestedMessage
+
+    const sendResultData = {
+        isReceived:false,
+        errorMessage :"",
+    };
+
+    if(id&&requestedMessage){
+        
+        try{
+            comfirm = await axios({
+                method:'POST',
+                url:process.env.OCPPURL+'/command/tgmg',
+                // headers:{
+                //     'content-type':'application/x-www-form-urlencoded;charset=utf-8',
+                //     Authorization: `Bearer ${token.data.access_token}`
+                // },
+                headers:{
+                    Id:id
+                },
+                data:ConnectorId?
+                {
+                    ConnectorId:Number(ConnectorId),
+                    requestedMessage:requestedMessage
+                }
+                :
+                {
+                    requestedMessage:requestedMessage
+                }
+            })
+
+
+            
+
+            const getData = comfirm.data.status
+
+
+            if(getData == "Accepted"){
+                sendResultData.isReceived = true
+            }else if(getData == "Rejected"){
+                sendResultData.isReceived = false
+                sendResultData.errorMessage = "설정 명령이 거절당했습니다. "
+            }else if(getData == "Scheduled"){
+                sendResultData.isReceived = false
+                sendResultData.errorMessage = "요청이 수락되었으며 진행 중인 트랜잭션이 완료되면 실행됩니다. "
+            }
+
+
+            response.send(sendResultData)
+
+            
+        }catch(e){
+            console.log("err : "+e);
+            sendResultData.isReceived = false
+            sendResultData.errorMessage = "명령 전송에 실패했습니다. "
+            response.send(sendResultData)
+        }
+
+
+        
+        
+    }else{
+        sendResultData.isReceived = false
+        sendResultData.errorMessage = "선택된 기기가 없습니다."
+        response.send(sendResultData)
+    }
+}
+
+
 
 module.exports = {
     getdevicelist,
@@ -981,4 +1055,5 @@ module.exports = {
     nvcatSettings,
     nvcatRestart,
     connectorEnabled,
+    triggerMessage,
 }

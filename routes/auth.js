@@ -7,6 +7,7 @@ const AuthController = require('../controllers/auth')
 
 router.get('/checkLogin', AuthController.isGuest)
 router.post('/authenticate',  AuthController.authenticate)
+router.post('/logout',AuthController.signOut)
 
 // router.get('/register', authMiddleware.isGuest, AuthController.register)
 // router.post('/register', authMiddleware.isGuest, AuthController.signup)

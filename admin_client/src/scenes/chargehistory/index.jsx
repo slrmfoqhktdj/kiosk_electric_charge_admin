@@ -19,6 +19,8 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import IconButton from '@mui/material/IconButton';
 
+import TextField from '@mui/material/TextField';
+
 
 const FAQ = () => {
   const theme = useTheme();
@@ -28,6 +30,8 @@ const FAQ = () => {
   const [SelectedItemId,setSelectedItemId] = useState({id:"",device:"",pay:"",can_pay:"",pay_by:"",c_num:"",c_c_num:"",pay_day:"",c_pay_day:"",c_conn:"",c_time:"",c_amount:"", c_time_s:"", c_time_e:"", c_time_u:""});
 
   const [TransactionDialog,setTransactionDialog] = useState(false);
+  const [PayCancleDialog,setPayCancleDialog] = useState(false);
+
   const [Mounted,setMounted] = useState(1);
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -47,6 +51,14 @@ const FAQ = () => {
 
   function closeTransactionDialog(){
     setTransactionDialog(false)
+  }
+
+  function openPayCancleDialog(){
+    setPayCancleDialog(true)
+  }
+
+  function closePayCancleDialog(){
+    setPayCancleDialog(false)
   }
 
   
@@ -214,6 +226,44 @@ const FAQ = () => {
     },
   }
 
+
+  const canclepayProps = {
+    
+    component: 'form',
+    onSubmit: (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      formData.append("device_id", SelectedItemId.device)
+      formData.append("OriginPay",SelectedItemId.pay)
+      formData.append("PayNum", SelectedItemId.id)
+      formData.append("PayDay", SelectedItemId.pay_day)
+      formData.append("PayToken", SelectedItemId.c_num)
+      
+      const formJson = Object.fromEntries(formData.entries());
+
+
+      if(Number(SelectedItemId.pay) < Number(formJson.CanclePay)){
+        alert("원 결제액보다 취소금액이 더 많습니다.")
+        return;
+      }
+
+      fetchPost("/cmd/nccp",formJson)
+      .then((data) =>{
+        if(data.isCancled===true){
+          
+          closePayCancleDialog();
+
+          setMounted(Mounted+1)
+        }
+        else {
+          alert(data.errorMessage)
+        }
+      })
+
+
+    },
+  }
+
   useEffect(() => {
 
     fetchGet("/charge_amount_history")
@@ -279,9 +329,45 @@ const FAQ = () => {
           }}
         >
 
+          <MenuItem onClick={()=>{closePositionMenu(); openPayCancleDialog()}} disabled={SelectedItemId.pay_by==="command"||SelectedItemId.c_pay_day}>원격부분취소</MenuItem>
           <MenuItem onClick={()=>{closePositionMenu(); openStopTransactionDialog()}} disabled={SelectedItemId.c_time_e}>원격충전중지</MenuItem>
           
         </Menu>
+
+        <Dialog
+          open={PayCancleDialog}
+          onClose={closePayCancleDialog}
+          PaperProps={
+            canclepayProps
+          }
+        >
+          
+          <DialogTitle>원격부분 금액취소</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              {SelectedItemId.device}의 충전에 대한 결제액을 필요만큼 취소합니다. - {SelectedItemId.id}
+            </DialogContentText>
+
+            <TextField
+            // autoFocus
+            required
+            margin="dense"
+            label="부분취소금액"
+            name="CanclePay"
+            fullWidth
+            type={"number"}
+            color="success"
+            variant="standard"
+          />
+            
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={closePayCancleDialog} color="secondary">취소</Button>
+            <Button type="submit" color="secondary">원격부분취소하기</Button>
+          </DialogActions>
+
+          
+        </Dialog>
 
         <Dialog
           open={TransactionDialog}

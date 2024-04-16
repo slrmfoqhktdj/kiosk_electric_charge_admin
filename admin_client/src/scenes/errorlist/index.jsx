@@ -118,6 +118,11 @@ const FAQ = () => {
           rows = {Data}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
+          initialState={{
+            sorting: {
+              sortModel: [{ field: 'o_time', sort: 'desc' }],
+            },
+          }}
         />
       </Box>
     </Box>

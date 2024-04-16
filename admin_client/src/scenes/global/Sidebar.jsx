@@ -4,29 +4,23 @@ import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link} from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
-// import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import TvIcon from '@mui/icons-material/Tv';
-// // import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-// import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-// import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-// import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-// import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import RoomIcon from '@mui/icons-material/Room';
 import DeviceUnknownIcon from '@mui/icons-material/DeviceUnknown';
-import CardMembershipIcon from '@mui/icons-material/CardMembership';
+import CardMembershipIcon from '@mui/icons-material/CardMembershipOutlined';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import FeaturedVideoIcon from '@mui/icons-material/FeaturedVideoOutlined';
 import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotionOutlined';
 import FileUploadIcon from '@mui/icons-material/FileUploadOutlined';
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAltOutlined';
+import ContentPasteGoIcon from '@mui/icons-material/ContentPasteGoOutlined';
+import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearchOutlined';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -233,8 +227,8 @@ const Sidebar = () => {
               광고관리
             </Typography>
             <Item
-              title="광고물 관리"
-              to="/invoices"
+              title="광고물 업로드"
+              to="/adupload"
               icon={<FeaturedVideoIcon/>}
               selected={selected}
               setSelected={setSelected}
@@ -242,7 +236,7 @@ const Sidebar = () => {
 
             <Item
               title="충전기별 광고 관리"
-              to="/form"
+              to="/admng"
               icon={<AutoAwesomeMotionIcon/>}
               selected={selected}
               setSelected={setSelected}
@@ -258,7 +252,7 @@ const Sidebar = () => {
             <Item
               title="진단파일 요청"
               to="/logcmd"
-              icon={<AutoAwesomeMotionIcon/>}
+              icon={<ContentPasteGoIcon/>}
               selected={selected}
               setSelected={setSelected}
             />
@@ -266,7 +260,7 @@ const Sidebar = () => {
             <Item
               title="진단파일 관리"
               to="/loglist"
-              icon={<AutoAwesomeMotionIcon/>}
+              icon={<ContentPasteSearchIcon/>}
               selected={selected}
               setSelected={setSelected}
             />
@@ -311,13 +305,13 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            <Item
+            {/* <Item
               title="매출실적 및 정산 조회"
               to="/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
 
             <Typography
               variant="h6"
@@ -327,13 +321,13 @@ const Sidebar = () => {
               환경설정
             </Typography>
 
-            <Item
+            {/* <Item
               title="사용자 관리/권한"
               to="/pie"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
             
             <Item
               title="공통코드"

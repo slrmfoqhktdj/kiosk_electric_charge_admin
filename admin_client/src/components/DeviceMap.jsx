@@ -36,7 +36,7 @@ const center = {
 //     }
 //   ];
   
-function DeviceMap() {
+function DeviceMap({ isDashboard = false }) {
     // const theme = useTheme();
     // const colors = tokens(theme.palette.mode);
     const [activeMarker, setActiveMarker] = useState(null);
@@ -75,7 +75,7 @@ function DeviceMap() {
             onClick={() => setActiveMarker(null)}
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={8}
+            zoom={isDashboard?6:8}
         >
 
         {Data.map(({ id, position, addr }) => (

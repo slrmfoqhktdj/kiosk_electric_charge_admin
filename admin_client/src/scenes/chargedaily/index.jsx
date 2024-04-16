@@ -27,7 +27,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import {fetchGet} from "../../communication/handlefetch"
 
-const Calendar = () => {
+const Calendar = ({ isDashboard = false }) => {
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -76,10 +76,15 @@ const Calendar = () => {
 
     
     <Box m="20px">
-      <Header title="일자별 충전량 조회" subtitle="일자별 총 충전량 및 매출액을 조회합니다" />
+      {
+        isDashboard?
+        null
+        :
+        <Header title="일자별 충전량 조회" subtitle="일자별 총 충전량 및 매출액을 조회합니다" />
+      }
       <Box
-        m="40px 0 0 0"
-        height="75vh"
+        m={isDashboard ? "20px 0 0 0": "40px 0 0 0"}
+        height={isDashboard ? "17vh": "75vh"}
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -113,7 +118,13 @@ const Calendar = () => {
 
           rows = {Data}
           columns={columns}
-          components={{ Toolbar: GridToolbar }}
+          components={{ Toolbar: isDashboard? null:GridToolbar }} 
+          hideFooter={isDashboard}
+          initialState={{
+            sorting: {
+              sortModel: [{ field: 'id', sort: 'desc' }],
+            },
+          }}
         />
       </Box>
     </Box>

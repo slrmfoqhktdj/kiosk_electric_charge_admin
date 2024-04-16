@@ -76,7 +76,7 @@ const getcharge_daily_list = async (request, response, next) => {
                 pay:rows[i].pay,
             }
     
-            console.log(rows[i].day)
+            // console.log(rows[i].day)
     
             result.push(sendcharge_daily_ListData)
         }
@@ -89,11 +89,47 @@ const getcharge_daily_list = async (request, response, next) => {
     
 }
 
+
+const getcharge_daily_graph_list = async (request, response, next) => {
+    console.log('c_getcharge_daily_graph_list')
+
+    let result = []
+
+    let comfirm;            /// ocpp 연결 여부 
+    try{
+        comfirm = await axios({
+            method:'GET',
+            url:process.env.OCPPURL.concat('/chargedailygraphlist'),
+        })
+        // console.log(comfirm.data)
+
+        const rows = comfirm.data.item
+
+        for(i = 0; i < rows.length; i ++){
+    
+            const sendcharge_daily_GraphData ={
+                device_id: rows[i].id,
+            }
+    
+    
+            result.push(sendcharge_daily_GraphData)
+        }
+    
+        response.send(result);
+    }catch(e){
+        console.log("err : "+e);
+    }
+    // const rows = await dbc.getcharge_daily_graph(StartTime,EndTime)
+
+    
+}
+
 const getcharge_daily_graph = async (request, response, next) => {
     console.log('c_getcharge_daily_graph')
 
     const StartTime = request.body.starttime
     const EndTime = request.body.endtime
+    const Device = request.body.device_id
     // const DeviceType = request.body.devicetype
 
     let result = []
@@ -105,7 +141,8 @@ const getcharge_daily_graph = async (request, response, next) => {
             url:process.env.OCPPURL.concat('/chargedailygraph'),
             data: {
                 starttime: StartTime,
-                endtime: EndTime
+                endtime: EndTime,
+                device_id: Device
             } 
         })
         // console.log(comfirm.data)
@@ -239,10 +276,93 @@ const remoteStopTransaction = async (request, response, next) =>{
     }
 }
 
+
+const remoteCanclePay = async (request, response, next) =>{
+    console.log('c_remoteCanclePay')
+
+    const id = request.body.device_id
+    
+    const vendor_id = "NVCAT"
+    const message_id = "NVCATCancle"
+
+    const PayNum =  request.body.PayNum
+    const OriginPay = request.body.OriginPay;
+    const PayDay = request.body.PayDay;
+    const PayToken = request.body.PayToken;
+    const CanclePay = request.body.CanclePay;
+
+    const sendupdatesettingsResultData = {
+        isCancled:false,
+        errorMessage :"",
+    };
+
+
+    if(id&&PayNum&&OriginPay&&PayDay&&PayToken){
+
+        const settingdata = "{'PayNum':'"+PayNum+"','CanclePay':'"+CanclePay+"','OriginPay':'"+OriginPay+"','PayDay':'"+PayDay+"','PayToken':'"+PayToken+"'}"
+        
+        try{
+            comfirm = await axios({
+                method:'POST',
+                url:process.env.OCPPURL+'/command/nccp',
+                // headers:{
+                //     'content-type':'application/x-www-form-urlencoded;charset=utf-8',
+                //     Authorization: `Bearer ${token.data.access_token}`
+                // },
+                headers:{
+                    Id:id
+                },
+                data:{
+                    vendorId:vendor_id,
+                    messageId:message_id,
+                    data:settingdata
+                }
+            })
+
+
+            
+
+            const getData = comfirm.data.status
+
+            if(getData == "Accepted"){
+                sendupdatesettingsResultData.isCancled = true
+            }else if(getData == "Rejected"){
+                sendupdatesettingsResultData.isCancled = false
+                sendupdatesettingsResultData.errorMessage = "원격취소가 거절당했습니다. "
+            }else if(getData == "UnknownMessageId"){
+                sendupdatesettingsResultData.isCancled = false
+                sendupdatesettingsResultData.errorMessage = "알수없는 메시지 형식입니다. "
+            }else{
+                sendupdatesettingsResultData.isCancled = false
+                sendupdatesettingsResultData.errorMessage = "알수없는 공급사입니다. "
+            }
+
+            response.send(sendupdatesettingsResultData)
+
+            
+        }catch(e){
+            console.log("err : "+e);
+            sendupdatesettingsResultData.isCancled = false
+            sendupdatesettingsResultData.errorMessage = "명령 전송에 실패했습니다."
+            response.send(sendupdatesettingsResultData)
+        }
+
+
+        
+        
+    }else{
+        sendupdatesettingsResultData.isCancled = false
+        sendupdatesettingsResultData.errorMessage = "선택된 기기가 없습니다."
+        response.send(sendupdatesettingsResultData)
+    }
+}
+
 module.exports = {
     getcharge_amount_history,
     getcharge_daily_list,
+    getcharge_daily_graph_list,
     getcharge_daily_graph,
     getcharge_error_history,
-    remoteStopTransaction
+    remoteStopTransaction,
+    remoteCanclePay,
 }

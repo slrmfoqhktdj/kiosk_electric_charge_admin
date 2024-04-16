@@ -20,7 +20,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import IconButton from '@mui/material/IconButton';
 
-const Contacts = () => {
+const Contacts = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [Data, setData] = useState([]);
@@ -66,7 +66,7 @@ const Contacts = () => {
       headerName: "ID", 
       headerAlign: "center",
       align: "center",
-      flex: 0.5 
+      flex: 0.5 ,
     },
     { 
       field: "price", 
@@ -129,13 +129,19 @@ const Contacts = () => {
 
     
     <Box m="20px">
-      <Header
+       {
+        isDashboard?
+        null
+        :
+        <Header
         title="충전요금 단가관리"
         subtitle="충전요금의 단가를 관리합니다. 가장 최신 등록된 단가가 적용됩니다."
-      />
+        />
+      }
+
       <Box
-        m="40px 0 0 0"
-        height="75vh"
+        m={isDashboard ? "20px 0 0 0": "40px 0 0 0"}
+        height={isDashboard ? "17vh": "75vh"}
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -169,7 +175,8 @@ const Contacts = () => {
 
           rows = {Data}
           columns={columns}
-          components={{ Toolbar: GridToolbar }}
+          components={{ Toolbar: isDashboard? null:GridToolbar }} 
+          hideFooter={isDashboard}
           initialState={{
             sorting: {
               sortModel: [{ field: 'time', sort: 'desc' }],
@@ -177,21 +184,28 @@ const Contacts = () => {
           }}
         />
       </Box>
-      <Box
-      m="20px 20px 0 0"
-      display="flex"
-      justifyContent="flex-end"
-      >
-        <Button variant="outlined" color="secondary" onClick={openinsertDialog}
-        sx={
-          {
-            width:"5vw",
-            height:"3vh"
-          }
-        }
-        >등록</Button>
 
-      </Box>
+      {
+        isDashboard?
+        null
+        :
+        <Box
+        m="20px 20px 0 0"
+        display="flex"
+        justifyContent="flex-end"
+        >
+          <Button variant="outlined" color="secondary" onClick={openinsertDialog}
+          sx={
+            {
+              width:"5vw",
+              height:"3vh"
+            }
+          }
+          >등록</Button>
+
+        </Box>
+      }
+      
 
       <Menu
         id="demo-positioned-menu"

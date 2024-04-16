@@ -264,7 +264,59 @@
             "id": "1016",
             "code" : "WeakSignal ",
             "content":"무선 통신 장치에서 신호가 약하다고 보고합니다."
+        },
+
+        {
+            "id": "1101",
+            "code" : "Idle",
+            "content":"현재 관련 행위를 하고있지 않습니다."
+        },
+        {
+            "id": "1102",
+            "code" : "Uploaded",
+            "content":"진단 정보가 업로드되었습니다."
+        },
+        {
+            "id": "1103",
+            "code" : "UploadFailed",
+            "content":"진단 정보 업로드에 실패했습니다."
+        },
+        {
+            "id": "1104",
+            "code" : "Uploading",
+            "content":"진단 정보 파일을 업로드 하는 중입니다."
+        },
+        {
+            "id": "1105",
+            "code" : "Downloaded",
+            "content":"충전소에 새로운 펌웨어가 다운로드되었습니다"
+        },
+        {
+            "id": "1106",
+            "code" : "DownloadFailed",
+            "content":"충전소에서 펌웨어를 다운로드하지 못했습니다."
+        },
+        {
+            "id": "1107",
+            "code" : "Downloading",
+            "content":"충전소에서 펌웨어를 다운로드하는 중입니다"
+        },
+        {
+            "id": "1108",
+            "code" : "InstallationFailed ",
+            "content":"충전소에서 새 펌웨어 설치에 실패했습니다."
+        },
+        {
+            "id": "1109",
+            "code" : "Installing",
+            "content":"충전소에서 펌웨어를 설치하는 중입니다."
+        },
+        {
+            "id": "1110",
+            "code" : "Installed",
+            "content":"충전소에서 새 펌웨어가 성공적으로 설치되었습니다."
         }
+
 
     ]
 }

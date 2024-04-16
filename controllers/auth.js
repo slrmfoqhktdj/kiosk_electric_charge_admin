@@ -115,8 +115,17 @@ const authenticate = async (request, response, next) => {
 const signOut = (request, response, next) => {
     console.log('c_auth signout')
 
+    const sendAuthenticateData = {
+        isLogout:false,
+        errorMessage :""
+    };
+
     request.session.destroy()
-    return response.redirect(response.locals.base)
+
+
+    // return response.redirect(response.locals.base)
+    sendAuthenticateData.isLogout = true
+    response.send(sendAuthenticateData)
 }
 
 

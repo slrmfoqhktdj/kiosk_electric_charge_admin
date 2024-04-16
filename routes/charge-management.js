@@ -31,4 +31,6 @@ router.post('/cmd/ncrs',charge_management.nvcatRestart)  //nvcat 재시작 명�
 
 router.post('/cmd/cgab',charge_management.connectorEnabled)     //커넥터 사용 가능 설정 명령
 
+router.post('/cmd/tgmg',charge_management.triggerMessage)     //트리거 명령
+
 module.exports = router
