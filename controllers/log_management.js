@@ -17,32 +17,38 @@ const getDevicecmdpage = async (request, response, next) => {
     try{
         comfirm = await axios({
             method:'GET',
-            url:process.env.OCPPURL.concat('/devicelogcmdpage')
+            url:process.env.OCPPURL.concat('/devicelogcmdpage'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
         })
 
-        const rows = comfirm.data.item
+        // const rows = comfirm.data.item
 
-        if(rows != null && rows.length>0){  // 응답이 없을경우
-            for(i = 0; i < rows.length; i ++){
-                const sendDeviceUpdateListData ={ 
-                    id: rows[i].id,
-                    addr:rows[i].addr,
-                    d_state:rows[i].d_state,
-                    s_time:"",
-                    e_time:""
-                }
+        // if(rows != null && rows.length>0){  // 응답이 없을경우
+        //     for(i = 0; i < rows.length; i ++){
+        //         const sendDeviceUpdateListData ={ 
+        //             id: rows[i].id,
+        //             addr:rows[i].addr,
+        //             d_state:rows[i].d_state,
+        //         }
         
-                result.push(sendDeviceUpdateListData)
-            }
-        }
+        //         result.push(sendDeviceUpdateListData)
+        //     }
+        // }
+
+        response.send(comfirm.data.item);
     
     }catch(e){
-        console.log("err : "+e);
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
     }
 
 
 
-    response.send(result);
 }
 
 const getDevicelistpage = async (request, response, next) => {  
@@ -68,13 +74,20 @@ const getDevicelistpage = async (request, response, next) => {
                 result.push(sendDeviceLogListData)
             }
         }
-    
+        
+        response.send(result);
+
     }catch(e){
-        console.log("err : "+e);
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
     }
 
 
-    response.send(result);
 }
 
 const commandUploadLog = async (request, response, next) => {  
@@ -130,7 +143,8 @@ const commandUploadLog = async (request, response, next) => {
             //     Authorization: `Bearer ${token.data.access_token}`
             // },
             headers:{
-                Id:device_id
+                Id:device_id,
+                Authorization: `Bearer ${request.session.user.name}`,
             },
             data:{
                 // Location:fullUrl,
@@ -141,33 +155,33 @@ const commandUploadLog = async (request, response, next) => {
                 StopTime: stopdatetime
             }
         })
-    }catch(e){
-        console.log("err : "+e);
-        // res.json(e.data);
-        result.isUploaded = false
-        result.errorMessage = "서버와의 통신 문제로 명령을 보내지 못했습니다."
-    }
 
-
-    try{
         if(comfirm.data.fileName == ""){
             console.log("not found log")
-
+    
             result.isUploaded = false
             result.errorMessage = "해당로그를 찾을 수 없습니다."
-        }else{
-            console.log(comfirm.data.fileName);
-            
         }
-    }catch (e){
-        console.log(e)
-    }
+        // else{
+        //     console.log(comfirm.data.fileName);
+            
+        // }
+
+        response.send(result);
+        
+    }catch(e){
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            result.isUploaded = false
+            result.errorMessage = "서버와의 통신 문제로 명령을 보내지 못했습니다."
+            response.send(result);
+        }
+    }    
     
 
-    
-    
-
-    response.send(result);
 }
 
 

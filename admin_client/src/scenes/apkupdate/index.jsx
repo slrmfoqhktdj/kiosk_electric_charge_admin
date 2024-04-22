@@ -193,7 +193,7 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid  rows={Data} columns={columns}  components={{ Toolbar: GridToolbar } }         
+        <DataGrid  rows={Data&&Data.length? Data:[]} columns={columns}  components={{ Toolbar: GridToolbar } }         
         initialState={{
           sorting: {
             sortModel: [{ field: 'u_time', sort: 'desc' }],

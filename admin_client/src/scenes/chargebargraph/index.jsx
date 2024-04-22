@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { ko } from "date-fns/locale";   
 import { format } from 'date-fns';
 
-import {fetchGet} from "../../communication/handlefetch"
+import {fetchPost} from "../../communication/handlefetch"
 
 
 import Menu from '@mui/material/Menu';
@@ -20,7 +20,7 @@ import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
-const Bar = () => {
+const ChargeBarChart = () => {
 
   const defalutDay = new Date();
 
@@ -30,7 +30,7 @@ const Bar = () => {
   const [StartTime, setStartTime] = useState(format(defalutDay,'yyyy-1-1 00:00:00'));
   const [EndTime, setEndTime] = useState(format(defalutDay,'yyyy-MM-dd 23:59:59'));
   const [Device,setDevice] = useState("전체");
-
+  const [Data, setData] = useState([]);
   const [DeviceList, setDeviceList] = useState([]);
 
 
@@ -78,13 +78,28 @@ const Bar = () => {
   };
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    fetchGet("/charge_daily_graph_list")
-    .then((data) => {      
-        setDeviceList(data)
+  //   fetchGet("/charge_daily_graph_list")
+  //   .then((data) => {      
+  //       setDeviceList(data)
+  //   });
+  // }, []);
+
+  useEffect(() => {
+    const userData = {
+      starttime: StartTime,
+      endtime:EndTime,
+      device_id:Device,
+      // devicetype:DeviceType
+    };
+
+    fetchPost("/charge_daily_graph",userData)
+    .then((data) => {       
+      setDeviceList(data.listitem)
+      setData(data.item)
     });
-  }, []);
+  }, [StartTime,EndTime,Device]);
 
 
   return (
@@ -107,11 +122,18 @@ const Bar = () => {
         <MenuItem key="전체" selected={"전체" === Device} onClick={()=> {closePositionMenu(); setDevice("전체")}}>
             전체
         </MenuItem>
-        {DeviceList.map((item) => (
-          <MenuItem key={item.device_id} selected={item.device_id === Device} onClick={()=> {closePositionMenu(); setDevice(item.device_id)}}>
-            {item.device_id}
-          </MenuItem>
-        ))}
+        {
+          DeviceList?
+
+          DeviceList.map((item) => (
+            <MenuItem key={item.id} selected={item.id === Device} onClick={()=> {closePositionMenu(); setDevice(item.id)}}>
+              {item.id}
+            </MenuItem>
+          ))
+          : 
+          null
+          
+        }
       </Menu>
 
 
@@ -180,11 +202,16 @@ const Bar = () => {
       </Box>
       
       <Box height="80vh">
-        <BarChart StartTime = {StartTime} EndTime = {EndTime} Device = {Device}/>
+        {
+          DeviceList&&DeviceList.length>0?
+          <BarChart Data = {Data} />
+          :
+          null
+        }
       </Box>
       
     </Box>
   );
 };
 
-export default Bar;
+export default ChargeBarChart;

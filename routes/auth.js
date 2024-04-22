@@ -1,13 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const AuthController = require('../controllers/auth')
-// const authMiddleware = require('../middlewares/auth')
+const authMiddleware = require('../middlewares/auth')
 
 
 
-router.get('/checkLogin', AuthController.isGuest)
-router.post('/authenticate',  AuthController.authenticate)
-router.post('/logout',AuthController.signOut)
+// router.get('/checkLogin', AuthController.isGuest)
+router.post('/authenticate',authMiddleware.isLogin,  AuthController.authenticate)
+router.post('/logout',authMiddleware.isAuthenticated,AuthController.signOut)
 
 // router.get('/register', authMiddleware.isGuest, AuthController.register)
 // router.post('/register', authMiddleware.isGuest, AuthController.signup)

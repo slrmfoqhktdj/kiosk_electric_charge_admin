@@ -1,15 +1,13 @@
+import React  from 'react'
+import { Fragment } from 'react'
 import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { Fragment } from "react";
 import { Axes } from "@nivo/axes";
 import { line } from "d3-shape";
 import { computeXYScalesForSeries } from "@nivo/scales";
 import { useTooltip, TableTooltip } from "@nivo/tooltip";
 import { BoxLegendSvg } from "@nivo/legends";
-import {fetchPost} from "../communication/handlefetch"
 
 // 라인 색
 const lineColor = "rgba(255, 113, 113, 1)";
@@ -89,7 +87,7 @@ function CustomTooltip({ timeValue, amountValue, countValue , payValue }) {
 
 
 
-const BarChart = ({ isDashboard = false , StartTime,EndTime,Device}) => {
+const ChargeBarChart = ({ isDashboard = false , Data}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -98,25 +96,25 @@ const BarChart = ({ isDashboard = false , StartTime,EndTime,Device}) => {
   // const [DEndTime, setEndTime] = useState(EndTime);
   // const [DDeviceType, setDeviceType] = useState(DeviceType);
 
-  const [Data, setData] = useState([]);
+  // const [Data, setData] = useState([]);
 
   // console.log(StartTime + EndTime + DeviceType)
 
   
 
-  useEffect(() => {
-    const userData = {
-      starttime: StartTime,
-      endtime:EndTime,
-      device_id:Device,
-      // devicetype:DeviceType
-    };
+  // useEffect(() => {
+  //   const userData = {
+  //     starttime: StartTime,
+  //     endtime:EndTime,
+  //     device_id:Device,
+  //     // devicetype:DeviceType
+  //   };
 
-    fetchPost("/charge_daily_graph",userData)
-    .then((data) => {        
-        setData(data)
-    });
-  }, [StartTime,EndTime,Device]);
+  //   fetchPost("/charge_daily_graph",userData)
+  //   .then((data) => {        
+  //       setData(data)
+  //   });
+  // }, [StartTime,EndTime,Device]);
 
 
   // 라인 그리기
@@ -126,7 +124,7 @@ const BarChart = ({ isDashboard = false , StartTime,EndTime,Device}) => {
       [
         {
           id: "count",
-          data: Data.map((it) => ({ x: it.time, y: it.count  }))
+          data: Data&&Data.length? Data.map((it) => ({ x: it.time, y: it.count  })) :[]
         }
       ],
       { type: "linear" },
@@ -139,7 +137,7 @@ const BarChart = ({ isDashboard = false , StartTime,EndTime,Device}) => {
       [
         {
           id: "pay",
-          data: Data.map((it) => ({ x: it.time, y: it.pay  }))
+          data: Data&&Data.length?  Data.map((it) => ({ x: it.time, y: it.pay  })) :[]
         }
       ],
       { type: "linear" },
@@ -177,7 +175,7 @@ const BarChart = ({ isDashboard = false , StartTime,EndTime,Device}) => {
     function renderTip(e, idx) {
 
       return tip.showTooltipFromEvent(
-        <CustomTooltip timeValue={Data[idx].time} amountValue={Data[idx].amount} countValue={Data[idx].count} payValue={Data[idx].pay} />,
+        <CustomTooltip timeValue={Data&&Data.length?  Data[idx].time : null} amountValue={Data&&Data.length?   Data[idx].amount : null} countValue={Data&&Data.length?  Data[idx].count : null} payValue={Data&&Data.length?  Data[idx].pay: null} />,
         e
       );
     }
@@ -280,7 +278,7 @@ const BarChart = ({ isDashboard = false , StartTime,EndTime,Device}) => {
   return (
     <ResponsiveBar
       // groupMode="grouped"
-      data={Data}
+      data={Data&&Data.length? Data:[]}
       theme={{
         // added
         axis: {
@@ -420,4 +418,4 @@ const BarChart = ({ isDashboard = false , StartTime,EndTime,Device}) => {
   );
 };
 
-export default BarChart;
+export default React.memo(ChargeBarChart);

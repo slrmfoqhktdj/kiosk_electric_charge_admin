@@ -5,51 +5,51 @@ require('dotenv').config({ path:'../.env'});
 
 
 // sign up user
-const signup = async (request, response, next) =>{
-    console.log('c_auth signup')
-    let userInfo = {
-        name : request.body.name,
-        email: request.body.email
-    }
-    let hashedPassword = ''
-    if(request.body.password !== ''){
-         hashedPassword = await bcrypt.hash(request.body.password,12)
-    }
-    let user = new User({...userInfo, password:hashedPassword})
-    await user.save().then(()=>{
-        request.session.user = userInfo
-        request.session.save()
-        response.redirect(response.locals.base + 'dashboard/demo-one/' + response.getLocale())
-    }).catch(error=>{
-        response.render('../views/auth/register',{
-            title:'Register',
-            name:'register',
-            layout:'../views/auth/auth_layout.ejs',
-            errors:error.errors,
-            input:{
-                name:request.body.name,
-                email:request.body.email,
-                password:request.body.password
-            }
-        })
-    })    
-}
+// const signup = async (request, response, next) =>{
+//     console.log('c_auth signup')
+//     let userInfo = {
+//         name : request.body.name,
+//         email: request.body.email
+//     }
+//     let hashedPassword = ''
+//     if(request.body.password !== ''){
+//          hashedPassword = await bcrypt.hash(request.body.password,12)
+//     }
+//     let user = new User({...userInfo, password:hashedPassword})
+//     await user.save().then(()=>{
+//         request.session.user = userInfo
+//         request.session.save()
+//         response.redirect(response.locals.base + 'dashboard/demo-one/' + response.getLocale())
+//     }).catch(error=>{
+//         response.render('../views/auth/register',{
+//             title:'Register',
+//             name:'register',
+//             layout:'../views/auth/auth_layout.ejs',
+//             errors:error.errors,
+//             input:{
+//                 name:request.body.name,
+//                 email:request.body.email,
+//                 password:request.body.password
+//             }
+//         })
+//     })    
+// }
 
 
 
 // check if the user is guest
-const isGuest = (request, response) => {
-    const sendGuestData = {isGuest:false};
+// const isGuest = (request, response) => {
+//     const sendGuestData = {isGuest:false};
 
-    console.log('Check Login')
-    if(request.session.user){
+//     console.log('Check Login')
+//     if(request.session.user){
         
-        sendGuestData.isGuest = true
-    }else{
-        sendGuestData.isGuest = false
-    }
-    return response.send(sendGuestData)
-}
+//         sendGuestData.isGuest = true
+//     }else{
+//         sendGuestData.isGuest = false
+//     }
+//     return response.send(sendGuestData)
+// }
 
 // authenticate user
 const authenticate = async (request, response, next) => {
@@ -75,27 +75,36 @@ const authenticate = async (request, response, next) => {
                     pwd: password
                 } 
             })
+
+
+            const data = comfirm.data.item
+
+            console.log(data)
+    
+            if(data.name != ''&& data.email != ''){
+                let userInfo = {
+                    name:data.name,
+                    email:data.email
+                }
+    
+                request.session.user = userInfo
+                request.session.save()
+                sendAuthenticateData.isLogin = true
+                response.send(sendAuthenticateData)
+            }else{
+                sendAuthenticateData.isLogin = false
+                sendAuthenticateData.errorMessage = "일치하는 아이디가 없습니다"
+                response.send(sendAuthenticateData)
+            }
         }catch(e){
             console.log("err : "+e);
-        }
-
-        const data = comfirm.data.item
-
-        if(data != null && data.length>0){
-            let userInfo = {
-                name:data[0].name,
-                email:data[0].email
-            }
-
-            request.session.user = userInfo
-            request.session.save()
-            sendAuthenticateData.isLogin = true
-            response.send(sendAuthenticateData)
-        }else{
             sendAuthenticateData.isLogin = false
-            sendAuthenticateData.errorMessage = "일치하는 아이디가 없습니다"
+            sendAuthenticateData.errorMessage = "서버와의 연결이 불안정합니다. 잠시후 다시 시도해주세요."
             response.send(sendAuthenticateData)
+            return
         }
+
+       
 
         
         
@@ -131,8 +140,8 @@ const signOut = (request, response, next) => {
 
 
 module.exports = {
-    isGuest,
-    signup,
+    // isGuest,
+    // signup,
     authenticate,
     signOut
 }

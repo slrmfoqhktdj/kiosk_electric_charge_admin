@@ -5,8 +5,26 @@ const isAuthenticated = (request, response, next) => {
     if(!request.session.user){
         console.log("auth")
         // return response.status(400)
-        return response.send(400)
+
+        return response.send(401)
     }
+    
+    next()
+}
+
+
+
+const isLogin = (request, response, next) => {
+    if(request.session.user){
+        console.log("auth")
+        // return response.status(400)
+
+        return response.send({
+            isLogin:true,
+            errorMessage :""
+        })
+    }
+    
     next()
 }
 
@@ -25,6 +43,6 @@ const isAuthenticated = (request, response, next) => {
 
 
 module.exports = {
+    isLogin,
     isAuthenticated,
-
 }

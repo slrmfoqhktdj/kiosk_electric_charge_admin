@@ -60,33 +60,41 @@ const getDeviceswlist = async (request, response, next) => {
     try{
         comfirm = await axios({
             method:'GET',
-            url:process.env.OCPPURL.concat('/deviceupdatelist')
+            url:process.env.OCPPURL.concat('/deviceupdatelist'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
         })
 
-        const rows = comfirm.data.item
+        // const rows = comfirm.data.item
 
-        if(rows != null && rows.length>0){  // 응답이 없을경우
-            for(i = 0; i < rows.length; i ++){
-                const sendDeviceUpdateListData ={ 
-                    id: rows[i].id,
-                    addr:rows[i].addr,
-                    s_version:rows[i].s_version,
-                    f_state:rows[i].f_state,
-                    i_time:rows[i].i_time,
-                    u_time:rows[i].u_time,
-                }
+        // if(rows != null && rows.length>0){  // 응답이 없을경우
+        //     for(i = 0; i < rows.length; i ++){
+        //         const sendDeviceUpdateListData ={ 
+        //             id: rows[i].id,
+        //             addr:rows[i].addr,
+        //             s_version:rows[i].s_version,
+        //             f_state:rows[i].f_state,
+        //             i_time:rows[i].i_time,
+        //             u_time:rows[i].u_time,
+        //         }
         
-                result.push(sendDeviceUpdateListData)
-            }
-        }
-    
+        //         result.push(sendDeviceUpdateListData)
+        //     }
+        // }
+        
+        response.send(comfirm.data.item);
+
     }catch(e){
-        console.log("err : "+e);
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
     }
 
 
 
-    response.send(result);
 }
 
 const uploadApk = async (request, response, next) => {
@@ -158,7 +166,8 @@ const commandUpdateFirmWare = async (request, response, next) => {
             method:'POST',
             url:process.env.OCPPURL.concat('/command/udfw'),
             headers:{
-                Id:device_id
+                Id:device_id,
+                Authorization: `Bearer ${request.session.user.name}`,
             },
             data:{
                 Location:version+"$$"+path,
@@ -169,17 +178,25 @@ const commandUpdateFirmWare = async (request, response, next) => {
         })
         // console.log(comfirm.data)
 
+        response.send(result);
+
     }catch(e){
-        console.log("err : "+e);
-         result.isUpdated = false
-         result.errorMessage = e
+
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            result.isUpdated = false
+            result.errorMessage = e
+            response.send(result);
+        }
     }
 
    
         
     
 
-    response.send(result);
 }
 
 // const downloadApk = async (request, response, next) => {

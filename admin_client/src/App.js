@@ -27,7 +27,8 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import ChargeDaily from "./scenes/chargedaily";
 // import  {fetchPageGet  } from "./communication/handlefetch";
-import {ProtectedRoute} from './communication/handlefetch'; 
+
+// import {ProtectedRoute} from './communication/handlefetch'; 
 
 // function MainView(){
 //   const [theme, colorMode] = useMode();
@@ -101,22 +102,7 @@ function App() {
             {!excludedRoutes.includes(location.pathname) &&<Topbar setIsSidebar={setIsSidebar} />}
             <Routes>
               <Route path="/login" element={<Login/>} />
-              <Route element={<ProtectedRoute />}>
-
-                {/* <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-                <Route path="/devicelist" element={<ProtectedRoute><DeviceList /></ProtectedRoute>} />
-                <Route path="/devicestatelist" element={<ProtectedRoute><DeviceStateList /></ProtectedRoute>} />
-                <Route path="/pricelist" element={<ProtectedRoute><PriceList /></ProtectedRoute>} />
-                <Route path="/invoices" element={<ProtectedRoute><Invoices /></ProtectedRoute>} />
-                <Route path="/form" element={<ProtectedRoute><Form /></ProtectedRoute>} />
-                <Route path="/chargebargraph" element={<ProtectedRoute><ChargeBarGraph /></ProtectedRoute>} />
-                <Route path="/pie" element={<ProtectedRoute><Pie /></ProtectedRoute>} />
-                <Route path="/line" element={<ProtectedRoute><Line /></ProtectedRoute>} />
-                <Route path="/chargehistory" element={<ProtectedRoute><ChargeHistory /></ProtectedRoute>} />
-                <Route path="/errorlist" element={<ProtectedRoute><ErrorList /></ProtectedRoute>} />
-                <Route path="/chargedaily" element={<ProtectedRoute><ChargeDaily /></ProtectedRoute>} />
-                <Route path="/devicemap" element={<ProtectedRoute><DeviceMap /></ProtectedRoute>} />
-                <Route path="/publiccode" element={<ProtectedRoute><PublicCode /></ProtectedRoute>} /> */}
+              {/* <Route element={<ProtectedRoute />}>
 
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/devicelist" element={<DeviceList />} />
@@ -129,16 +115,31 @@ function App() {
                 <Route path="/adupload" element={<ADUpload/>} />
                 <Route path="/admng" element={<ADMng/>} />
                 <Route path="/chargebargraph" element={<ChargeBarGraph />} />
-                {/* <Route path="/pie" element={<Pie />} />
-                <Route path="/line" element={<Line />} /> */}
                 <Route path="/chargehistory" element={<ChargeHistory />} />
                 <Route path="/errorlist" element={<ErrorList />} />
                 <Route path="/chargedaily" element={<ChargeDaily />} />
                 <Route path="/devicemap" element={<DeviceMap />} />
                 <Route path="/publiccode" element={<PublicCode />} />
-              </Route>
+              </Route> */}
 
-              {/* <Route path="/" element={<ProtectedRoute isAllowed={true} redirectTo={"/login"}><Dashboard/></ProtectedRoute>} /> */}
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/devicelist" element={<DeviceList />} />
+              <Route path="/devicestatelist" element={<DeviceStateList />} />
+              <Route path="/pricelist" element={<PriceList />} />
+              <Route path="/apkup" element={<APKUpload />} />
+              <Route path='/deviceupdate' element={<DeviceUpdate/>}/>
+              <Route path='/logcmd' element={<DeviceLogCmd/>}/>
+              <Route path='/loglist' element={<DeviceLogList/>}/>
+              <Route path="/adupload" element={<ADUpload/>} />
+              <Route path="/admng" element={<ADMng/>} />
+              <Route path="/chargebargraph" element={<ChargeBarGraph />} />
+              <Route path="/chargehistory" element={<ChargeHistory />} />
+              <Route path="/errorlist" element={<ErrorList />} />
+              <Route path="/chargedaily" element={<ChargeDaily />} />
+              <Route path="/devicemap" element={<DeviceMap />} />
+              <Route path="/publiccode" element={<PublicCode />} />
+
+              
               
             
             </Routes>

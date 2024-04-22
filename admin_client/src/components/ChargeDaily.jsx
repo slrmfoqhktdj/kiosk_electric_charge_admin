@@ -1,0 +1,104 @@
+import React from 'react'
+import { Box , useTheme} from "@mui/material";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { tokens } from "../theme";
+
+const ChargeDaily = ({ isDashboard = false, Data }) => {
+
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
+  const columns = [
+    { 
+      field: "day",
+      headerName: "일자", 
+      headerAlign: "center",
+      align: "center",
+      flex: 1 
+    },
+    { 
+      field: "amount", 
+      headerName: "충전량",
+      headerAlign: "center",
+      align: "center",
+      flex: 1, 
+    },
+    {
+      field: "count",
+      headerName: "충전횟수",
+      headerAlign: "center",
+      align: "center",
+      flex: 1,
+    },
+    {
+      field: "pay",
+      headerName: "매출액",
+      headerAlign: "center",
+      align: "center",
+      flex: 1,
+    },
+  ];
+
+ 
+
+
+  return (
+
+    
+    <Box m={isDashboard ? "20px" : "0px"}>
+
+      <Box
+        m={isDashboard ? "20px 0 0 0": "40px 0 0 0"}
+        height={isDashboard ? "17vh": "75vh"}
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none",
+          },
+          "& .MuiDataGrid-cell": {
+            borderBottom: "none",
+          },
+          "& .name-column--cell": {
+            color: colors.greenAccent[300],
+          },
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: colors.blueAccent[700],
+            borderBottom: "none",
+          },
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: colors.primary[400],
+          },
+          "& .MuiDataGrid-footerContainer": {
+            borderTop: "none",
+            backgroundColor: colors.blueAccent[700],
+          },
+          "& .MuiCheckbox-root": {
+            color: `${colors.greenAccent[200]} !important`,
+          },
+          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+            color: `${colors.grey[100]} !important`,
+          },
+        }}
+      >
+        <DataGrid
+
+          rows = {Data&&Data.length? Data:[]}
+          columns={columns}
+          components={{ Toolbar: isDashboard? null:GridToolbar }} 
+          hideFooter={isDashboard}
+          initialState={{
+            sorting: {
+              sortModel: [{ field: 'id', sort: 'desc' }],
+            },
+          }}
+          getRowId={(row)=> row.day}
+        />
+      </Box>
+    </Box>
+  );
+
+
+
+
+};
+
+export default React.memo(ChargeDaily);

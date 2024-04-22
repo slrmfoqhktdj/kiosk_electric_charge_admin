@@ -11,42 +11,49 @@ const getcharge_amount_history = async (request, response, next) => {
     try{
         comfirm = await axios({
             method:'GET',
-            url:process.env.OCPPURL.concat('/chargelist')
+            url:process.env.OCPPURL.concat('/chargelist'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` }
         })
         // console.log(comfirm.data)
 
-        const rows = comfirm.data.item
+        // const rows = comfirm.data.item
 
-        for(i = 0; i < rows.length; i ++){
-            const sendcharge_amount_historyListData ={
-                id: rows[i].payid,
-                device: rows[i].d_id,
-                pay:rows[i].c_pay,
-                can_pay:rows[i].can_pay,
-                pay_by:rows[i].pay_by,
-                c_num:rows[i].c_num,
-                c_c_num:rows[i].c_c_num,
-                pay_day:rows[i].pay_day,
-                c_pay_day:rows[i].c_pay_day,
-                c_conn:rows[i].c_conn,
-                c_time:rows[i].c_time,
-                c_amount:rows[i].c_amount,
-                c_time_s:rows[i].c_time_s?  new Date(rows[i].c_time_s).toLocaleString() : null,
-                c_time_e:rows[i].c_time_e?  new Date(rows[i].c_time_e).toLocaleString() : null,
-                c_time_u:rows[i].c_time_u?  new Date(rows[i].c_time_u).toLocaleString() : null
+        // for(i = 0; i < rows.length; i ++){
+        //     const sendcharge_amount_historyListData ={
+        //         payid: rows[i].payid,
+        //         d_id: rows[i].d_id,
+        //         c_pay:rows[i].c_pay,
+        //         can_pay:rows[i].can_pay,
+        //         pay_by:rows[i].pay_by,
+        //         c_num:rows[i].c_num,
+        //         c_c_num:rows[i].c_c_num,
+        //         pay_day:rows[i].pay_day,
+        //         c_pay_day:rows[i].c_pay_day,
+        //         c_conn:rows[i].c_conn,
+        //         c_time:rows[i].c_time,
+        //         c_amount:rows[i].c_amount,
+        //         c_time_s:rows[i].c_time_s,
+        //         c_time_e:rows[i].c_time_e,
+        //         c_time_u:rows[i].c_time_u
 
-            }
+        //     }
 
-            result.push(sendcharge_amount_historyListData)
-        }
+        //     result.push(sendcharge_amount_historyListData)
+        // }
+
+        response.send(comfirm.data.item);
+
     }catch(e){
-        console.log("err : "+e);
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
     }
 
 
-    
-
-    response.send(result);
 }
 
 const getcharge_daily_list = async (request, response, next) => {
@@ -58,71 +65,85 @@ const getcharge_daily_list = async (request, response, next) => {
     try{
         comfirm = await axios({
             method:'GET',
-            url:process.env.OCPPURL.concat('/chargedailylist')
+            url:process.env.OCPPURL.concat('/chargedailylist'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` }
         })
         // console.log(comfirm.data)
 
-        const rows = comfirm.data.item
+        // const rows = comfirm.data.item
 
-        for(i = 0; i < rows.length; i ++){
-            if(rows[i].day == null){
-                continue;
-            }
+        // for(i = 0; i < rows.length; i ++){
+        //     if(rows[i].day == null){
+        //         continue;
+        //     }
     
-            const sendcharge_daily_ListData ={
-                id: rows[i].day,
-                amount: rows[i].amount,
-                count:rows[i].count,
-                pay:rows[i].pay,
-            }
+        //     const sendcharge_daily_ListData ={
+        //         day: rows[i].day,
+        //         amount: rows[i].amount,
+        //         count:rows[i].count,
+        //         pay:rows[i].pay,
+        //     }
     
-            // console.log(rows[i].day)
+        //     // console.log(rows[i].day)
     
-            result.push(sendcharge_daily_ListData)
-        }
+        //     result.push(sendcharge_daily_ListData)
+        // }
     
-        response.send(result);
+        response.send(comfirm.data.item);
     }catch(e){
-        console.log("err : "+e);
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
     }
 
     
 }
 
 
-const getcharge_daily_graph_list = async (request, response, next) => {
-    console.log('c_getcharge_daily_graph_list')
+// const getcharge_daily_graph_list = async (request, response, next) => {
+//     console.log('c_getcharge_daily_graph_list')
 
-    let result = []
+//     let result = []
 
-    let comfirm;            /// ocpp 연결 여부 
-    try{
-        comfirm = await axios({
-            method:'GET',
-            url:process.env.OCPPURL.concat('/chargedailygraphlist'),
-        })
-        // console.log(comfirm.data)
+//     let comfirm;            /// ocpp 연결 여부 
+//     try{
+//         comfirm = await axios({
+//             method:'GET',
+//             url:process.env.OCPPURL.concat('/chargedailygraphlist'),
+//             headers: { Authorization: `Bearer ${request.session.user.name}` }
+//         })
+//         // console.log(comfirm.data)
 
-        const rows = comfirm.data.item
+//         const rows = comfirm.data.item
 
-        for(i = 0; i < rows.length; i ++){
+//         for(i = 0; i < rows.length; i ++){
     
-            const sendcharge_daily_GraphData ={
-                device_id: rows[i].id,
-            }
+//             const sendcharge_daily_GraphData ={
+//                 device_id: rows[i].id,
+//             }
     
     
-            result.push(sendcharge_daily_GraphData)
-        }
+//             result.push(sendcharge_daily_GraphData)
+//         }
     
-        response.send(result);
-    }catch(e){
-        console.log("err : "+e);
-    }
-    // const rows = await dbc.getcharge_daily_graph(StartTime,EndTime)
+//         response.send(result);
+//     }catch(e){
+//         if(e.response?.status==401){
+//             request.session.destroy()
+//             response.send(401)
+//         }else{
+//             console.log("err : "+e);
+//             response.send(result);
+//         }
+//     }
+//     // const rows = await dbc.getcharge_daily_graph(StartTime,EndTime)
 
     
-}
+// }
 
 const getcharge_daily_graph = async (request, response, next) => {
     console.log('c_getcharge_daily_graph')
@@ -132,6 +153,7 @@ const getcharge_daily_graph = async (request, response, next) => {
     const Device = request.body.device_id
     // const DeviceType = request.body.devicetype
 
+    let listResult = []
     let result = []
 
     let comfirm;            /// ocpp 연결 여부 
@@ -139,6 +161,7 @@ const getcharge_daily_graph = async (request, response, next) => {
         comfirm = await axios({
             method:'POST',
             url:process.env.OCPPURL.concat('/chargedailygraph'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
             data: {
                 starttime: StartTime,
                 endtime: EndTime,
@@ -147,28 +170,46 @@ const getcharge_daily_graph = async (request, response, next) => {
         })
         // console.log(comfirm.data)
 
-        const rows = comfirm.data.item
+        // const listrows = comfirm.data.listitem
 
-        for(i = 0; i < rows.length; i ++){
-            if(rows[i].time == null){
-                continue;
-            }
+        // for(i = 0; i < listrows.length; i ++){
     
-            const sendcharge_daily_GraphData ={
-                time: rows[i].time,
-                amount: rows[i].amount,
-                count:rows[i].count,
-                pay:rows[i].pay,
-            }
+        //     const sendcharge_daily_list_GraphData ={
+        //         id: listrows[i].id,
+        //     }
     
-            // console.log(rows[i].time)
     
-            result.push(sendcharge_daily_GraphData)
-        }
+        //     listResult.push(sendcharge_daily_list_GraphData)
+        // }
+
+        // const rows = comfirm.data.item
+
+        // for(i = 0; i < rows.length; i ++){
+        //     if(rows[i].time == null){
+        //         continue;
+        //     }
     
-        response.send(result);
+        //     const sendcharge_daily_GraphData ={
+        //         time: rows[i].time,
+        //         amount: rows[i].amount,
+        //         count:rows[i].count,
+        //         pay:rows[i].pay,
+        //     }
+    
+        //     // console.log(rows[i].time)
+    
+        //     result.push(sendcharge_daily_GraphData)
+        // }
+    
+        response.send({item:comfirm.data.item,listitem:comfirm.data.listitem});
     }catch(e){
-        console.log("err : "+e);
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send({item:result,listitem:listResult});
+        }
     }
     // const rows = await dbc.getcharge_daily_graph(StartTime,EndTime)
 
@@ -185,32 +226,41 @@ const getcharge_error_history = async (request, response, next) => {
     try{
         comfirm = await axios({
             method:'GET',
-            url:process.env.OCPPURL.concat('/errlist')
+            url:process.env.OCPPURL.concat('/errlist'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
         })
         // console.log(comfirm.data)
 
-        const rows = comfirm.data.item
+        // const rows = comfirm.data.item
 
-        for(i = 0; i < rows.length; i ++){
-            const sendcharge_error_historyListData ={
-                id: rows[i].id,
-                d_id: rows[i].d_id,
-                d_error:rows[i].d_error,
-                v_id:rows[i].v_id,
-                v_error:rows[i].v_error,
-                e_info:rows[i].e_info,
-                o_time:rows[i].o_time,
+        // for(i = 0; i < rows.length; i ++){
+        //     const sendcharge_error_historyListData ={
+        //         id: rows[i].id,
+        //         d_id: rows[i].d_id,
+        //         d_error:rows[i].d_error,
+        //         v_id:rows[i].v_id,
+        //         v_error:rows[i].v_error,
+        //         e_info:rows[i].e_info,
+        //         o_time:rows[i].o_time,
 
-            }
+        //     }
 
-            result.push(sendcharge_error_historyListData)
-        }
+        //     result.push(sendcharge_error_historyListData)
+        // }
+        
+        response.send(comfirm.data.item);
+
     }catch(e){
-        console.log("err : "+e);
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
     }
     
 
-    response.send(result);
 }
 
 
@@ -236,6 +286,7 @@ const remoteStopTransaction = async (request, response, next) =>{
                 //     'content-type':'application/x-www-form-urlencoded;charset=utf-8',
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
+                headers: { Authorization: `Bearer ${request.session.user.name}` },
                 headers:{
                     Id:id
                 },
@@ -260,10 +311,16 @@ const remoteStopTransaction = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendupdatesettingsResultData.isStopped = false
-            sendupdatesettingsResultData.errorMessage = "명령 전송에 실패했습니다."
-            response.send(sendupdatesettingsResultData)
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendupdatesettingsResultData.isStopped = false
+                sendupdatesettingsResultData.errorMessage = "명령 전송에 실패했습니다."
+                response.send(sendupdatesettingsResultData)
+            }
+
         }
 
 
@@ -310,7 +367,8 @@ const remoteCanclePay = async (request, response, next) =>{
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
                 headers:{
-                    Id:id
+                    Id:id,
+                    Authorization: `Bearer ${request.session.user.name}` 
                 },
                 data:{
                     vendorId:vendor_id,
@@ -341,10 +399,16 @@ const remoteCanclePay = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendupdatesettingsResultData.isCancled = false
-            sendupdatesettingsResultData.errorMessage = "명령 전송에 실패했습니다."
-            response.send(sendupdatesettingsResultData)
+
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendupdatesettingsResultData.isStopped = false
+                sendupdatesettingsResultData.errorMessage = "명령 전송에 실패했습니다."
+                response.send(sendupdatesettingsResultData)
+            }
         }
 
 
@@ -360,7 +424,7 @@ const remoteCanclePay = async (request, response, next) =>{
 module.exports = {
     getcharge_amount_history,
     getcharge_daily_list,
-    getcharge_daily_graph_list,
+    // getcharge_daily_graph_list,
     getcharge_daily_graph,
     getcharge_error_history,
     remoteStopTransaction,

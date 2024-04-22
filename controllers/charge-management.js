@@ -10,39 +10,47 @@ const getdevicelist = async (request, response, next) => {
     try{
         comfirm = await axios({
             method:'GET',
-            url:process.env.OCPPURL.concat('/devicelist')
+            url:process.env.OCPPURL.concat('/devicelist'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` }
         })
 
-        const rows = comfirm.data.item
+        // const rows = comfirm.data.item
 
-        if(rows != null && rows.length>0){  // 응답이 없을경우
-            for(i = 0; i < rows.length; i ++){
-                const sendDeviceListData ={ 
-                    id: rows[i].id,
-                    latitude: rows[i].latitude,
-                    longitude:rows[i].longitude,
-                    addr:rows[i].addr,
-                    s_version:rows[i].s_version,
-                    h_c_m:rows[i].h_c_m,
-                    h_p_m:rows[i].h_p_m,
-                    h_b_m:rows[i].h_b_m,
-                    h_w_m:rows[i].h_w_m,
-                    i_time:rows[i].i_time,
-                    u_time:rows[i].u_time,
-                    enabled:rows[i].enabled==="1"?"정상":rows[i].enabled==="2"?"보류":"불가",
-                }
+        // if(rows != null && rows.length>0){  // 응답이 없을경우
+        //     for(i = 0; i < rows.length; i ++){
+        //         const sendDeviceListData ={ 
+        //             id: rows[i].id,
+        //             latitude: rows[i].latitude,
+        //             longitude:rows[i].longitude,
+        //             addr:rows[i].addr,
+        //             s_version:rows[i].s_version,
+        //             h_c_m:rows[i].h_c_m,
+        //             h_p_m:rows[i].h_p_m,
+        //             h_b_m:rows[i].h_b_m,
+        //             h_w_m:rows[i].h_w_m,
+        //             i_time:rows[i].i_time,
+        //             u_time:rows[i].u_time,
+        //             enabled:rows[i].enabled,
+        //         }
         
-                result.push(sendDeviceListData)
-            }
-        }
-    
+        //         result.push(sendDeviceListData)
+        //     }
+        // }
+        
+        response.send(comfirm.data.item);
+        
     }catch(e){
-        console.log("err : "+e);
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
     }
 
 
 
-    response.send(result);
 }
 
 const getdevicestatelist = async (request, response, next) => {
@@ -54,30 +62,40 @@ const getdevicestatelist = async (request, response, next) => {
     try{
         comfirm = await axios({
             method:'GET',
-            url:process.env.OCPPURL.concat('/devicestatelist')
+            url:process.env.OCPPURL.concat('/devicestatelist'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
         })
         // console.log(comfirm.data)
 
-        const rows = comfirm.data.item
+        // const rows = comfirm.data.item
 
-        for(i = 0; i < rows.length; i ++){
-            const sendDeviceStateListData ={
-                id: rows[i].id,
-                conn:rows[i].conn,
-                state: rows[i].state,
-                state_e:rows[i].state_e,
-                v_id:rows[i].v_id,
-                v_error:rows[i].v_error,
-                e_info:rows[i].e_info,
-                u_time:rows[i].u_time?  new Date(rows[i].u_time).toLocaleString(): null,
-                f_state:rows[i].f_state,
-                d_state:rows[i].d_state,
-            }
+        // for(i = 0; i < rows.length; i ++){
+        //     const sendDeviceStateListData ={
+        //         id: rows[i].id,
+        //         conn:rows[i].conn,
+        //         state: rows[i].state,
+        //         state_e:rows[i].state_e,
+        //         v_id:rows[i].v_id,
+        //         v_error:rows[i].v_error,
+        //         e_info:rows[i].e_info,
+        //         u_time:rows[i].u_time,
+        //         f_state:rows[i].f_state,
+        //         d_state:rows[i].d_state,
+        //     }
 
-            result.push(sendDeviceStateListData)
-        }
+        //     result.push(sendDeviceStateListData)
+        // }
+
+        response.send( comfirm.data.item);
+    
     }catch(e){
-        console.log("err : "+e);
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
     }
 
 
@@ -86,7 +104,6 @@ const getdevicestatelist = async (request, response, next) => {
 
     // console.log(result)
 
-    response.send(result);
 }
 
 const getpricelist = async (request, response, next) => {
@@ -98,29 +115,38 @@ const getpricelist = async (request, response, next) => {
     try{
         comfirm = await axios({
             method:'GET',
-            url:process.env.OCPPURL.concat('/pricemng')
+            url:process.env.OCPPURL.concat('/pricemng'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
         })
         // console.log(comfirm.data)
 
-        const rows = comfirm.data.item
+        // const rows = comfirm.data.item
 
-        for(i = 0; i < rows.length; i ++){
-            const sendPriceListData ={
-                id: rows[i].id,
-                price: rows[i].price,
-                time:rows[i].time,
-                writer:rows[i].writer
-            }
+        // for(i = 0; i < rows.length; i ++){
+        //     const sendPriceListData ={
+        //         id: rows[i].id,
+        //         price: rows[i].price,
+        //         time:rows[i].time,
+        //         writer:rows[i].writer
+        //     }
 
-            result.push(sendPriceListData)
-        }
+        //     result.push(sendPriceListData)
+        // }
+
+        response.send(comfirm.data.item);
+        
     }catch(e){
-        console.log("err : "+e);
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
     }
 
 
 
-    response.send(result);
 }
 
 const insertprice = async (request, response, next) =>{
@@ -142,6 +168,7 @@ const insertprice = async (request, response, next) =>{
             comfirm = await axios({
                 method:'POST',
                 url:process.env.OCPPURL.concat('/price/register'),
+                headers: { Authorization: `Bearer ${request.session.user.name}` },
                 data: {
                     price: price,
                     writer: writer,
@@ -161,9 +188,18 @@ const insertprice = async (request, response, next) =>{
                 response.send(sendInsertResultData)
                 // response.redirect(response.locals.base)
             }
+            
 
         }catch(e){
-            console.log("err : "+e);
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendInsertResultData.isInserted = false
+                sendInsertResultData.errorMessage = "등록에 실패했습니다"
+                response.send(sendInsertResultData)
+            }
         }
         
     }else{
@@ -192,6 +228,7 @@ const removeprice = async (request, response, next) =>{
             comfirm = await axios({
                 method:'POST',
                 url:process.env.OCPPURL.concat('/price/deleter'),
+                headers: { Authorization: `Bearer ${request.session.user.name}` },
                 data: {
                     id: id,
                     writer: writer,
@@ -215,7 +252,16 @@ const removeprice = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendRemoveResultData.isRemoved = false
+                sendRemoveResultData.errorMessage = "삭제에 실패했습니다"
+                response.send(sendRemoveResultData)
+            }
+
         }
         
     }else{
@@ -253,6 +299,7 @@ const insertdevice = async (request, response, next) =>{
             comfirm = await axios({
                 method:'POST',
                 url:process.env.OCPPURL.concat('/device/register'),
+                headers: { Authorization: `Bearer ${request.session.user.name}` },
                 data: {
                     id: id,
                     latitude: latitude,
@@ -282,7 +329,15 @@ const insertdevice = async (request, response, next) =>{
             }
 
         }catch(e){
-            console.log("err : "+e);
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendInsertResultData.isInserted = false
+                sendInsertResultData.errorMessage = "등록에 실패했습니다"
+                response.send(sendInsertResultData)
+            }
         }
 
 
@@ -325,6 +380,7 @@ const updatedevice = async (request, response, next) =>{
             comfirm = await axios({
                 method:'POST',
                 url:process.env.OCPPURL.concat('/device/updater'),
+                headers: { Authorization: `Bearer ${request.session.user.name}` },
                 data: {
                     id: id,
                     latitude: latitude,
@@ -348,15 +404,24 @@ const updatedevice = async (request, response, next) =>{
                 sendUpdateResultData.isUpdated = true
                 response.send(sendUpdateResultData)
             }else{
-                sendUpdateResultData.isUpdated = false
-                sendUpdateResultData.errorMessage = "수정에 실패했습니다"
-                response.send(sendUpdateResultData)
+                if(e.response?.status==401){
+                    request.session.destroy()
+                    response.send(401)
+                }else{
+                    console.log("err : "+e);
+                    sendUpdateResultData.isUpdated = false
+                    sendUpdateResultData.errorMessage = "수정에 실패했습니다"
+                    response.send(sendUpdateResultData)
+                }
                 // response.redirect(response.locals.base)
             }
 
             
         }catch(e){
             console.log("err : "+e);
+            sendUpdateResultData.isUpdated = false
+            sendUpdateResultData.errorMessage = "수정에 실패했습니다"
+            response.send(sendUpdateResultData)
         }
 
         
@@ -387,6 +452,7 @@ const removedevice = async (request, response, next) =>{
             comfirm = await axios({
                 method:'POST',
                 url:process.env.OCPPURL.concat('/device/deleter'),
+                headers: { Authorization: `Bearer ${request.session.user.name}` },
                 data: {
                     id: id,
                     latitude: latitude,
@@ -411,7 +477,16 @@ const removedevice = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
+            
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendRemoveResultData.isRemoved = false
+                sendRemoveResultData.errorMessage = "삭제에 실패했습니다"
+                response.send(sendRemoveResultData)
+            }
         }
 
 
@@ -451,7 +526,8 @@ const showsettings = async (request, response, next) =>{
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
                 headers:{
-                    Id:id
+                    Id:id,
+                    Authorization: `Bearer ${request.session.user.name}`,
                 },
                 data:{
                    key:GetConfiguration_key
@@ -466,10 +542,15 @@ const showsettings = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendshowsettingsResultData.isShow = false
-            sendshowsettingsResultData.errorMessage = "명령 전송에 실패했습니다."
-            response.send(sendshowsettingsResultData)
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendshowsettingsResultData.isShow = false
+                sendshowsettingsResultData.errorMessage = "명령 전송에 실패했습니다."
+                response.send(sendshowsettingsResultData)
+            }
         }
 
 
@@ -507,7 +588,8 @@ const updatesettings = async (request, response, next) =>{
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
                 headers:{
-                    Id:id
+                    Id:id,
+                    Authorization: `Bearer ${request.session.user.name}`,
                 },
                 data:{
                    key:key,
@@ -536,10 +618,16 @@ const updatesettings = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendupdatesettingsResultData.isUpdated = false
-            sendupdatesettingsResultData.errorMessage = "명령 전송에 실패했습니다."
-            response.send(sendupdatesettingsResultData)
+            
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendupdatesettingsResultData.isUpdated = false
+                sendupdatesettingsResultData.errorMessage = "명령 전송에 실패했습니다."
+                response.send(sendupdatesettingsResultData)
+            }
         }
 
 
@@ -577,7 +665,8 @@ const remoteStartTransaction = async (request, response, next) =>{
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
                 headers:{
-                    Id:id
+                    Id:id,
+                    Authorization: `Bearer ${request.session.user.name}`,
                 },
                 data:{
                     connectorId:Number(connectorId),
@@ -601,10 +690,15 @@ const remoteStartTransaction = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendupdatesettingsResultData.isStarted = false
-            sendupdatesettingsResultData.errorMessage = "명령 전송에 실패했습니다."
-            response.send(sendupdatesettingsResultData)
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendupdatesettingsResultData.isStarted = false
+                sendupdatesettingsResultData.errorMessage = "명령 전송에 실패했습니다."
+                response.send(sendupdatesettingsResultData)
+            }
         }
 
 
@@ -639,7 +733,8 @@ const cacheClear = async (request, response, next) =>{
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
                 headers:{
-                    Id:id
+                    Id:id,
+                    Authorization: `Bearer ${request.session.user.name}` ,
                 },
                 data:{}
             })
@@ -661,10 +756,15 @@ const cacheClear = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendResultData.isCleared = false
-            sendResultData.errorMessage = "명령 전송에 실패했습니다."
-            response.send(sendResultData)
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendResultData.isCleared = false
+                sendResultData.errorMessage = "명령 전송에 실패했습니다."
+                response.send(sendResultData)
+            }
         }
 
 
@@ -701,7 +801,8 @@ const Reset = async (request, response, next) =>{
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
                 headers:{
-                    Id:id
+                    Id:id,
+                    Authorization: `Bearer ${request.session.user.name}`,
                 },
                 data:{
                     Type:Type
@@ -725,10 +826,15 @@ const Reset = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendResultData.isReseted = false
-            sendResultData.errorMessage = "명령 전송에 실패했습니다."
-            response.send(sendResultData)
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendResultData.isReseted = false
+                sendResultData.errorMessage = "명령 전송에 실패했습니다."
+                response.send(sendResultData)
+            }
         }
 
 
@@ -772,7 +878,8 @@ const nvcatSettings = async (request, response, next) =>{
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
                 headers:{
-                    Id:id
+                    Id:id,
+                    Authorization: `Bearer ${request.session.user.name}`,
                 },
                 data:{
                     vendorId:vendor_id,
@@ -804,10 +911,16 @@ const nvcatSettings = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendResultData.isSetting = false
-            sendResultData.errorMessage = "명령 전송에 실패했습니다."
-            response.send(sendResultData)
+            
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendResultData.isSetting = false
+                sendResultData.errorMessage = "명령 전송에 실패했습니다."
+                response.send(sendResultData)
+            }
         }
 
 
@@ -845,7 +958,8 @@ const nvcatRestart = async (request, response, next) =>{
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
                 headers:{
-                    Id:id
+                    Id:id,
+                    Authorization: `Bearer ${request.session.user.name}`,
                 },
                 data:{
                     vendorId:vendor_id,
@@ -877,10 +991,16 @@ const nvcatRestart = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendResultData.isReseted = false
-            sendResultData.errorMessage = "명령 전송에 실패했습니다."
-            response.send(sendResultData)
+            
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendResultData.isReseted = false
+                sendResultData.errorMessage = "명령 전송에 실패했습니다."
+                response.send(sendResultData)
+            }
         }
 
 
@@ -917,7 +1037,8 @@ const connectorEnabled = async (request, response, next) =>{
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
                 headers:{
-                    Id:id
+                    Id:id,
+                    Authorization: `Bearer ${request.session.user.name}`,
                 },
                 data:{
                     ConnectorId:Number(ConnectorId),
@@ -946,10 +1067,16 @@ const connectorEnabled = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendResultData.isEnabled = false
-            sendResultData.errorMessage = "명령 전송에 실패했습니다."
-            response.send(sendResultData)
+            
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendResultData.isEnabled = false
+                sendResultData.errorMessage = "명령 전송에 실패했습니다."
+                response.send(sendResultData)
+            }
         }
 
 
@@ -986,7 +1113,8 @@ const triggerMessage = async (request, response, next) =>{
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
                 headers:{
-                    Id:id
+                    Id:id,
+                    Authorization: `Bearer ${request.session.user.name}`,
                 },
                 data:ConnectorId?
                 {
@@ -1020,10 +1148,16 @@ const triggerMessage = async (request, response, next) =>{
 
             
         }catch(e){
-            console.log("err : "+e);
-            sendResultData.isReceived = false
-            sendResultData.errorMessage = "명령 전송에 실패했습니다. "
-            response.send(sendResultData)
+            
+            if(e.response?.status==401){
+                request.session.destroy()
+                response.send(401)
+            }else{
+                console.log("err : "+e);
+                sendResultData.isReceived = false
+                sendResultData.errorMessage = "명령 전송에 실패했습니다. "
+                response.send(sendResultData)
+            }
         }
 
 

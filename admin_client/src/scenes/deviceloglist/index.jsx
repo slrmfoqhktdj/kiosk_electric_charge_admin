@@ -160,6 +160,38 @@ const Team = () => {
 
   }
 
+  const downProps = {
+    component: 'form',
+    onSubmit: (event) => {
+      event.preventDefault();
+      downloadFile();
+    },
+  }
+
+  const removeProps = {
+    component: 'form',
+    onSubmit: (event) => {
+      event.preventDefault();
+      const filename = {
+        filename:SelectedItemId.id,
+      }
+
+      fetchPost("/log/remove",filename)
+      .then((json) => {     
+        
+        closeRemoveDialog();
+
+        setMounted(Mounted+1)
+
+        if(!json.isRemoved&&json.errorMessage){
+          alert(json.errorMessage)
+        }
+      });
+
+
+    },
+  }
+
   return (
     <Box m="20px">
       <Header title="진단파일 관리" subtitle="요청된 모든 진단파일을 볼 수 있습니다." />
@@ -196,7 +228,7 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid  rows={Data} columns={columns}  components={{ Toolbar: GridToolbar } }/>
+        <DataGrid  rows={Data&&Data.length? Data:[]} columns={columns}  components={{ Toolbar: GridToolbar } }/>
       </Box>
 
       
@@ -228,17 +260,7 @@ const Team = () => {
       <Dialog
         open={downDialog}
         onClose={closedownDialog}
-        PaperProps={{
-          component: 'form',
-          onSubmit: (event) => {
-            event.preventDefault();
-
-            downloadFile();
-
-            
-
-          },
-        }}
+        PaperProps={downProps}
       >
         <DialogTitle>진단파일 다운로드</DialogTitle>
         <DialogContent>
@@ -260,29 +282,7 @@ const Team = () => {
       <Dialog
         open={RemoveDialog}
         onClose={closeRemoveDialog}
-        PaperProps={{
-          component: 'form',
-          onSubmit: (event) => {
-            event.preventDefault();
-            const filename = {
-              filename:SelectedItemId.id,
-            }
-
-            fetchPost("/log/remove",filename)
-            .then((json) => {     
-              
-              closeRemoveDialog();
-
-              setMounted(Mounted+1)
-
-              if(!json.isRemoved&&json.errorMessage){
-                alert(json.errorMessage)
-              }
-            });
-
-
-          },
-        }}
+        PaperProps={removeProps}
       >
         <DialogTitle>진단파일 삭제</DialogTitle>
         <DialogContent>

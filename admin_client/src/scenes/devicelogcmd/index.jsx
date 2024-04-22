@@ -150,6 +150,56 @@ const Team = () => {
     setEndDate(date)
   }
 
+  const updateProps = {
+    component: 'form',
+    onSubmit: (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      formData.append('device_id',SelectedItemId.id)
+      const formJson = Object.fromEntries(formData.entries());
+
+      
+      fetchPost("/command/upl",formJson)
+      .then((json) => {           
+        if(json.isUploaded===true){
+          
+          closeUpdateDialog();
+
+          setMounted(Mounted+1)
+        }
+        else {
+          alert(json.errorMessage)
+        }
+      });
+
+    },
+  }
+
+  const removeProps = {
+    component: 'form',
+    onSubmit: (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      formData.append('device_id',SelectedItemId.id)
+      const formJson = Object.fromEntries(formData.entries());
+
+      
+      fetchPost("/command/upl",formJson)
+      .then((json) => {           
+        if(json.isUploaded===true){
+          
+          closeUpdateDialog();
+
+          setMounted(Mounted+1)
+        }
+        else {
+          alert(json.errorMessage)
+        }
+      });
+
+    },
+  }
+
   return (
     <Box m="20px">
       <Header title="진단파일 요청" subtitle="해당 충전기의 진단파일을 요청 및 삭제 할 수 있습니다." />
@@ -186,7 +236,7 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid  rows={Data} columns={columns}  components={{ Toolbar: GridToolbar } }/>
+        <DataGrid  rows={Data&&Data.length? Data:[]} columns={columns}  components={{ Toolbar: GridToolbar } }/>
       </Box>
 
       
@@ -218,30 +268,7 @@ const Team = () => {
       <Dialog
         open={UpdateDialog}
         onClose={closeUpdateDialog}
-        PaperProps={{
-          component: 'form',
-          onSubmit: (event) => {
-            event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            formData.append('device_id',SelectedItemId.id)
-            const formJson = Object.fromEntries(formData.entries());
-
-            
-            fetchPost("/command/upl",formJson)
-            .then((json) => {           
-              if(json.isUploaded===true){
-                
-                closeUpdateDialog();
-
-                setMounted(Mounted+1)
-              }
-              else {
-                alert(json.errorMessage)
-              }
-            });
-
-          },
-        }}
+        PaperProps={updateProps}
       >
         <DialogTitle>진단파일 요청</DialogTitle>
         <DialogContent>
@@ -316,30 +343,7 @@ const Team = () => {
       <Dialog
         open={RemoveDialog}
         onClose={closeRemoveDialog}
-        PaperProps={{
-          component: 'form',
-          onSubmit: (event) => {
-            event.preventDefault();
-            const deviceid = {
-              device_id:SelectedItemId.id,
-            }
-
-            fetchPost("/log/allremove",deviceid)
-            .then((json) => {      
-              
-              closeRemoveDialog();
-
-              setMounted(Mounted+1)
-
-              if(json.isRemoved===true&&json.errorMessage){
-                alert(json.errorMessage)
-              }
-              
-            });
-
-
-          },
-        }}
+        PaperProps={removeProps}
       >
         <DialogTitle>진단파일 삭제</DialogTitle>
         <DialogContent>

@@ -1,14 +1,7 @@
-
-// import { tokens } from "../theme";
-
-// import { useTheme } from "@mui/material";
 import React from 'react'
-// import { GoogleMap, LoadScript ,MarkerF , InfoWindow , Marker} from '@react-google-maps/api';
 import { GoogleMap, LoadScript , InfoWindow , Marker} from '@react-google-maps/api';
-// import RoomIcon from '@mui/icons-material/Room';
 import { useState } from "react";
-import { useEffect } from 'react';
-import {fetchGet} from "../communication/handlefetch"
+
 
 const APIKEY = process.env.REACT_APP_GOOGLE_MAP_API_KEY
 const containerStyle = {
@@ -36,34 +29,18 @@ const center = {
 //     }
 //   ];
   
-function DeviceMap({ isDashboard = false }) {
+function DeviceMap({ isDashboard = false , Data}) {
     // const theme = useTheme();
     // const colors = tokens(theme.palette.mode);
     const [activeMarker, setActiveMarker] = useState(null);
-    const [Data, setData] = useState([]);
-
-    useEffect(() => {
-        fetchGet("/mapdata")
-        .then((data) => {        
-            setData(data)
-        });
-      }, []);
 
 
     const handleActiveMarker = (marker) => {
-        if (marker === activeMarker) {
+      if (marker === activeMarker) {
           return;
-        }
-        setActiveMarker(marker);
-      };
-    
-      //로드 될때 위치 잡기
-    //   const handleOnLoad = (map) => {
-    //     const bounds = new window.google.maps.LatLngBounds();
-    //     markers.forEach(({ position }) => bounds.extend(position));
-    //     map.fitBounds(bounds);
-        
-    //   };
+      }
+      setActiveMarker(marker);
+    };
 
 
     return (
@@ -78,25 +55,29 @@ function DeviceMap({ isDashboard = false }) {
             zoom={isDashboard?6:8}
         >
 
-        {Data.map(({ id, position, addr }) => (
-            <Marker
-            key={id}
-            position={position}
-            onClick={() => handleActiveMarker(id)}
-            >
-            {activeMarker === id ? (
-                <InfoWindow onCloseClick={() => setActiveMarker(null)}>
-                <div style={{color:'black'}}>{id}
-                    <div style={{color:'black'}}>{addr}
-                    </div>
-                </div>
-                </InfoWindow>
-            ) : null}
-            </Marker>
-        ))}
-          {/* <MarkerF position={center} icon={{
-            url:(require('@mui/icons-material/Room')),
-            }}></MarkerF> */}
+        {
+          Data?
+
+          Data.map(({ id, position, addr }) => (
+              <Marker
+              key={id}
+              position={{lat:parseFloat(position.latitude),lng:parseFloat(position.longitude)}}
+              onClick={() => handleActiveMarker(id)}
+              >
+              {activeMarker === id ? (
+                  <InfoWindow onCloseClick={() => setActiveMarker(null)}>
+                  <div style={{color:'black'}}>{id}
+                      <div style={{color:'black'}}>{addr}
+                      </div>
+                  </div>
+                  </InfoWindow>
+              ) : null}
+              </Marker>
+          ))
+          :
+          null
+          
+        }
         </GoogleMap>
       </LoadScript>
     )

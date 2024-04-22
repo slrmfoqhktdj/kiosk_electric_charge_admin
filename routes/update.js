@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const update = require('../controllers/update')
 const multer = require('multer')
+const authMiddleware = require('../middlewares/auth')
 
 const storagePole = multer.diskStorage({
     destination:function(req,file,cb){
@@ -24,12 +25,12 @@ const storageTwin = multer.diskStorage({
 const uploadTwinfunction = multer({storage:storageTwin})
 
 
-router.get('/apkfilelist',update.getApkfilelist)    // 프로그램 업로드 페이지 리스트
-router.get('/deviceswlist',update.getDeviceswlist)  // 충전기 업데이트 페이지 리스트
+router.get('/apkfilelist',authMiddleware.isAuthenticated,update.getApkfilelist)    // 프로그램 업로드 페이지 리스트
+router.get('/deviceswlist',authMiddleware.isAuthenticated,update.getDeviceswlist)  // 충전기 업데이트 페이지 리스트
 
-router.post('/upload/pole',uploadPolefunction.single('apkfile'),update.uploadApk)   //폴 apk 업로드
-router.post('/upload/twin',uploadTwinfunction.single('apkfile'),update.uploadApk)   //트윈 apk 업로드
-router.post('/command/upd',update.commandUpdateFirmWare)    // 충전기 업데이트 명령
+router.post('/upload/pole',authMiddleware.isAuthenticated,uploadPolefunction.single('apkfile'),update.uploadApk)   //폴 apk 업로드
+router.post('/upload/twin',authMiddleware.isAuthenticated,uploadTwinfunction.single('apkfile'),update.uploadApk)   //트윈 apk 업로드
+router.post('/command/upd',authMiddleware.isAuthenticated,update.commandUpdateFirmWare)    // 충전기 업데이트 명령
 
 // router.post('/apks',update.)    // apk 파일 공유
 

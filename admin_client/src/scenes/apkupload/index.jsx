@@ -89,6 +89,72 @@ const Team = () => {
       });
   }, [Mounted]);
 
+  const poleProps = {
+    component: 'form',
+    onSubmit: (e) => {
+
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append("apkfile",files)
+
+      
+      if(files === undefined){
+        return alert("파일을 선택해주세요");
+      }
+
+      fetchFile('/upload/pole', formData)
+      .then((data) =>{
+
+        
+        if(data.isUploaded===true){
+          
+          closePoleDialog();
+
+          setMounted(Mounted+1)
+        }
+        else {
+          alert(data.errorMessage)
+        }
+      }).catch((err) => {
+          console.error(err);
+      });
+
+
+    },
+  }
+
+  const twinProps = {
+    component: 'form',
+    onSubmit: (e) => {
+
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append("apkfile",files)
+
+      
+      if(files === undefined){
+        return alert("파일을 선택해주세요");
+      }
+
+      fetchFile('/upload/twin', formData)
+      .then((data) =>{
+        if(data.isUploaded===true){
+          
+          closeTwinDialog();
+
+          setMounted(Mounted+1)
+        }
+        else {
+          alert(data.errorMessage)
+        }
+      }).catch((err) => {
+          console.error(err);
+      });
+
+
+    },
+  }
+
 
 
   return (
@@ -124,7 +190,7 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid rows={PoleData} columns={columns} hideFooter={true}/>
+        <DataGrid rows={PoleData&&PoleData.length? PoleData:[]} columns={columns} hideFooter={true}/>
       </Box>
 
       <Box
@@ -174,7 +240,7 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid rows={TwinData} columns={columns} hideFooter={true}/>
+        <DataGrid rows={TwinData&&TwinData.length? TwinData:[]} columns={columns} hideFooter={true}/>
       </Box>
 
       <Box
@@ -197,39 +263,7 @@ const Team = () => {
       <Dialog
         open={PoleDialog}
         onClose={closePoleDialog}
-        PaperProps={{
-          component: 'form',
-          onSubmit: (e) => {
-
-            e.preventDefault();
-            const formData = new FormData();
-            formData.append("apkfile",files)
-
-            
-            if(files === undefined){
-              return alert("파일을 선택해주세요");
-            }
-
-            fetchFile('/upload/pole', formData)
-            .then((data) =>{
-
-              
-              if(data.isUploaded===true){
-                
-                closePoleDialog();
-
-                setMounted(Mounted+1)
-              }
-              else {
-                alert(data.errorMessage)
-              }
-            }).catch((err) => {
-                console.error(err);
-            });
-
-
-          },
-        }}
+        PaperProps={poleProps}
       >
         <DialogTitle>Pole 프로그램 업로드</DialogTitle>
         <DialogContent>
@@ -269,37 +303,7 @@ const Team = () => {
       <Dialog
         open={TwinDialog}
         onClose={closeTwinDialog}
-        PaperProps={{
-          component: 'form',
-          onSubmit: (e) => {
-
-            e.preventDefault();
-            const formData = new FormData();
-            formData.append("apkfile",files)
-
-            
-            if(files === undefined){
-              return alert("파일을 선택해주세요");
-            }
-
-            fetchFile('/upload/twin', formData)
-            .then((data) =>{
-              if(data.isUploaded===true){
-                
-                closeTwinDialog();
-
-                setMounted(Mounted+1)
-              }
-              else {
-                alert(data.errorMessage)
-              }
-            }).catch((err) => {
-                console.error(err);
-            });
-
-
-          },
-        }}
+        PaperProps={twinProps}
       >
         <DialogTitle>Twin 프로그램 업로드</DialogTitle>
         <DialogContent>

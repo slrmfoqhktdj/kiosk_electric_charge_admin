@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box,Typography } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
@@ -27,7 +27,7 @@ const FAQ = () => {
   const colors = tokens(theme.palette.mode);
   const [Data, setData] = useState([]);
 
-  const [SelectedItemId,setSelectedItemId] = useState({id:"",device:"",pay:"",can_pay:"",pay_by:"",c_num:"",c_c_num:"",pay_day:"",c_pay_day:"",c_conn:"",c_time:"",c_amount:"", c_time_s:"", c_time_e:"", c_time_u:""});
+  const [SelectedItemId,setSelectedItemId] = useState({payid:"",d_id:"",c_pay:"",can_pay:"",pay_by:"",c_num:"",c_c_num:"",pay_day:"",c_pay_day:"",c_conn:"",c_time:"",c_amount:"", c_time_s:"", c_time_e:"", c_time_u:""});
 
   const [TransactionDialog,setTransactionDialog] = useState(false);
   const [PayCancleDialog,setPayCancleDialog] = useState(false);
@@ -37,8 +37,8 @@ const FAQ = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  const openPositionMenu = (event,id) => {
-    setSelectedItemId(id);
+  const openPositionMenu = (event,payid) => {
+    setSelectedItemId(payid);
     setAnchorEl(event.currentTarget);
   };
   const closePositionMenu = () => {
@@ -65,7 +65,7 @@ const FAQ = () => {
 
   const columns = [
     { 
-      field: "id",
+      field: "payid",
       headerName: "충전결제승인번호", 
       headerAlign: "center",
       align: "center",
@@ -73,14 +73,14 @@ const FAQ = () => {
       cellClassName: "name-column--cell",
     },
     { 
-      field: "device", 
+      field: "d_id", 
       headerName: "기기명",
       headerAlign: "center",
       align: "center",
       flex: 1, 
     },
     {
-      field: "pay",
+      field: "c_pay",
       headerName: "결제금액",
       headerAlign: "center",
       align: "center",
@@ -155,6 +155,22 @@ const FAQ = () => {
       headerAlign: "center",
       align: "center",
       flex: 1,
+      renderCell: ({ row: { c_time_s } }) => {
+        return (
+          <Box
+            // width="60%"
+            m="0 auto"
+            // p="5px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            width="100%"
+            height="100%"
+          >
+            <Typography color={colors.grey[100]} sx={{ ml: "5px" , fontSize:"12px"}}>{c_time_s?  new Date(c_time_s).toLocaleString(): null}</Typography>
+          </Box>
+        );
+      },
     },
     {
       field: "c_time_e",
@@ -162,6 +178,22 @@ const FAQ = () => {
       headerAlign: "center",
       align: "center",
       flex: 1,
+      renderCell: ({ row: { c_time_e } }) => {
+        return (
+          <Box
+            // width="60%"
+            m="0 auto"
+            // p="5px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            width="100%"
+            height="100%"
+          >
+            <Typography color={colors.grey[100]} sx={{ ml: "5px" , fontSize:"12px"}}>{c_time_e?  new Date(c_time_e).toLocaleString(): null}</Typography>
+          </Box>
+        );
+      },
     },
     {
       field: "c_time_u",
@@ -169,6 +201,22 @@ const FAQ = () => {
       headerAlign: "center",
       align: "center",
       flex: 1,
+      renderCell: ({ row: { c_time_u } }) => {
+        return (
+          <Box
+            // width="60%"
+            m="0 auto"
+            // p="5px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            width="100%"
+            height="100%"
+          >
+            <Typography color={colors.grey[100]} sx={{ ml: "5px" , fontSize:"12px"}}>{c_time_u?  new Date(c_time_u).toLocaleString(): null}</Typography>
+          </Box>
+        );
+      },
     },
     {
       field:"rowmenu",
@@ -204,8 +252,8 @@ const FAQ = () => {
     onSubmit: (event) => {
       event.preventDefault();
       const formData = new FormData();
-      formData.append("device_id", SelectedItemId.device)
-      formData.append("TransactionId", SelectedItemId.id)
+      formData.append("device_id", SelectedItemId.d_id)
+      formData.append("TransactionId", SelectedItemId.payid)
       
       const formJson = Object.fromEntries(formData.entries());
 
@@ -233,16 +281,16 @@ const FAQ = () => {
     onSubmit: (event) => {
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
-      formData.append("device_id", SelectedItemId.device)
-      formData.append("OriginPay",SelectedItemId.pay)
-      formData.append("PayNum", SelectedItemId.id)
+      formData.append("device_id", SelectedItemId.d_id)
+      formData.append("OriginPay",SelectedItemId.c_pay)
+      formData.append("PayNum", SelectedItemId.payid)
       formData.append("PayDay", SelectedItemId.pay_day)
       formData.append("PayToken", SelectedItemId.c_num)
       
       const formJson = Object.fromEntries(formData.entries());
 
 
-      if(Number(SelectedItemId.pay) < Number(formJson.CanclePay)){
+      if(Number(SelectedItemId.c_pay) < Number(formJson.CanclePay)){
         alert("원 결제액보다 취소금액이 더 많습니다.")
         return;
       }
@@ -345,7 +393,7 @@ const FAQ = () => {
           <DialogTitle>원격부분 금액취소</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              {SelectedItemId.device}의 충전에 대한 결제액을 필요만큼 취소합니다. - {SelectedItemId.id}
+              {SelectedItemId.d_id}의 충전에 대한 결제액을 필요만큼 취소합니다. - {SelectedItemId.payid}
             </DialogContentText>
 
             <TextField
@@ -380,7 +428,7 @@ const FAQ = () => {
           <DialogTitle>원격충전 중지</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              {SelectedItemId.device}의 충전을 원격으로 중지합니다. - {SelectedItemId.id}
+              {SelectedItemId.d_id}의 충전을 원격으로 중지합니다. - {SelectedItemId.payid}
             </DialogContentText>
             
           </DialogContent>
@@ -394,7 +442,7 @@ const FAQ = () => {
 
 
         <DataGrid
-          rows = {Data}
+          rows = {Data&&Data.length? Data:[]}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
           initialState={{
@@ -402,6 +450,7 @@ const FAQ = () => {
               sortModel: [{ field: 'c_time_s', sort: 'desc' }],
             },
           }}
+          getRowId={(row)=> row.payid}
         />
       </Box>
     </Box>

@@ -89,7 +89,7 @@ const FAQ = () => {
       >
         <DataGrid
 
-          rows = {Data}
+          rows = {Data&&Data.length? Data:[]}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />
