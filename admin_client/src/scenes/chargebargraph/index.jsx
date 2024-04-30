@@ -37,7 +37,7 @@ const ChargeBarChart = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  const ITEM_HEIGHT = 48;
+  const MENU_MAX_HEIGHT = 200;
 
 
   const handleClickRadioBtn = (e) => {
@@ -114,7 +114,7 @@ const ChargeBarChart = () => {
         onClose={closePositionMenu}
         PaperProps={{
           style: {
-            maxHeight: ITEM_HEIGHT * 4.5,
+            maxHeight: MENU_MAX_HEIGHT,
             width: '20ch',
           },
         }}

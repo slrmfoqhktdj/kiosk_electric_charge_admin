@@ -1,15 +1,33 @@
 import { Box, useTheme } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid,GridToolbarColumnsButton,GridToolbarDensitySelector,GridToolbarExport, GridToolbarContainer } from "@mui/x-data-grid";
+// import { DataGrid } from '@material-ui/data-grid';
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useCallback, useEffect,useState } from 'react';
 import {fetchGet} from "../../communication/handlefetch"
+import TablePagination from "@mui/material/TablePagination";
+import CustomTableSearcher from "../../components/CustomTableSearcher";
 
-const FAQ = () => {
+
+const ErrorList = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [Data, setData] = useState([]);
+
+  const [DataCount, setDataCount] = useState(0);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(50);
+
+  const [IsSearch, setIsSearch] = useState(false);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
 
 
   const columns = [
@@ -65,12 +83,70 @@ const FAQ = () => {
 
   ];
 
-  useEffect(() => {
-    fetchGet("/charge_error_history")
-      .then((data) => {        
-        setData(data)
+  const getPageData = useCallback(async () => {
+    fetchGet(`/charge_error_history/${(page*rowsPerPage)}/${((page*rowsPerPage)+rowsPerPage)}`)
+      .then((data) => {      
+        setData(data?.item)
+        setDataCount(data?.count)
       });
-  }, []);
+  },[page,rowsPerPage])
+
+  useEffect(() => {
+    getPageData();
+  }, [getPageData]);
+
+
+  const SearchHandle = (column ,data) => {
+    console.log(data)
+
+    if(!data||data===""){
+      setIsSearch(false)
+      setPage(0)
+      getPageData()
+    }else{
+      setIsSearch(true)
+
+      fetchGet(`/charge_error_history/search/${column}/${data}`)
+      .then((data) => {        
+          setData(data?.item)
+          setDataCount(data?.item?.length)
+      });
+    }
+    
+  }
+
+ 
+  function TablePaginationFunc () {
+
+    return (
+      <TablePagination
+        component="div"
+        count={DataCount}
+        page={page}
+        onPageChange={handleChangePage}
+        rowsPerPage={rowsPerPage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+        
+      />
+    );
+  }
+
+  function CustomToolBar (){
+    return (
+      <GridToolbarContainer>
+        <GridToolbarColumnsButton/>
+        <GridToolbarDensitySelector />
+        <GridToolbarExport />
+        <Box sx={{ flexGrow: 1 }} />
+        <CustomTableSearcher
+          MenuList={columns}
+          SearchHandle={SearchHandle}
+        />
+        
+      </GridToolbarContainer>
+    )
+    
+  }
 
 
   return (
@@ -113,20 +189,23 @@ const FAQ = () => {
           },
         }}
       >
-        <DataGrid
 
+        
+        <DataGrid
           rows = {Data&&Data.length? Data:[]}
           columns={columns}
-          components={{ Toolbar: GridToolbar }}
-          initialState={{
-            sorting: {
-              sortModel: [{ field: 'o_time', sort: 'desc' }],
-            },
-          }}
+          // components={{ Toolbar: CustomToolBar ,Pagination : TablePaginationFunc}}
+          components={IsSearch?{ Toolbar: CustomToolBar }:{ Toolbar: CustomToolBar ,Pagination : TablePaginationFunc}}
+          disableColumnMenu
+          
         />
+        
       </Box>
     </Box>
   );
 };
 
-export default FAQ;
+export default ErrorList;
+
+
+

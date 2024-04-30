@@ -11,33 +11,11 @@ const getdevicelist = async (request, response, next) => {
         comfirm = await axios({
             method:'GET',
             url:process.env.OCPPURL.concat('/devicelist'),
-            headers: { Authorization: `Bearer ${request.session.user.name}` }
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{s_order:request.params.s_order,e_order:request.params.e_order},
         })
 
-        // const rows = comfirm.data.item
-
-        // if(rows != null && rows.length>0){  // 응답이 없을경우
-        //     for(i = 0; i < rows.length; i ++){
-        //         const sendDeviceListData ={ 
-        //             id: rows[i].id,
-        //             latitude: rows[i].latitude,
-        //             longitude:rows[i].longitude,
-        //             addr:rows[i].addr,
-        //             s_version:rows[i].s_version,
-        //             h_c_m:rows[i].h_c_m,
-        //             h_p_m:rows[i].h_p_m,
-        //             h_b_m:rows[i].h_b_m,
-        //             h_w_m:rows[i].h_w_m,
-        //             i_time:rows[i].i_time,
-        //             u_time:rows[i].u_time,
-        //             enabled:rows[i].enabled,
-        //         }
-        
-        //         result.push(sendDeviceListData)
-        //     }
-        // }
-        
-        response.send(comfirm.data.item);
+        response.send(comfirm.data);
         
     }catch(e){
         if(e.response?.status==401){
@@ -53,6 +31,33 @@ const getdevicelist = async (request, response, next) => {
 
 }
 
+const getdevicelist_search = async (request, response, next) => {  
+    console.log('c_getdevicelist_search')
+
+    let result = []
+
+    try{
+        comfirm = await axios({
+            method:'GET',
+            url:process.env.OCPPURL.concat('/devicelist/search'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{column:request.params.column,data:request.params.data},
+        })
+
+        response.send(comfirm.data);
+        
+    }catch(e){
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
+    }
+
+}
+
 const getdevicestatelist = async (request, response, next) => {
     console.log('c_getdevicestatelist')
 
@@ -64,29 +69,11 @@ const getdevicestatelist = async (request, response, next) => {
             method:'GET',
             url:process.env.OCPPURL.concat('/devicestatelist'),
             headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{s_order:request.params.s_order,e_order:request.params.e_order},
         })
-        // console.log(comfirm.data)
 
-        // const rows = comfirm.data.item
+        response.send(comfirm.data);
 
-        // for(i = 0; i < rows.length; i ++){
-        //     const sendDeviceStateListData ={
-        //         id: rows[i].id,
-        //         conn:rows[i].conn,
-        //         state: rows[i].state,
-        //         state_e:rows[i].state_e,
-        //         v_id:rows[i].v_id,
-        //         v_error:rows[i].v_error,
-        //         e_info:rows[i].e_info,
-        //         u_time:rows[i].u_time,
-        //         f_state:rows[i].f_state,
-        //         d_state:rows[i].d_state,
-        //     }
-
-        //     result.push(sendDeviceStateListData)
-        // }
-
-        response.send( comfirm.data.item);
     
     }catch(e){
         if(e.response?.status==401){
@@ -106,6 +93,42 @@ const getdevicestatelist = async (request, response, next) => {
 
 }
 
+const getdevicestatelist_search = async (request, response, next) => {
+    console.log('c_getdevicestatelist_search')
+
+    let result = []
+
+    let comfirm;            /// ocpp 연결 여부 
+    try{
+        comfirm = await axios({
+            method:'GET',
+            url:process.env.OCPPURL.concat('/devicestatelist/search'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{column:request.params.column,data:request.params.data},
+        })
+
+        response.send(comfirm.data);
+
+    
+    }catch(e){
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
+    }
+
+
+    
+
+
+    // console.log(result)
+
+}
+
+
 const getpricelist = async (request, response, next) => {
     console.log('c_getpricelist')
 
@@ -117,23 +140,41 @@ const getpricelist = async (request, response, next) => {
             method:'GET',
             url:process.env.OCPPURL.concat('/pricemng'),
             headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{s_order:request.params.s_order,e_order:request.params.e_order},
         })
-        // console.log(comfirm.data)
 
-        // const rows = comfirm.data.item
+        response.send(comfirm.data);
+        
+    }catch(e){
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
+    }
 
-        // for(i = 0; i < rows.length; i ++){
-        //     const sendPriceListData ={
-        //         id: rows[i].id,
-        //         price: rows[i].price,
-        //         time:rows[i].time,
-        //         writer:rows[i].writer
-        //     }
 
-        //     result.push(sendPriceListData)
-        // }
 
-        response.send(comfirm.data.item);
+}
+
+
+const getpricelist_search = async (request, response, next) => {
+    console.log('c_getpricelist_search')
+
+    let result = []
+
+    let comfirm;            /// ocpp 연결 여부 
+    try{
+        comfirm = await axios({
+            method:'GET',
+            url:process.env.OCPPURL.concat('/pricemng/search'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{column:request.params.column,data:request.params.data},
+        })
+
+        response.send(comfirm.data);
         
     }catch(e){
         if(e.response?.status==401){
@@ -1174,8 +1215,11 @@ const triggerMessage = async (request, response, next) =>{
 
 module.exports = {
     getdevicelist,
+    getdevicelist_search,
     getdevicestatelist,
+    getdevicestatelist_search,
     getpricelist,
+    getpricelist_search,
     insertprice,
     removeprice,
     insertdevice,

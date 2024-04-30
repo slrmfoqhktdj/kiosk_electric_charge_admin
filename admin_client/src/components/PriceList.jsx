@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box , useTheme } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid,GridToolbarColumnsButton,GridToolbarDensitySelector,GridToolbarExport, GridToolbarContainer } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 import { useState } from 'react';
 import {fetchPost} from '../communication/handlefetch'
@@ -16,7 +16,10 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import IconButton from '@mui/material/IconButton';
 
-const PriceList = ({ isDashboard = false , Data, setMounted }) => {
+
+import CustomTableSearcher from "../components/CustomTableSearcher";
+
+const PriceList = ({ isDashboard = false , Data, setMounted , TablePaginationFunc ,SearchHandle,IsSearch = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -102,7 +105,22 @@ const PriceList = ({ isDashboard = false , Data, setMounted }) => {
     }
   ];
 
-
+  function CustomToolBar (){
+    return (
+      <GridToolbarContainer>
+        <GridToolbarColumnsButton/>
+        <GridToolbarDensitySelector />
+        <GridToolbarExport />
+        <Box sx={{ flexGrow: 1 }} />
+        <CustomTableSearcher
+          MenuList={columns.filter((item) => (item.field !== "rowmenu"))}
+          SearchHandle={SearchHandle}
+        />
+        
+      </GridToolbarContainer>
+    )
+    
+  }
 
 
   const removeProps = {
@@ -173,13 +191,10 @@ const PriceList = ({ isDashboard = false , Data, setMounted }) => {
 
           rows = {Data&&Data.length? Data:[]}
           columns={isDashboard? columns.slice(0,-1):columns}
-          components={{ Toolbar: isDashboard? null:GridToolbar }} 
           hideFooter={isDashboard}
-          initialState={{
-            sorting: {
-              sortModel: [{ field: 'time', sort: 'desc' }],
-            },
-          }}
+          components={IsSearch?{Toolbar: CustomToolBar}:{ Toolbar: isDashboard? null:CustomToolBar , Pagination : isDashboard? null:TablePaginationFunc}} 
+          disableColumnMenu
+          disableColumnFilter
         />
       </Box>
 

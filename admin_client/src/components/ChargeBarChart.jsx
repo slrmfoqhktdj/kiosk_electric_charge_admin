@@ -227,8 +227,8 @@ const ChargeBarChart = ({ isDashboard = false , Data}) => {
         {bars.map((bar) => (
           <circle
             key={bar.key}
-            cx={xScale(bar.data.index) + bar.width / 2}
-            cy={typeof bar.data.data.count == "undefined"|| bar.data.data.count === "0" ? scale.yScale(0)  : scale.yScale(bar.data.data.count)}
+            cx={bar.x + bar.width / 2}
+            cy={(typeof bar.data.data.count == "undefined")|| bar.data.data.count === "0" ? scale.yScale(0)  : scale.yScale(bar.data.data.count)}
             r={3}
             fill={lineColor}
             stroke={lineColor}
@@ -239,8 +239,8 @@ const ChargeBarChart = ({ isDashboard = false , Data}) => {
         {bars.map((bar) => (
           <circle
             key={bar.key}
-            cx={xScale(bar.data.index) + bar.width / 2}
-            cy={typeof bar.data.data.pay == "undefined" || bar.data.data.pay === "0" ?  scale.yScale(0)  : scale2.yScale(bar.data.data.pay)}
+            cx={bar.x + bar.width / 2}
+            cy={(typeof bar.data.data.pay == "undefined") || bar.data.data.pay === "0" ?  scale.yScale(0)  : scale2.yScale(bar.data.data.pay)}
             r={3}
             fill={lineColor2}
             stroke={lineColor2}

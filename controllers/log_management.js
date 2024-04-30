@@ -19,23 +19,39 @@ const getDevicecmdpage = async (request, response, next) => {
             method:'GET',
             url:process.env.OCPPURL.concat('/devicelogcmdpage'),
             headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{s_order:request.params.s_order,e_order:request.params.e_order},
         })
 
-        // const rows = comfirm.data.item
+        response.send(comfirm.data);
+    
+    }catch(e){
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
+    }
 
-        // if(rows != null && rows.length>0){  // 응답이 없을경우
-        //     for(i = 0; i < rows.length; i ++){
-        //         const sendDeviceUpdateListData ={ 
-        //             id: rows[i].id,
-        //             addr:rows[i].addr,
-        //             d_state:rows[i].d_state,
-        //         }
-        
-        //         result.push(sendDeviceUpdateListData)
-        //     }
-        // }
 
-        response.send(comfirm.data.item);
+
+}
+
+const getDevicecmdpage_search = async (request, response, next) => {  
+    console.log('c_getDevicecmdpage_search')
+
+    let result = []
+
+    try{
+        comfirm = await axios({
+            method:'GET',
+            url:process.env.OCPPURL.concat('/devicelogcmdpage/search'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{column:request.params.column,data:request.params.data},
+        })
+
+        response.send(comfirm.data);
     
     }catch(e){
         if(e.response?.status==401){
@@ -304,6 +320,7 @@ const downloadLog = async (request, response, next) => {
 
 module.exports = {
     getDevicecmdpage,
+    getDevicecmdpage_search,
     getDevicelistpage,
     commandUploadLog,
     commandRemoveAllLog,

@@ -1,12 +1,15 @@
 import React from 'react'
 import { Box , useTheme} from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid,GridToolbarColumnsButton,GridToolbarDensitySelector,GridToolbarExport, GridToolbarContainer } from "@mui/x-data-grid";
 import { tokens } from "../theme";
+import CustomTableSearcher from "../components/CustomTableSearcher";
 
-const ChargeDaily = ({ isDashboard = false, Data }) => {
+const ChargeDaily = ({ isDashboard = false, Data ,TablePaginationFunc,SearchHandle,IsSearch = false}) => {
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+ 
 
   const columns = [
     { 
@@ -39,7 +42,22 @@ const ChargeDaily = ({ isDashboard = false, Data }) => {
     },
   ];
 
- 
+  function CustomToolBar (){
+    return (
+      <GridToolbarContainer>
+        <GridToolbarColumnsButton/>
+        <GridToolbarDensitySelector />
+        <GridToolbarExport />
+        <Box sx={{ flexGrow: 1 }} />
+        <CustomTableSearcher
+          MenuList={columns}
+          SearchHandle={SearchHandle}
+        />
+        
+      </GridToolbarContainer>
+    )
+    
+  }
 
 
   return (
@@ -83,14 +101,16 @@ const ChargeDaily = ({ isDashboard = false, Data }) => {
 
           rows = {Data&&Data.length? Data:[]}
           columns={columns}
-          components={{ Toolbar: isDashboard? null:GridToolbar }} 
           hideFooter={isDashboard}
-          initialState={{
-            sorting: {
-              sortModel: [{ field: 'id', sort: 'desc' }],
-            },
-          }}
+          // initialState={{
+          //   sorting: {
+          //     sortModel: [{ field: 'id', sort: 'desc' }],
+          //   },
+          // }}
           getRowId={(row)=> row.day}
+          components={IsSearch?{Toolbar: CustomToolBar}:{ Toolbar: isDashboard? null:CustomToolBar , Pagination : isDashboard? null:TablePaginationFunc}} 
+          disableColumnMenu
+          disableColumnFilter
         />
       </Box>
     </Box>

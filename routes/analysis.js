@@ -3,11 +3,17 @@ const router = express.Router()
 const analysis = require('../controllers/analysis')
 const authMiddleware = require('../middlewares/auth')
 
-router.get('/charge_amount_history',authMiddleware.isAuthenticated,analysis.getcharge_amount_history)  // 충전량 및 이력 조회
-router.get('/charge_daily_list',authMiddleware.isAuthenticated,analysis.getcharge_daily_list)  // 일자별 충전량 조회
+router.get('/charge_amount_history/:s_order/:e_order',authMiddleware.isAuthenticated,analysis.getcharge_amount_history)  // 충전량 및 이력 조회
+
+router.get('/charge_amount_history/search/:column/:data',authMiddleware.isAuthenticated,analysis.getcharge_amount_history_search)         // 충전량 및 이력 조회 검색
+
+router.get('/charge_daily_list/:s_order/:e_order',authMiddleware.isAuthenticated,analysis.getcharge_daily_list)  // 일자별 충전량 조회
 // router.get('/charge_daily_graph_list',authMiddleware.isAuthenticated,analysis.getcharge_daily_graph_list)    //충전기 그래프 조회   - 기기 리스트
 router.post('/charge_daily_graph',authMiddleware.isAuthenticated,analysis.getcharge_daily_graph)    //충전기 그래프 조회   - 그래프 값
-router.get('/charge_error_history',authMiddleware.isAuthenticated,analysis.getcharge_error_history)    // 충전기 장애이력
+router.get('/charge_error_history/:s_order/:e_order',authMiddleware.isAuthenticated,analysis.getcharge_error_history)    // 충전기 장애이력
+
+router.get('/charge_daily_list/search/:column/:data',authMiddleware.isAuthenticated,analysis.getcharge_daily_list_search)    // 일자별 충전량 조회 검색
+router.get('/charge_error_history/search/:column/:data',authMiddleware.isAuthenticated,analysis.getcharge_error_history_search)    // 충전기 장애이력 검색
 
 router.post('/cmd/rmstp',authMiddleware.isAuthenticated,analysis.remoteStopTransaction)  //기기 원격 충전중지 명령
 router.post('/cmd/nccp',authMiddleware.isAuthenticated,analysis.remoteCanclePay)  //기기 원격 부분취소

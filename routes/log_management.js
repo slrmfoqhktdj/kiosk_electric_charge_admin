@@ -21,8 +21,13 @@ const storageLog = multer.diskStorage({
 const LogFilefunction = multer({storage:storageLog})
 
 
-router.get('/logcmdpage',authMiddleware.isAuthenticated,log_management.getDevicecmdpage)   // 진단파일 요청 페이지
+router.get('/logcmdpage/:s_order/:e_order',authMiddleware.isAuthenticated,log_management.getDevicecmdpage)   // 진단파일 요청 페이지
+
+router.get('/logcmdpage/search/:column/:data',authMiddleware.isAuthenticated,log_management.getDevicecmdpage_search)   // 진단파일 요청 페이지 검색
+
 router.get('/loglistpage',authMiddleware.isAuthenticated,log_management.getDevicelistpage)   // 진단파일 관리 페이지
+
+
 router.post('/command/upl',authMiddleware.isAuthenticated,log_management.commandUploadLog)     // 충전기 진단파일 업로드 명령
 router.post('/log/allremove',authMiddleware.isAuthenticated,log_management.commandRemoveAllLog)     // 해당 충전기 모든 진단파일 삭제
 router.post('/log/remove',authMiddleware.isAuthenticated,log_management.commandRemoveLog)     //  진단파일 삭제

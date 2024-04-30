@@ -319,7 +319,7 @@ const Dashboard = () => {
                 color={colors.grey[100]}
                 m={"0 0 20px 0"}
               >
-                최근 3일 충전기 그래프
+                최근 3일 전체 충전기 그래프
               </Typography>
               <p style={{margin:"0 0 15px 0" , color:colors.greenAccent[300]}}> &nbsp;&nbsp;-&nbsp;&nbsp; 바로가기</p>
             </div>

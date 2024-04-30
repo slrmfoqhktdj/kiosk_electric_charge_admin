@@ -1,11 +1,10 @@
 import { Box,   useTheme } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid,GridToolbarColumnsButton,GridToolbarDensitySelector,GridToolbarExport, GridToolbarContainer } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 
 
 import Header from "../../components/Header";
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useCallback, useEffect,useState } from 'react';
 // import { useRef } from 'react';
 
 import {fetchPost,fetchGet} from '../../communication/handlefetch'
@@ -29,6 +28,9 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import IconButton from '@mui/material/IconButton';
 
 import CalendarContainer from "../../components/CalenderContainer";
+import TablePagination from "@mui/material/TablePagination";
+
+import CustomTableSearcher from "../../components/CustomTableSearcher";
 
 // import { height } from "@mui/system";
 
@@ -47,6 +49,38 @@ const Team = () => {
   const [RetrieveDate, setRetrieveDate] = useState();
 
   const open = Boolean(anchorEl);
+
+  const [DataCount, setDataCount] = useState(0);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(50);
+
+  const [IsSearch, setIsSearch] = useState(false);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  function TablePaginationFunc () {
+
+    return (
+      <TablePagination
+        component="div"
+        count={DataCount}
+        page={page}
+        onPageChange={handleChangePage}
+        rowsPerPage={rowsPerPage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+        
+      />
+    );
+  }
+
+  
 
   const columns = [
     { 
@@ -123,15 +157,36 @@ const Team = () => {
   ];
 
 
-  useEffect(() => {
-    
-    fetchGet("/deviceswlist",{credentials: 'include'})
+  const getPageData = useCallback(async () => {
+    fetchGet(`/deviceswlist/${(page*rowsPerPage)}/${((page*rowsPerPage)+rowsPerPage)}`)
     .then((data) => {        
-      setData(data)
+      setData(data?.item)
+      setDataCount(data?.count)
     });
+  },[page,rowsPerPage])
+
+  useEffect(() => {
+    getPageData();
+  }, [Mounted,getPageData]);
+
+  const SearchHandle = (column ,data) => {
+    console.log(data)
+
+    if(!data||data===""){
+      setIsSearch(false)
+      setPage(0)
+      getPageData()
+    }else{
+      setIsSearch(true)
+
+      fetchGet(`/deviceswlist/search/${column}/${data}`)
+      .then((data) => {        
+          setData(data?.item)
+          setDataCount(data?.item?.length)
+      });
+    }
     
-    
-  }, [Mounted]);
+  }
 
   const openPositionMenu = (event,id) => {
     setSelectedItemId(id);
@@ -156,6 +211,24 @@ const Team = () => {
   const handleClickDatePicker= (date) => {
     setRetrieveDate(date)
   }
+
+  function CustomToolBar (){
+    return (
+      <GridToolbarContainer>
+        <GridToolbarColumnsButton/>
+        <GridToolbarDensitySelector />
+        <GridToolbarExport />
+        <Box sx={{ flexGrow: 1 }} />
+        <CustomTableSearcher
+          MenuList={columns.filter((item) => ( item.field !== "rowmenu"))}
+          SearchHandle={SearchHandle}
+        />
+        
+      </GridToolbarContainer>
+    )
+    
+  }
+
 
   return (
     <Box m="20px">
@@ -193,12 +266,17 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid  rows={Data&&Data.length? Data:[]} columns={columns}  components={{ Toolbar: GridToolbar } }         
-        initialState={{
-          sorting: {
-            sortModel: [{ field: 'u_time', sort: 'desc' }],
-          },
-        }}
+        <DataGrid  
+          rows={Data&&Data.length? Data:[]} 
+          columns={columns}           
+          // initialState={{
+          //   sorting: {
+          //     sortModel: [{ field: 'u_time', sort: 'desc' }],
+          //   },
+          // }}
+          components={IsSearch?{ Toolbar: CustomToolBar }:{ Toolbar: CustomToolBar ,Pagination : TablePaginationFunc}}
+          disableColumnMenu
+          disableColumnFilter
         // onRowClick={(rows) => {
         //   console.log(rows);
         // }}

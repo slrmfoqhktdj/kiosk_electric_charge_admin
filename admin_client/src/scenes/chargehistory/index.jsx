@@ -1,10 +1,9 @@
 import { Box,Typography } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid,GridToolbarColumnsButton,GridToolbarDensitySelector,GridToolbarExport, GridToolbarContainer } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useCallback, useEffect,useState } from 'react';
 import {fetchGet,fetchPost} from "../../communication/handlefetch"
 
 import  Button  from '@mui/material/Button'
@@ -20,7 +19,9 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import IconButton from '@mui/material/IconButton';
 
 import TextField from '@mui/material/TextField';
+import TablePagination from "@mui/material/TablePagination";
 
+import CustomTableSearcher from "../../components/CustomTableSearcher";
 
 const FAQ = () => {
   const theme = useTheme();
@@ -36,6 +37,36 @@ const FAQ = () => {
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+  const [DataCount, setDataCount] = useState(0);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(50);
+
+  const [IsSearch, setIsSearch] = useState(false);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  function TablePaginationFunc () {
+
+    return (
+      <TablePagination
+        component="div"
+        count={DataCount}
+        page={page}
+        onPageChange={handleChangePage}
+        rowsPerPage={rowsPerPage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+        
+      />
+    );
+  }
 
   const openPositionMenu = (event,payid) => {
     setSelectedItemId(payid);
@@ -245,6 +276,8 @@ const FAQ = () => {
     }
   ];
 
+  
+
 
   const stopremoteProps = {
     
@@ -312,14 +345,53 @@ const FAQ = () => {
     },
   }
 
-  useEffect(() => {
-
-    fetchGet("/charge_amount_history")
+  const getPageData = useCallback(async () => {
+    fetchGet(`/charge_amount_history/${(page*rowsPerPage)}/${((page*rowsPerPage)+rowsPerPage)}`)
     .then((data) => {        
-      setData(data)
+      setData(data?.item)
+      setDataCount(data?.count)
     });
-  }, []);
+  },[page,rowsPerPage])
 
+  useEffect(() => {
+    getPageData()
+  }, [getPageData]);
+
+  const SearchHandle = (column ,data) => {
+    console.log(data)
+
+    if(!data||data===""){
+      setIsSearch(false)
+      setPage(0)
+      getPageData()
+    }else{
+      setIsSearch(true)
+
+      fetchGet(`/charge_amount_history/search/${column}/${data}`)
+      .then((data) => {        
+          setData(data?.item)
+          setDataCount(data?.item?.length)
+      });
+    }
+    
+  }
+
+  function CustomToolBar (){
+    return (
+      <GridToolbarContainer>
+        <GridToolbarColumnsButton/>
+        <GridToolbarDensitySelector />
+        <GridToolbarExport />
+        <Box sx={{ flexGrow: 1 }} />
+        <CustomTableSearcher
+          MenuList={columns.filter((item) => ( item.field !== "rowmenu"))}
+          SearchHandle={SearchHandle}
+        />
+        
+      </GridToolbarContainer>
+    )
+    
+  }
 
   return (
 
@@ -444,13 +516,10 @@ const FAQ = () => {
         <DataGrid
           rows = {Data&&Data.length? Data:[]}
           columns={columns}
-          components={{ Toolbar: GridToolbar }}
-          initialState={{
-            sorting: {
-              sortModel: [{ field: 'c_time_s', sort: 'desc' }],
-            },
-          }}
           getRowId={(row)=> row.payid}
+          components={IsSearch?{ Toolbar: CustomToolBar }:{ Toolbar: CustomToolBar ,Pagination : TablePaginationFunc}}
+          disableColumnMenu
+          disableColumnFilter
         />
       </Box>
     </Box>

@@ -3,9 +3,13 @@ const router = express.Router()
 const charge_management = require('../controllers/charge-management')
 const authMiddleware = require('../middlewares/auth')
 
-router.get('/devicelist',authMiddleware.isAuthenticated,charge_management.getdevicelist)       // 충전기 기본 정보
-router.get('/devicestatelist',authMiddleware.isAuthenticated,charge_management.getdevicestatelist)     // 충전기 상태 정보
-router.get('/pricelist',authMiddleware.isAuthenticated,charge_management.getpricelist)         // 충전요금 단가 관리
+router.get('/devicelist/:s_order/:e_order',authMiddleware.isAuthenticated,charge_management.getdevicelist)       // 충전기 기본 정보
+router.get('/devicestatelist/:s_order/:e_order',authMiddleware.isAuthenticated,charge_management.getdevicestatelist)     // 충전기 상태 정보
+router.get('/pricelist/:s_order/:e_order',authMiddleware.isAuthenticated,charge_management.getpricelist)         // 충전요금 단가 관리
+
+router.get('/devicelist/search/:column/:data',authMiddleware.isAuthenticated,charge_management.getdevicelist_search)       // 충전기 기본 정보 검색
+router.get('/devicestatelist/search/:column/:data',authMiddleware.isAuthenticated,charge_management.getdevicestatelist_search)    // 충전기 상태 정보 검색
+router.get('/pricelist/search/:column/:data',authMiddleware.isAuthenticated,charge_management.getpricelist_search)         // 충전요금 단가 검색
 
 // router.post('/device/register',auth.isAuthenticated,charge_management.insertdevice)  // 충전기 등록
 router.post('/device/register',authMiddleware.isAuthenticated,charge_management.insertdevice)  // 충전기 등록

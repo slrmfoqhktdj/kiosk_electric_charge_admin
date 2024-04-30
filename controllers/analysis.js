@@ -12,36 +12,40 @@ const getcharge_amount_history = async (request, response, next) => {
         comfirm = await axios({
             method:'GET',
             url:process.env.OCPPURL.concat('/chargelist'),
-            headers: { Authorization: `Bearer ${request.session.user.name}` }
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{s_order:request.params.s_order,e_order:request.params.e_order},
         })
-        // console.log(comfirm.data)
 
-        // const rows = comfirm.data.item
+        response.send(comfirm.data);
 
-        // for(i = 0; i < rows.length; i ++){
-        //     const sendcharge_amount_historyListData ={
-        //         payid: rows[i].payid,
-        //         d_id: rows[i].d_id,
-        //         c_pay:rows[i].c_pay,
-        //         can_pay:rows[i].can_pay,
-        //         pay_by:rows[i].pay_by,
-        //         c_num:rows[i].c_num,
-        //         c_c_num:rows[i].c_c_num,
-        //         pay_day:rows[i].pay_day,
-        //         c_pay_day:rows[i].c_pay_day,
-        //         c_conn:rows[i].c_conn,
-        //         c_time:rows[i].c_time,
-        //         c_amount:rows[i].c_amount,
-        //         c_time_s:rows[i].c_time_s,
-        //         c_time_e:rows[i].c_time_e,
-        //         c_time_u:rows[i].c_time_u
+    }catch(e){
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
+    }
 
-        //     }
 
-        //     result.push(sendcharge_amount_historyListData)
-        // }
+}
 
-        response.send(comfirm.data.item);
+const getcharge_amount_history_search = async (request, response, next) => {
+    console.log('c_getcharge_amount_history_search')
+
+    let result = []
+
+    let comfirm;            /// ocpp 연결 여부 
+    try{
+        comfirm = await axios({
+            method:'GET',
+            url:process.env.OCPPURL.concat('/chargelist/search'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{column:request.params.column,data:request.params.data},
+        })
+
+        response.send(comfirm.data);
 
     }catch(e){
         if(e.response?.status==401){
@@ -66,30 +70,39 @@ const getcharge_daily_list = async (request, response, next) => {
         comfirm = await axios({
             method:'GET',
             url:process.env.OCPPURL.concat('/chargedailylist'),
-            headers: { Authorization: `Bearer ${request.session.user.name}` }
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{s_order:request.params.s_order,e_order:request.params.e_order},
         })
-        // console.log(comfirm.data)
 
-        // const rows = comfirm.data.item
+        response.send(comfirm.data);
+    }catch(e){
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
+    }
 
-        // for(i = 0; i < rows.length; i ++){
-        //     if(rows[i].day == null){
-        //         continue;
-        //     }
     
-        //     const sendcharge_daily_ListData ={
-        //         day: rows[i].day,
-        //         amount: rows[i].amount,
-        //         count:rows[i].count,
-        //         pay:rows[i].pay,
-        //     }
-    
-        //     // console.log(rows[i].day)
-    
-        //     result.push(sendcharge_daily_ListData)
-        // }
-    
-        response.send(comfirm.data.item);
+}
+
+const getcharge_daily_list_search = async (request, response, next) => {
+    console.log('c_getcharge_daily_list_search')
+
+    let result = []
+
+    let comfirm;            /// ocpp 연결 여부 
+    try{
+        comfirm = await axios({
+            method:'GET',
+            url:process.env.OCPPURL.concat('/chargedailylist/search'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{column:request.params.column,data:request.params.data},
+        })
+
+        response.send(comfirm.data);
     }catch(e){
         if(e.response?.status==401){
             request.session.destroy()
@@ -228,27 +241,41 @@ const getcharge_error_history = async (request, response, next) => {
             method:'GET',
             url:process.env.OCPPURL.concat('/errlist'),
             headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{s_order:request.params.s_order,e_order:request.params.e_order},
         })
-        // console.log(comfirm.data)
 
-        // const rows = comfirm.data.item
+        response.send(comfirm.data);
 
-        // for(i = 0; i < rows.length; i ++){
-        //     const sendcharge_error_historyListData ={
-        //         id: rows[i].id,
-        //         d_id: rows[i].d_id,
-        //         d_error:rows[i].d_error,
-        //         v_id:rows[i].v_id,
-        //         v_error:rows[i].v_error,
-        //         e_info:rows[i].e_info,
-        //         o_time:rows[i].o_time,
+    }catch(e){
+        if(e.response?.status==401){
+            request.session.destroy()
+            response.send(401)
+        }else{
+            console.log("err : "+e);
+            response.send(result);
+        }
+    }
+    
 
-        //     }
+}
 
-        //     result.push(sendcharge_error_historyListData)
-        // }
-        
-        response.send(comfirm.data.item);
+
+
+const getcharge_error_history_search = async (request, response, next) => {
+    console.log('c_getcharge_error_history_search')
+
+    let result = []
+
+    let comfirm;            /// ocpp 연결 여부 
+    try{
+        comfirm = await axios({
+            method:'GET',
+            url:process.env.OCPPURL.concat('/errlist/search'),
+            headers: { Authorization: `Bearer ${request.session.user.name}` },
+            params:{column:request.params.column,data:request.params.data},
+        })
+
+        response.send(comfirm.data);
 
     }catch(e){
         if(e.response?.status==401){
@@ -423,10 +450,13 @@ const remoteCanclePay = async (request, response, next) =>{
 
 module.exports = {
     getcharge_amount_history,
+    getcharge_amount_history_search,
     getcharge_daily_list,
+    getcharge_daily_list_search,
     // getcharge_daily_graph_list,
     getcharge_daily_graph,
     getcharge_error_history,
+    getcharge_error_history_search,
     remoteStopTransaction,
     remoteCanclePay,
 }

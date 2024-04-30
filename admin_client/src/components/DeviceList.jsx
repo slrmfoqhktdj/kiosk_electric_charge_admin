@@ -1,16 +1,12 @@
 import React from 'react'
 import { useState } from "react";
 import { Box,  Typography, useTheme } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid,GridToolbarColumnsButton,GridToolbarDensitySelector,GridToolbarExport, GridToolbarContainer } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 
 import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
 import BlockIcon from '@mui/icons-material/Block';
-
-// import Header from "../../components/Header";
-// import { useEffect } from 'react';
-// import { useRef } from 'react';
 
 import {fetchPost} from '../communication/handlefetch'
 
@@ -30,10 +26,11 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import IconButton from '@mui/material/IconButton';
-// import DeviceListComponent from "../../components/DeviceList";
+
+import CustomTableSearcher from "../components/CustomTableSearcher";
 
   
-function DeviceList({ isDashboard = false , Data, setMounted}) {
+function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFunc ,SearchHandle,IsSearch = false}) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -43,6 +40,8 @@ function DeviceList({ isDashboard = false , Data, setMounted}) {
   const [SelectedItemId,setSelectedItemId] = useState({id:"",latitude:"",longitude:"",addr:"",s_version:"",h_c_m:"",h_p_m:"",h_b_m:"",h_w_m:"",enabled:""});
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+  
 
   const columns = [
     { 
@@ -183,7 +182,22 @@ function DeviceList({ isDashboard = false , Data, setMounted}) {
   ];
 
 
-
+  function CustomToolBar (){
+    return (
+      <GridToolbarContainer>
+        <GridToolbarColumnsButton/>
+        <GridToolbarDensitySelector />
+        <GridToolbarExport />
+        <Box sx={{ flexGrow: 1 }} />
+        <CustomTableSearcher
+          MenuList={columns.filter((item) => (item.field !== "enabled" && item.field !== "rowmenu"))}
+          SearchHandle={SearchHandle}
+        />
+        
+      </GridToolbarContainer>
+    )
+    
+  }
 
   const openPositionMenu = (event,id) => {
     setSelectedItemId(id);
@@ -291,13 +305,18 @@ function DeviceList({ isDashboard = false , Data, setMounted}) {
           },
         }}
       >
-        <DataGrid  rows={Data&&Data.length? Data:[]} columns={isDashboard? columns.slice(0,-1):columns}  components={{ Toolbar: isDashboard? null:GridToolbar }} hideFooter={isDashboard}
-
-        initialState={{
-          sorting: {
-            sortModel: [{ field: 'i_time', sort: 'desc' }],
-          },
-        }}
+        <DataGrid  
+          rows={Data&&Data.length? Data:[]} 
+          columns={isDashboard? columns.slice(0,-1):columns}  
+          hideFooter={isDashboard}
+          components={IsSearch?{Toolbar: CustomToolBar}:{ Toolbar: isDashboard? null:CustomToolBar , Pagination : isDashboard? null:TablePaginationFunc}} 
+          disableColumnMenu
+          disableColumnFilter
+          // initialState={{
+          //   sorting: {
+          //     sortModel: [{ field: 'i_time', sort: 'desc' }],
+          //   },
+          // }}
 
         />
       </Box>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box,FormControl,Typography, useTheme } from "@mui/material";
-import { DataGrid,GridToolbar } from "@mui/x-data-grid";
+import { DataGrid,GridToolbarColumnsButton,GridToolbarDensitySelector,GridToolbarExport, GridToolbarContainer } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 
 
@@ -28,11 +28,11 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import IconButton from '@mui/material/IconButton';
-
+import CustomTableSearcher from "../components/CustomTableSearcher";
 
 import moment from 'moment';
 
-const DeviceStateList = ({ isDashboard = false , Data, setMounted}) => {
+const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginationFunc,SearchHandle,IsSearch = false}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -58,6 +58,8 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted}) => {
   const [TriggerRadio, setTriggerRadio] = useState(null);
 
   const open = Boolean(anchorEl);
+
+  
 
   const openPositionMenu = (event,id) => {
     setSelectedItemId(id);
@@ -261,6 +263,7 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted}) => {
     }
   
   ];
+  
 
 
   const settingscolumns = [
@@ -305,6 +308,26 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted}) => {
       align: "center",
     },
   ];
+
+  
+
+
+  function CustomToolBar (){
+    return (
+      <GridToolbarContainer>
+        <GridToolbarColumnsButton/>
+        <GridToolbarDensitySelector />
+        <GridToolbarExport />
+        <Box sx={{ flexGrow: 1 }} />
+        <CustomTableSearcher
+          MenuList={columns.filter((item) => (item.field !== "conn" && item.field !== "rowmenu"))}
+          SearchHandle={SearchHandle}
+        />
+        
+      </GridToolbarContainer>
+    )
+    
+  }
 
   const changeProps = {
     
@@ -1156,7 +1179,14 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted}) => {
       </Dialog>
 
         {/* <DataGrid checkboxSelection rows={Data} columns={columns} components={{ Toolbar: GridToolbar }} /> */}
-        <DataGrid  rows={Data&&Data.length? Data:[]} columns={isDashboard? columns.slice(0,-1):columns} components={{ Toolbar: isDashboard? null:GridToolbar }} hideFooter={isDashboard} />
+        <DataGrid  
+          rows={Data&&Data.length? Data:[]}
+          columns={isDashboard? columns.slice(0,-1):columns} 
+          hideFooter={isDashboard} 
+          components={IsSearch?{Toolbar: CustomToolBar}:{ Toolbar: isDashboard? null:CustomToolBar , Pagination : isDashboard? null:TablePaginationFunc}} 
+          disableColumnMenu
+          disableColumnFilter
+          />
       </Box>
     </Box>
   );

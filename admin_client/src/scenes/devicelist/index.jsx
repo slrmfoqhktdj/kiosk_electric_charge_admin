@@ -2,7 +2,7 @@ import { Box} from "@mui/material";
 
 
 import Header from "../../components/Header";
-import { useEffect , useState } from 'react';
+import { useState , useCallback , useEffect } from 'react';
 
 import {fetchPost,fetchGet} from '../../communication/handlefetch'
 
@@ -17,7 +17,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import Radio from '@mui/material/Radio';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
-
+import TablePagination from "@mui/material/TablePagination";
 import DeviceListComponent from "../../components/DeviceList";
 
 // import { height } from "@mui/system";
@@ -26,23 +26,70 @@ const DeviceList = () => {
 
 
   const [RegistDialog,setRegistDialog] = useState(false);
-
-
   const [Data, setData] = useState([]);
-
   const [Mounted,setMounted] = useState(1);
 
+  const [DataCount, setDataCount] = useState(0);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(50);
 
+  const [IsSearch, setIsSearch] = useState(false);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  const SearchHandle = (column ,data) => {
+    console.log(data)
+
+    if(!data||data===""){
+      setIsSearch(false)
+      setPage(0)
+      getPageData()
+    }else{
+      setIsSearch(true)
+
+      fetchGet(`/devicelist/search/${column}/${data}`)
+      .then((data) => {        
+          setData(data?.item)
+          setDataCount(data?.item?.length)
+      });
+    }
+    
+  }
+
+  function TablePaginationFunc () {
+
+    return (
+      <TablePagination
+        component="div"
+        count={DataCount}
+        page={page}
+        onPageChange={handleChangePage}
+        rowsPerPage={rowsPerPage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+        
+      />
+    );
+  }
+
+
+  const getPageData = useCallback(async () => {
+    fetchGet(`/devicelist/${(page*rowsPerPage)}/${((page*rowsPerPage)+rowsPerPage)}`)
+    .then((data) => {        
+      setData(data?.item)
+      setDataCount(data?.count)
+    });
+  },[page,rowsPerPage])
 
   useEffect(() => {
-    
-    fetchGet("/devicelist",{credentials: 'include'})
-    .then((data) => {        
-      setData(data)
-    });
-    
-    
-  }, [Mounted]);
+    getPageData()
+  }, [Mounted,getPageData]);
 
   const changeMounted = () => setMounted(Mounted+1);
 
@@ -108,7 +155,7 @@ const DeviceList = () => {
         <b>기본정보에 등록하지 않은 충전기는 작동하지 않습니다.</b>
       </Box>  
 
-      <DeviceListComponent Data={Data} setMounted = {changeMounted}/>
+      <DeviceListComponent Data={Data} setMounted = {changeMounted} TablePaginationFunc={TablePaginationFunc}  SearchHandle={SearchHandle} IsSearch={IsSearch}/>
       
       
       <Box
