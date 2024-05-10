@@ -40,7 +40,7 @@ const DeviceStateList = () => {
       .then((data) => {        
           setData(data?.item)
           setDataCount(data?.item?.length)
-      });
+      }).catch((err)=>{});
     }
     
   }
@@ -67,7 +67,7 @@ const DeviceStateList = () => {
       .then((data) => {        
         setData(data?.item)
         setDataCount(data?.count)
-      });
+      }).catch((err)=>{});
   },[page,rowsPerPage])
 
   useEffect(() => {

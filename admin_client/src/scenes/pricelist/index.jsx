@@ -52,7 +52,7 @@ const PriceList = () => {
       .then((data) => {        
           setData(data?.item)
           setDataCount(data?.item?.length)
-      });
+      }).catch((err)=>{});
     }
     
   }
@@ -85,7 +85,7 @@ const PriceList = () => {
       .then((data) => {        
         setData(data?.item)
         setDataCount(data?.count)
-      });
+      }).catch((err)=>{});
   },[page,rowsPerPage])
 
   useEffect(() => {
@@ -102,16 +102,16 @@ const PriceList = () => {
       
       fetchPost("/price/register",formJson)
       .then((data) =>{
-        if(data.isInserted===true){
+        if(data?.isInserted===true){
           
           closeinsertDialog();
 
           setMounted()
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      })
+      }).catch((err)=>{});
 
 
     },

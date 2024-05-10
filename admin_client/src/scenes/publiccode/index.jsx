@@ -47,13 +47,13 @@ const FAQ = () => {
     fetchGet("/publiccode")
       .then((data) => {        
         setData(data)
-      });
+      }).catch((err)=>{});
   }, []);
 
   return (
     <Box m="20px">
       <Header title="공통코드" subtitle="명령 및 오류코드의 설명을 합니다." />
-      <b>800번대 : 제조사 , 900번대 : 설정변경코드 , 1000번대 : 오류코드 , 1100번대 : 진단파일,업데이트 상태</b>
+      <b>800번대 : 제조사 , 900번대 : 설정변경코드 , 1000번대 : 오류코드 , 1100번대 : 진단파일,업데이트 상태, 1200번대 : 중단이유</b>
 
       <Box
         m="40px 0 0 0"
@@ -89,7 +89,7 @@ const FAQ = () => {
       >
         <DataGrid
 
-          rows = {Data&&Data.length? Data:[]}
+          rows = {Data&&Data?.length? Data:[]}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />

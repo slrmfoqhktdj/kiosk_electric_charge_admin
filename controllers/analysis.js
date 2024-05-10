@@ -313,12 +313,12 @@ const remoteStopTransaction = async (request, response, next) =>{
                 //     'content-type':'application/x-www-form-urlencoded;charset=utf-8',
                 //     Authorization: `Bearer ${token.data.access_token}`
                 // },
-                headers: { Authorization: `Bearer ${request.session.user.name}` },
-                headers:{
-                    Id:id
+                headers: { 
+                    Id:id , 
+                    Authorization: `Bearer ${request.session.user.name}` 
                 },
                 data:{
-                    TransactionId:Number(TransactionId)
+                    transactionId:Number(TransactionId)
                 }
             })
 
@@ -327,11 +327,16 @@ const remoteStopTransaction = async (request, response, next) =>{
 
             const getData = comfirm.data.status
 
+            console.log(getData)
+
             if(getData == "Accepted"){
                 sendupdatesettingsResultData.isStopped = true
             }else if(getData == "Rejected"){
                 sendupdatesettingsResultData.isStopped = false
                 sendupdatesettingsResultData.errorMessage = "원격중지가 거절당했습니다. "
+            }else{
+                sendupdatesettingsResultData.isStopped  = false
+                sendupdatesettingsResultData.errorMessage = "해당 기기가 서버와 연결이 되어 있질 않습니다. "
             }
 
             response.send(sendupdatesettingsResultData)
@@ -417,9 +422,12 @@ const remoteCanclePay = async (request, response, next) =>{
             }else if(getData == "UnknownMessageId"){
                 sendupdatesettingsResultData.isCancled = false
                 sendupdatesettingsResultData.errorMessage = "알수없는 메시지 형식입니다. "
-            }else{
+            }else if(getData == "UnknownVendorId"){
                 sendupdatesettingsResultData.isCancled = false
                 sendupdatesettingsResultData.errorMessage = "알수없는 공급사입니다. "
+            }else{
+                sendupdatesettingsResultData.isCancled  = false
+                sendupdatesettingsResultData.errorMessage = "해당 기기가 서버와 연결이 되어 있질 않습니다. "
             }
 
             response.send(sendupdatesettingsResultData)

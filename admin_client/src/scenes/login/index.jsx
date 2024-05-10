@@ -25,17 +25,16 @@ function LoginView() {
         };
         fetchPost("/authenticate",userData)
           .then((json) => {           
-            console.log("login "+json.isLogin) 
-            if(json.isLogin===true){
+            if(json?.isLogin===true){
               // props.setMode(true);
               
               // <Navigate  to = "/"/>
               navigate("/")
           }
           else {
-            alert(json.errorMessage)
+            alert(json?.errorMessage)
           }
-        });
+        }).catch((err)=>{});
       }
     }
     

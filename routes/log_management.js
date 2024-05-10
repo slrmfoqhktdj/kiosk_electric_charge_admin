@@ -32,7 +32,7 @@ router.post('/command/upl',authMiddleware.isAuthenticated,log_management.command
 router.post('/log/allremove',authMiddleware.isAuthenticated,log_management.commandRemoveAllLog)     // 해당 충전기 모든 진단파일 삭제
 router.post('/log/remove',authMiddleware.isAuthenticated,log_management.commandRemoveLog)     //  진단파일 삭제
 
-router.post('/uploadlog',authMiddleware.isAuthenticated,LogFilefunction.single("upload_log"),log_management.uploadLog)   // 충전기 진단파일 업로드
+router.post('/uploadlog',LogFilefunction.single("upload_log"),log_management.uploadLog)   // 충전기 진단파일 업로드
 router.get('/downloadlog/:fileName',authMiddleware.isAuthenticated,log_management.downloadLog) // 충전기 진단파일 다운로드
 
 // router.post('/uploadlog',(req,res)=>{

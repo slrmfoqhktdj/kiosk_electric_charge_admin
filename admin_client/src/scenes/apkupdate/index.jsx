@@ -44,7 +44,7 @@ const Team = () => {
 
   const [Mounted,setMounted] = useState(1);
 
-  const [SelectedItemId,setSelectedItemId] = useState({id:"",s_version:""});
+  const [SelectedItemId,setSelectedItemId] = useState({id:"",model:"",s_version:""});
   const [anchorEl, setAnchorEl] = useState(null);
   const [RetrieveDate, setRetrieveDate] = useState();
 
@@ -95,6 +95,13 @@ const Team = () => {
     {
       field: "addr",
       headerName: "주소",
+      headerAlign: "center",
+      align: "center",
+      flex: 1,
+    },
+    {
+      field: "model",
+      headerName: "모델",
       headerAlign: "center",
       align: "center",
       flex: 1,
@@ -162,7 +169,7 @@ const Team = () => {
     .then((data) => {        
       setData(data?.item)
       setDataCount(data?.count)
-    });
+    }).catch((err)=>{});
   },[page,rowsPerPage])
 
   useEffect(() => {
@@ -183,7 +190,7 @@ const Team = () => {
       .then((data) => {        
           setData(data?.item)
           setDataCount(data?.item?.length)
-      });
+      }).catch((err)=>{});
     }
     
   }
@@ -229,6 +236,31 @@ const Team = () => {
     
   }
 
+  const updateProps = {
+    component: 'form',
+    onSubmit: (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      formData.append("device_id",SelectedItemId.id)
+      formData.append("model",SelectedItemId.model)
+      const formJson = Object.fromEntries(formData.entries());
+      
+      fetchPost("/command/upd",formJson)
+      
+      .then((json) => {  
+        console.log(json)
+        if(json?.isUpdated){
+          
+          closeUpdateDialog();
+          setMounted(Mounted+1)
+        }
+        else {
+          alert(json?.errorMessage)
+        }
+      }).catch((err) => {});
+
+    },
+  }
 
   return (
     <Box m="20px">
@@ -320,33 +352,7 @@ const Team = () => {
         fullWidth={true}
         open={UpdateDialog}
         onClose={closeUpdateDialog}
-        PaperProps={{
-          component: 'form',
-          onSubmit: (event) => {
-            event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            formData.append("device_id",SelectedItemId.id)
-            const formJson = Object.fromEntries(formData.entries());
-            
-            fetchPost("/command/upd",formJson)
-            
-            .then((json) => {  
-              console.log(json)
-              if(json.isUpdated){
-                
-                closeUpdateDialog();
-                setMounted(Mounted+1)
-              }
-              else {
-                alert(json.errorMessage)
-              }
-            }).catch((err) => {
-                console.error(err);
-           
-            });
-
-          },
-        }}
+        PaperProps={updateProps}
       >
         <DialogTitle>업데이트</DialogTitle>
         <DialogContent>

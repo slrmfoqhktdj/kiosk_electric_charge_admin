@@ -78,8 +78,6 @@ const authenticate = async (request, response, next) => {
 
 
             const data = comfirm.data.item
-
-            console.log(data)
     
             if(data.name != ''&& data.email != ''){
                 let userInfo = {

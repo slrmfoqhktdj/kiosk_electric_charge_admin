@@ -96,9 +96,9 @@ const ChargeBarChart = () => {
 
     fetchPost("/charge_daily_graph",userData)
     .then((data) => {       
-      setDeviceList(data.listitem)
-      setData(data.item)
-    });
+      setDeviceList(data?.listitem)
+      setData(data?.item)
+    }).catch((err)=>{});
   }, [StartTime,EndTime,Device]);
 
 

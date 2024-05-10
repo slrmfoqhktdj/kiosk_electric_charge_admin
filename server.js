@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const session = require('express-session')
 const path = require('path');
-const serveStatic = require("serve-static");
+// const serveStatic = require("serve-static");
 
 //환경변수
 require('dotenv').config({ path:path.join(__dirname,'./.env') });

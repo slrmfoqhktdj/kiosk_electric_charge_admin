@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import {fetchGet} from "../../communication/handlefetch"
 import { useState } from "react";
 
+
+
 const Geography = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -16,7 +18,7 @@ const Geography = () => {
     fetchGet("/mapdata")
     .then((data) => {        
         setData(data)
-    });
+    }).catch((err)=>{});
   }, []);
 
   return (
@@ -33,6 +35,7 @@ const Geography = () => {
       </Box>
     </Box>
   );
+
 };
 
 export default Geography;

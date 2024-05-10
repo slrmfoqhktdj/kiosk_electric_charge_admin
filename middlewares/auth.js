@@ -3,10 +3,9 @@
 
 const isAuthenticated = (request, response, next) => {
     if(!request.session.user){
-        console.log("auth")
-        // return response.status(400)
 
-        return response.send(401)
+        return response.status(401).json({message:"세션이 만료되었습니다. 다시 로그인해주세요."})
+        
     }
     
     next()

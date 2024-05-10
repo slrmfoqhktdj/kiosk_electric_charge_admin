@@ -315,6 +315,61 @@
             "id": "1110",
             "code" : "Installed",
             "content":"충전소에서 새 펌웨어가 성공적으로 설치되었습니다."
+        },
+        {
+            "id": "1200",
+            "code" : "DeAuthorized",
+            "content":" 인증 상태로 인해 트랜잭션이 중지되었습니다."
+        },
+        {
+            "id": "1201",
+            "code" : "EmergencyStop",
+            "content":"비상정지 버튼을 사용하였습니다."
+        },
+        {
+            "id": "1202",
+            "code" : "EVDisconnected",
+            "content":"케이블 분리, 차량이 유도 충전 장치에서 멀어졌습니다."
+        },
+        {
+            "id": "1203",
+            "code" : "HardReset",
+            "content":"하드 리셋 명령이 수신되었습니다"
+        },
+        {
+            "id": "1204",
+            "code" : "Local",
+            "content":"충전소에서 사용자의 요청에 따라 로컬로 중지됩니다."
+        },
+        {
+            "id": "1205",
+            "code" : "Other",
+            "content":"다른 이유."
+        },
+        {
+            "id": "1206",
+            "code" : "PowerLoss",
+            "content":"완전한 전력 손실. 이 경우 완료시간은 전력이 끊긴 기준이 아닌 기기가 재 정상가동을 했을때의 시간."
+        },
+        {
+            "id": "1207",
+            "code" : "Reboot",
+            "content":"로컬로 시작된 재설정/재부팅이 발생했습니다."
+        },
+        {
+            "id": "1208",
+            "code" : "Remote",
+            "content":"중앙 시스템의 요청에 따라 원격으로 중지되었습니다."
+        },
+        {
+            "id": "1209",
+            "code" : "SoftReset",
+            "content":"소프트웨어 리셋 명령이 수신되었습니다."
+        },
+        {
+            "id": "1210",
+            "code" : "UnlockCommand",
+            "content":"중앙 시스템이 커넥터 잠금 해제 명령을 보냈습니다."
         }
 
 

@@ -60,14 +60,14 @@ const Topbar = () => {
 
       fetchPost("/logout",formJson)
       .then((data) =>{
-        if(data.isLogout===true){
+        if(data?.isLogout===true){
           
           closeLogoutDialog();
           navigate("/login")
          
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
       })
 

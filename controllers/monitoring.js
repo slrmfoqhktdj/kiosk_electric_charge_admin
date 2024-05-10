@@ -54,6 +54,7 @@ const getMapData = async (request, response, next) => {
         //     result.push(sendDeviceMapData)
         // }
     
+        // response.send({key:process.env.GOOGLE_MAP_API_KEY,data:comfirm.data.item});
         response.send(comfirm.data.item);
         
     }catch(e){

@@ -139,7 +139,7 @@ const Team = () => {
     .then((data) => {        
       setData(data?.item)
       setDataCount(data?.count)
-    });
+    }).catch((err)=>{});
   },[page,rowsPerPage])
 
   useEffect(() => {
@@ -160,7 +160,7 @@ const Team = () => {
       .then((data) => {        
           setData(data?.item)
           setDataCount(data?.item?.length)
-      });
+      }).catch((err)=>{});
     }
     
   }
@@ -229,16 +229,16 @@ const Team = () => {
       
       fetchPost("/command/upl",formJson)
       .then((json) => {           
-        if(json.isUploaded===true){
+        if(json?.isUploaded===true){
           
           closeUpdateDialog();
 
           setMounted(Mounted+1)
         }
         else {
-          alert(json.errorMessage)
+          alert(json?.errorMessage)
         }
-      });
+      }).catch((err)=>{});
 
     },
   }
@@ -254,16 +254,16 @@ const Team = () => {
       
       fetchPost("/command/upl",formJson)
       .then((json) => {           
-        if(json.isUploaded===true){
+        if(json?.isUploaded===true){
           
           closeUpdateDialog();
 
           setMounted(Mounted+1)
         }
         else {
-          alert(json.errorMessage)
+          alert(json?.errorMessage)
         }
-      });
+      }).catch((err)=>{});
 
     },
   }
@@ -397,7 +397,7 @@ const Team = () => {
             name="stopdatetime"
             showTimeSelect
             locale={ko} 
-            minDate={new Date()}
+            maxDate={new Date()}
             selected={EndDate}
             onChange={handleEndDatePicker}
             dateFormat= "yyyy-MM-dd HH:mm:ss"

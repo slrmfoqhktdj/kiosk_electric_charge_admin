@@ -35,6 +35,10 @@ const DeviceList = () => {
 
   const [IsSearch, setIsSearch] = useState(false);
 
+  const [Latitude,setLatitude] = useState("");
+  const [Longitude,setLongitude] = useState("");
+  const [S_Version,setS_Version] = useState("");
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -58,7 +62,7 @@ const DeviceList = () => {
       .then((data) => {        
           setData(data?.item)
           setDataCount(data?.item?.length)
-      });
+      }).catch((err)=>{});
     }
     
   }
@@ -84,7 +88,7 @@ const DeviceList = () => {
     .then((data) => {        
       setData(data?.item)
       setDataCount(data?.count)
-    });
+    }).catch((err)=>{});
   },[page,rowsPerPage])
 
   useEffect(() => {
@@ -102,7 +106,29 @@ const DeviceList = () => {
     setRegistDialog(false)
   }
 
+  const handleLatitude = (event) => {
+    const value = event.target.value;
+    const regex = /^[0-9]*\.?[0-9]*$/;
+    if(regex.test(value)){
+      setLatitude(value)
+    }
+  }
 
+  const handleLongitude = (event) => {
+    const value = event.target.value;
+    const regex = /^[0-9]*\.?[0-9]*$/;
+    if(regex.test(value)){
+      setLongitude(value)
+    }
+  }
+
+  const handleS_Version = (event) => {
+    const value = event.target.value;
+    const regex = /^[0-9]*\.?[0-9]*$/;
+    if(regex.test(value)){
+      setS_Version(value)
+    }
+  }
 
 
   const registerProps =
@@ -128,7 +154,7 @@ const DeviceList = () => {
       
       fetchPost("/device/register",formJson)
       .then((data) =>{
-        if(data.isInserted===true){
+        if(data?.isInserted===true){
           
           closeRegisterDialog();
 
@@ -136,9 +162,9 @@ const DeviceList = () => {
           
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      })
+      }).catch((err)=>{});
 
 
     },
@@ -202,7 +228,8 @@ const DeviceList = () => {
             label="위도"
             name="latitude"
             fullWidth
-            type={"number"}
+            value={Latitude}
+            onChange={handleLatitude}
             color="success"
             variant="standard"
           />
@@ -213,7 +240,8 @@ const DeviceList = () => {
             label="경도"
             name="longitude"
             fullWidth
-            type={"number"}
+            value={Longitude}
+            onChange={handleLongitude}
             color="success"
             variant="standard"
           />
@@ -228,12 +256,20 @@ const DeviceList = () => {
             variant="standard"
           />
           <TextField
-            // autoFocus
-            required
+            margin="dense"
+            label="모델"
+            name="model"
+            fullWidth
+            color="success"
+            variant="standard"
+          />
+          <TextField
             margin="dense"
             label="소프트웨어버전"
             name="s_version"
             fullWidth
+            value={S_Version}
+            onChange={handleS_Version}
             color="success"
             variant="standard"
           />

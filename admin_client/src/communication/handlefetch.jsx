@@ -1,27 +1,45 @@
 // import { useEffect, useState  } from "react"
 // import { Navigate, Outlet  } from "react-router-dom"
 
+const checkMainStatusAndParse = response => {
+
+    if(response.ok){
+        return response.json()
+    }
+    window.location.href="/login"
+    return 
+}
 
 const checkStatusAndParse = response => {
-    // if(!response.ok) alert('로그인세션이 만료되었습니다') ; 
-    // if(response.error === true) throw new Error(`Status Code Error, ${response.status}`)
-    // console.log(response.status)
-
-    if(response.status === 401){
-        alert('세션이 만료되었습니다. 다시 로그인해주세요.')
-        window.location.href="/login"
-        return 
+    
+    if(response.ok){
+        return response.json()
     }
-    return response.json()
+
+    response.json().then((data)=>{alert(data.message)})
+    window.location.href="/login"
+    return 
 }
 
 const FilecheckStatusAndParse = response => {
-    if(response.status === 401){
-        alert('세션이 만료되었습니다. 다시 로그인해주세요.')
-        window.location.href="/login"
-        return 
+
+    if(response.ok){
+        return response
     }
-    return response
+
+    response.json().then((data)=>{alert(data.message)})
+    window.location.href="/login"
+    return 
+    
+}
+
+export const fetchMainGet = async(url) =>{
+    return await fetch(`${process.env.REACT_APP_BACKURL}${url}`,{
+        credentials: 'include'
+    }).then(checkMainStatusAndParse)
+    .catch(err => {
+        alert("서버와의 연결이 불안정합니다. 잠시 후 다시 시도해주세요." + err)
+    });
 }
 
 

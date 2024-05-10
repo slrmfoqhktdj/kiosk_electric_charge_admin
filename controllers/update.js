@@ -136,6 +136,7 @@ const commandUpdateFirmWare = async (request, response, next) => {
     const msg = request.body
     const device_id = msg.device_id
     const version = msg.version
+    const model = msg.model
 
     // let filename = msg.UpdateFirmwarefilename
     const Retries = Number(msg.Retries)
@@ -150,21 +151,21 @@ const commandUpdateFirmWare = async (request, response, next) => {
         errorMessage:""
     }
 
-    const type = device_id.split("_")[0]
+    const filePath = model.toUpperCase()
 
-    console.log(request.protocol+"//"+request.headers.host+"/"+type.toUpperCase()+"/app-debug.apk")
+    console.log(request.protocol+"//"+request.headers.host+"/"+filePath+"/app-debug.apk")
 
-    const path =  type.toUpperCase()+"/app-debug.apk"
+    const path =  filePath+"/app-debug.apk"
 
 
-    if(!fs.existsSync(__dirname+"/../update_apks/"+type.toUpperCase())){
+    if(!fs.existsSync(__dirname+"/../update_apks/"+filePath)){
         result.isUpdated = false
         result.errorMessage = "충전기 타입에 따른 apk경로가 존재하지 않습니다."
         response.send(result);
         return
     }
 
-    if(!fs.existsSync(__dirname+"/../update_apks/"+type.toUpperCase()+"/app-debug.apk")){
+    if(!fs.existsSync(__dirname+"/../update_apks/"+filePath+"/app-debug.apk")){
         result.isUpdated = false
         result.errorMessage = "업데이트할 apk가 존재하지 않습니다."
         response.send(result);

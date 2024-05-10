@@ -28,7 +28,7 @@ const FAQ = () => {
   const colors = tokens(theme.palette.mode);
   const [Data, setData] = useState([]);
 
-  const [SelectedItemId,setSelectedItemId] = useState({payid:"",d_id:"",c_pay:"",can_pay:"",pay_by:"",c_num:"",c_c_num:"",pay_day:"",c_pay_day:"",c_conn:"",c_time:"",c_amount:"", c_time_s:"", c_time_e:"", c_time_u:""});
+  const [SelectedItemId,setSelectedItemId] = useState({payid:"",d_id:"",c_pay:"",can_pay:"",pay_by:"",c_num:"",c_c_num:"",pay_day:"",c_pay_day:"",c_conn:"",c_time:"",c_amount:"", c_time_s:"", c_time_e:"", c_time_u:"",c_reason:""});
 
   const [TransactionDialog,setTransactionDialog] = useState(false);
   const [PayCancleDialog,setPayCancleDialog] = useState(false);
@@ -250,6 +250,13 @@ const FAQ = () => {
       },
     },
     {
+      field:"c_reason",
+      headerName: "중단 이유",
+      headerAlign: "center",
+      align: "center",
+      flex: 1,
+    },
+    {
       field:"rowmenu",
       headerName:"",
       headerAlign: "center",
@@ -292,16 +299,16 @@ const FAQ = () => {
 
       fetchPost("/cmd/rmstp",formJson)
       .then((data) =>{
-        if(data.isStopped===true){
+        if(data?.isStopped===true){
           
           closeTransactionDialog();
 
           setMounted(Mounted+1)
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      })
+      }).catch((err)=>{});
 
 
     },
@@ -330,16 +337,16 @@ const FAQ = () => {
 
       fetchPost("/cmd/nccp",formJson)
       .then((data) =>{
-        if(data.isCancled===true){
+        if(data?.isCancled===true){
           
           closePayCancleDialog();
 
           setMounted(Mounted+1)
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      })
+      }).catch((err)=>{});
 
 
     },
@@ -350,7 +357,7 @@ const FAQ = () => {
     .then((data) => {        
       setData(data?.item)
       setDataCount(data?.count)
-    });
+    }).catch((err)=>{});
   },[page,rowsPerPage])
 
   useEffect(() => {
@@ -371,7 +378,7 @@ const FAQ = () => {
       .then((data) => {        
           setData(data?.item)
           setDataCount(data?.item?.length)
-      });
+      }).catch((err)=>{});
     }
     
   }
@@ -449,7 +456,7 @@ const FAQ = () => {
           }}
         >
 
-          <MenuItem onClick={()=>{closePositionMenu(); openPayCancleDialog()}} disabled={SelectedItemId.pay_by==="command"||SelectedItemId.c_pay_day}>원격부분취소</MenuItem>
+          <MenuItem onClick={()=>{closePositionMenu(); openPayCancleDialog()}} disabled={SelectedItemId.pay_by==="command"||SelectedItemId.c_pay === SelectedItemId.can_pay}>원격부분취소</MenuItem>
           <MenuItem onClick={()=>{closePositionMenu(); openStopTransactionDialog()}} disabled={SelectedItemId.c_time_e}>원격충전중지</MenuItem>
           
         </Menu>

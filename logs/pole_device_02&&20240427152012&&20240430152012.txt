@@ -1,0 +1,1271 @@
+device id : pole_device_02
+connector id : 1
+--------- beginning of crash
+--------- beginning of system
+2024-04-28 01:56:59.511   450   538 W ProcessCpuTracker: Skipping unknown process pid 17669
+2024-04-28 02:02:22.624   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-28 02:08:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 02:10:52.310   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 02:10:52.310   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 02:10:52.317   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 02:38:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 02:40:52.309   450   550 W ProcessCpuTracker: Skipping unknown process pid 13499
+2024-04-28 02:40:52.313   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 02:40:52.313   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 02:40:52.319   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 03:08:00.023   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 03:10:52.323   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 03:10:52.323   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 03:10:52.329   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 03:11:00.019   450   550 W ProcessCpuTracker: Skipping unknown process pid 14348
+2024-04-28 03:39:00.013   450   538 I ProcessStatsService: Prepared write state in 12ms
+2024-04-28 03:39:00.055   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-27-00-17-00.bin
+2024-04-28 03:40:52.341   450   550 W ProcessCpuTracker: Skipping unknown process pid 13614
+2024-04-28 03:40:52.344   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 03:40:52.344   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 03:40:52.349   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 03:41:09.812   450   450 I EntropyMixer: Writing entropy...
+2024-04-28 03:56:59.945   450   538 W ProcessCpuTracker: Skipping unknown process pid 18048
+2024-04-28 04:10:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 04:10:52.365   450   550 W ProcessCpuTracker: Skipping unknown process pid 12986
+2024-04-28 04:10:52.367   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 04:10:52.367   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 04:10:52.373   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 04:12:00.010   450   538 W ProcessCpuTracker: Skipping unknown process pid 17876
+2024-04-28 04:27:00.040   450   538 W ProcessCpuTracker: Skipping unknown process pid 18275
+2024-04-28 04:40:00.018   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 04:40:52.395   450   550 W ProcessCpuTracker: Skipping unknown process pid 13847
+2024-04-28 04:40:52.398   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 04:40:52.398   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 04:40:52.404   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 04:41:00.017   450   550 W ProcessCpuTracker: Skipping unknown process pid 14421
+2024-04-28 05:10:49.134   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 05:10:52.445   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 05:10:52.445   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 05:10:52.450   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 05:40:52.472   450   550 W ProcessCpuTracker: Skipping unknown process pid 15350
+2024-04-28 05:40:52.472   450   550 W ProcessCpuTracker: Skipping unknown process pid 15351
+2024-04-28 05:40:52.475   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 05:40:52.475   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 05:40:52.480   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 05:41:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 06:10:52.466   450   550 W ProcessCpuTracker: Skipping unknown process pid 15593
+2024-04-28 06:10:52.469   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 06:10:52.469   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 06:10:52.475   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 06:11:00.008   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 06:11:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 16118
+2024-04-28 06:27:00.154   450   538 W ProcessCpuTracker: Skipping unknown process pid 21212
+2024-04-28 06:40:52.489   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 06:40:52.489   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 06:40:52.497   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 06:41:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 17006
+2024-04-28 06:41:00.037   450   538 I ProcessStatsService: Prepared write state in 16ms
+2024-04-28 06:41:00.089   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-27-03-20-00.bin
+2024-04-28 06:41:09.973   450   450 I EntropyMixer: Writing entropy...
+2024-04-28 07:10:52.513   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 07:10:52.513   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 07:10:52.519   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 07:12:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 07:27:00.209   450   538 W ProcessCpuTracker: Skipping unknown process pid 22349
+2024-04-28 07:40:52.529   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 07:40:52.529   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 07:40:52.535   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 07:41:00.018   450   550 W ProcessCpuTracker: Skipping unknown process pid 18003
+2024-04-28 07:42:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 22259
+2024-04-28 07:42:00.016   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 08:10:52.551   450   550 W ProcessCpuTracker: Skipping unknown process pid 17535
+2024-04-28 08:10:52.554   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 08:10:52.554   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 08:10:52.559   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 08:11:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 18084
+2024-04-28 08:13:00.031   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 08:40:52.592   450   550 W ProcessCpuTracker: Skipping unknown process pid 18271
+2024-04-28 08:40:52.594   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 08:40:52.594   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 08:40:52.598   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 08:42:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 23109
+2024-04-28 08:44:00.001   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 09:10:52.609   450   550 W ProcessCpuTracker: Skipping unknown process pid 19011
+2024-04-28 09:10:52.609   450   550 W ProcessCpuTracker: Skipping unknown process pid 19012
+2024-04-28 09:10:52.610   450   550 W ProcessCpuTracker: Skipping unknown process pid 19013
+2024-04-28 09:10:52.612   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 09:10:52.612   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 09:10:52.617   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 09:12:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 23925
+2024-04-28 09:15:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 09:27:00.355   450   538 W ProcessCpuTracker: Skipping unknown process pid 24016
+2024-04-28 09:27:00.356   450   538 W ProcessCpuTracker: Skipping unknown process pid 24017
+2024-04-28 09:40:52.662   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 09:40:52.663   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 09:40:52.670   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 09:41:10.173   450   450 I EntropyMixer: Writing entropy...
+2024-04-28 09:42:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 24221
+2024-04-28 09:45:00.013   450   538 I ProcessStatsService: Prepared write state in 12ms
+2024-04-28 09:45:00.091   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-27-06-22-00.bin
+2024-04-28 09:48:00.000   450   537 I UsageStatsService: User[0] Rolling over usage stats
+2024-04-28 09:48:00.000   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-28 09:48:00.157   450   537 I UsageStatsService: User[0] Rollover scheduled @ 2024-04-29 09:47:58(1714351678132)
+2024-04-28 09:48:00.157   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-28 09:48:00.293   450   537 I UsageStatsService: User[0] Rolling over usage stats complete. Took 293 milliseconds
+2024-04-28 10:08:00.065   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-28 10:10:52.644   450   550 W ProcessCpuTracker: Skipping unknown process pid 19414
+2024-04-28 10:10:52.647   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 10:10:52.647   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 10:10:52.653   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 10:11:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 19944
+2024-04-28 10:15:01.002   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 10:40:52.690   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 10:40:52.690   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 10:40:52.695   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 10:45:01.002   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 11:10:52.678   450   550 W ProcessCpuTracker: Skipping unknown process pid 19139
+2024-04-28 11:10:52.680   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 11:10:52.680   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 11:10:52.686   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 11:11:00.019   450   550 W ProcessCpuTracker: Skipping unknown process pid 19649
+2024-04-28 11:15:01.005   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 11:27:00.395   450   538 W ProcessCpuTracker: Skipping unknown process pid 23782
+2024-04-28 11:40:52.677   450   550 W ProcessCpuTracker: Skipping unknown process pid 19288
+2024-04-28 11:40:52.679   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 11:40:52.679   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 11:40:52.685   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 11:41:00.015   450   550 W ProcessCpuTracker: Skipping unknown process pid 19825
+2024-04-28 11:45:01.043   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 11:57:00.454   450   538 W ProcessCpuTracker: Skipping unknown process pid 23892
+2024-04-28 12:10:52.725   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 12:10:52.725   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 12:10:52.730   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 12:12:00.019   450   550 W ProcessCpuTracker: Skipping unknown process pid 23858
+2024-04-28 12:16:00.002   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 12:16:00.003   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 12:40:52.731   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 12:40:52.731   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 12:40:52.735   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 12:41:10.278   450   450 I EntropyMixer: Writing entropy...
+2024-04-28 12:47:00.011   450   538 I ProcessStatsService: Prepared write state in 10ms
+2024-04-28 12:47:00.231   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-27-09-25-00.bin
+2024-04-28 12:57:00.503   450   538 W ProcessCpuTracker: Skipping unknown process pid 25358
+2024-04-28 13:10:52.766   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 13:10:52.766   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 13:10:52.771   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 13:12:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 25689
+2024-04-28 13:17:00.017   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 13:27:00.520   450   538 W ProcessCpuTracker: Skipping unknown process pid 26049
+2024-04-28 13:40:52.776   450   550 W ProcessCpuTracker: Skipping unknown process pid 20986
+2024-04-28 13:40:52.776   450   550 W ProcessCpuTracker: Skipping unknown process pid 20987
+2024-04-28 13:40:52.778   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 13:40:52.778   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 13:40:52.784   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 13:41:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 21514
+2024-04-28 13:48:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 14:10:52.846   450   550 W ProcessCpuTracker: Skipping unknown process pid 21720
+2024-04-28 14:10:52.848   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 14:10:52.848   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 14:10:52.855   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 14:12:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 26346
+2024-04-28 14:18:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 14:40:52.822   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 14:40:52.822   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 14:40:52.826   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 14:41:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 23024
+2024-04-28 14:48:00.018   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 14:57:00.614   450   538 W ProcessCpuTracker: Skipping unknown process pid 27204
+2024-04-28 14:57:00.615   450   538 W ProcessCpuTracker: Skipping unknown process pid 27205
+2024-04-28 15:10:52.845   450   550 W ProcessCpuTracker: Skipping unknown process pid 22410
+2024-04-28 15:10:52.847   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 15:10:52.847   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 15:10:52.853   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 15:12:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 27129
+2024-04-28 15:19:00.001   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 15:27:00.673   450   538 W ProcessCpuTracker: Skipping unknown process pid 27308
+2024-04-28 15:27:00.674   450   538 W ProcessCpuTracker: Skipping unknown process pid 27309
+2024-04-28 15:40:49.386   450   537 I UsageStatsService: Time changed in UsageStats by 2 seconds
+2024-04-28 15:40:49.393   450   537 I UsageStatsDatabase: Time changed by +2s6ms. files deleted: 0 files moved: 35
+2024-04-28 15:40:49.396   450   537 I UsageStatsService: User[0] Rollover scheduled @ 2024-04-29 09:48:00(1714351680138)
+2024-04-28 15:40:52.897   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 15:40:52.897   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 15:40:52.902   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 15:41:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 23417
+2024-04-28 15:41:10.485   450   450 I EntropyMixer: Writing entropy...
+2024-04-28 15:49:00.012   450   538 I ProcessStatsService: Prepared write state in 11ms
+2024-04-28 15:49:00.113   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-27-12-27-00.bin
+2024-04-28 15:57:00.648   450   538 W ProcessCpuTracker: Skipping unknown process pid 28424
+2024-04-28 16:00:49.394   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-28 16:10:52.864   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 16:10:52.865   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 16:10:52.869   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 16:12:00.017   450   550 W ProcessCpuTracker: Skipping unknown process pid 28297
+2024-04-28 16:20:00.003   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 16:40:52.904   450   550 W ProcessCpuTracker: Skipping unknown process pid 23693
+2024-04-28 16:40:52.905   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 16:40:52.905   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 16:40:52.911   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 16:50:05.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 16:57:00.732   450   538 W ProcessCpuTracker: Skipping unknown process pid 29014
+2024-04-28 17:10:52.942   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 17:10:52.942   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 17:10:52.946   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 17:11:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 25040
+2024-04-28 17:20:05.017   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 17:40:52.966   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 17:40:52.966   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 17:40:52.971   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 17:41:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 24888
+2024-04-28 17:41:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 24889
+2024-04-28 17:42:00.015   450   550 W ProcessCpuTracker: Skipping unknown process pid 29159
+2024-04-28 17:51:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 18:10:53.014   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 18:10:53.014   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 18:10:53.020   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 18:21:00.002   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 18:27:00.805   450   538 W ProcessCpuTracker: Skipping unknown process pid 29597
+2024-04-28 18:40:52.994   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 18:40:52.994   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 18:40:52.998   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 18:41:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 25694
+2024-04-28 18:41:10.605   450   450 I EntropyMixer: Writing entropy...
+2024-04-28 18:52:00.014   450   538 I ProcessStatsService: Prepared write state in 12ms
+2024-04-28 18:52:00.059   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-27-15-29-00.bin
+2024-04-28 18:57:00.874   450   538 W ProcessCpuTracker: Skipping unknown process pid 30243
+2024-04-28 19:10:53.060   450   550 W ProcessCpuTracker: Skipping unknown process pid 25067
+2024-04-28 19:10:53.061   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 19:10:53.061   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 19:10:53.066   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 19:11:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 25581
+2024-04-28 19:22:00.007   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 19:27:00.883   450   538 W ProcessCpuTracker: Skipping unknown process pid 30638
+2024-04-28 19:27:00.884   450   538 W ProcessCpuTracker: Skipping unknown process pid 30640
+2024-04-28 19:40:53.064   450   550 W ProcessCpuTracker: Skipping unknown process pid 25726
+2024-04-28 19:40:53.065   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 19:40:53.065   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 19:40:53.070   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 19:52:00.023   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 19:57:00.910   450   538 W ProcessCpuTracker: Skipping unknown process pid 30107
+2024-04-28 20:10:53.086   450   550 W ProcessCpuTracker: Skipping unknown process pid 25000
+2024-04-28 20:10:53.088   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 20:10:53.088   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 20:10:53.095   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 20:11:00.015   450   550 W ProcessCpuTracker: Skipping unknown process pid 25517
+2024-04-28 20:23:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 20:40:53.110   450   550 W ProcessCpuTracker: Skipping unknown process pid 25575
+2024-04-28 20:40:53.111   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 20:40:53.112   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 20:40:53.116   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 20:42:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 30300
+2024-04-28 20:42:00.015   450   550 W ProcessCpuTracker: Skipping unknown process pid 30302
+2024-04-28 20:53:00.015   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 20:57:00.979   450   538 W ProcessCpuTracker: Skipping unknown process pid 30042
+2024-04-28 21:10:53.133   450   550 W ProcessCpuTracker: Skipping unknown process pid 24966
+2024-04-28 21:10:53.135   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 21:10:53.135   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 21:10:53.140   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 21:11:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 25469
+2024-04-28 21:24:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 21:40:53.200   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 21:40:53.200   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 21:40:53.207   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 21:41:10.838   450   450 I EntropyMixer: Writing entropy...
+2024-04-28 21:54:00.014   450   538 I ProcessStatsService: Prepared write state in 12ms
+2024-04-28 21:54:00.153   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-27-18-30-01.bin
+2024-04-28 21:57:01.004   450   538 W ProcessCpuTracker: Skipping unknown process pid 30781
+2024-04-28 22:10:53.137   450   550 W ProcessCpuTracker: Skipping unknown process pid 26418
+2024-04-28 22:10:53.139   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 22:10:53.139   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 22:10:53.148   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 22:12:00.015   450   550 W ProcessCpuTracker: Skipping unknown process pid 31058
+2024-04-28 22:24:00.021   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-28 22:27:01.031   450   538 W ProcessCpuTracker: Skipping unknown process pid 31289
+2024-04-28 22:40:53.155   450   550 W ProcessCpuTracker: Skipping unknown process pid 26601
+2024-04-28 22:40:53.157   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 22:40:53.157   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 22:40:53.163   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 22:42:00.018   450   550 W ProcessCpuTracker: Skipping unknown process pid 31306
+2024-04-28 22:54:00.023   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 23:10:53.152   450   550 W ProcessCpuTracker: Skipping unknown process pid 27049
+2024-04-28 23:10:53.154   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 23:10:53.154   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 23:10:53.158   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 23:12:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 31701
+2024-04-28 23:25:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 23:27:01.079   450   538 W ProcessCpuTracker: Skipping unknown process pid 31881
+2024-04-28 23:40:53.171   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 23:40:53.171   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-28 23:40:53.176   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-28 23:56:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-28 23:57:01.162   450   538 W ProcessCpuTracker: Skipping unknown process pid 32478
+2024-04-29 00:10:53.251   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 00:10:53.252   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 00:10:53.259   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 00:26:00.023   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-29 00:40:53.274   450   550 W ProcessCpuTracker: Skipping unknown process pid 28629
+2024-04-29 00:40:53.275   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 00:40:53.275   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 00:40:53.279   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 00:41:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 29125
+2024-04-29 00:41:10.975   450   450 I EntropyMixer: Writing entropy...
+2024-04-29 00:56:00.040   450   538 I ProcessStatsService: Prepared write state in 11ms
+2024-04-29 00:56:00.124   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-27-21-33-00.bin
+2024-04-29 00:57:01.213   450   538 W ProcessCpuTracker: Skipping unknown process pid 1536
+2024-04-29 01:10:53.291   450   550 W ProcessCpuTracker: Skipping unknown process pid 29028
+2024-04-29 01:10:53.292   450   550 W ProcessCpuTracker: Skipping unknown process pid 29030
+2024-04-29 01:10:53.293   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 01:10:53.293   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 01:10:53.298   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 01:27:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 01:40:53.308   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 01:40:53.308   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 01:40:53.312   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 01:57:01.301   450   538 W ProcessCpuTracker: Skipping unknown process pid 2865
+2024-04-29 01:58:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 02:02:22.642   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-29 02:10:53.356   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 02:10:53.356   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 02:10:53.360   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 02:27:01.329   450   538 W ProcessCpuTracker: Skipping unknown process pid 2267
+2024-04-29 02:27:01.330   450   538 W ProcessCpuTracker: Skipping unknown process pid 2268
+2024-04-29 02:28:00.025   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 02:28:00.025   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-29 02:28:00.026   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 02:32:31.453   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-29 02:40:53.378   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 02:40:53.378   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 02:40:53.384   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 02:57:01.331   450   538 W ProcessCpuTracker: Skipping unknown process pid 3229
+2024-04-29 02:58:00.028   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 03:10:53.375   450   550 W ProcessCpuTracker: Skipping unknown process pid 30834
+2024-04-29 03:10:53.377   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 03:10:53.377   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 03:10:53.381   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 03:29:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 03:40:53.401   450   550 W ProcessCpuTracker: Skipping unknown process pid 31178
+2024-04-29 03:40:53.401   450   550 W ProcessCpuTracker: Skipping unknown process pid 31179
+2024-04-29 03:40:53.403   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 03:40:53.403   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 03:40:53.408   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 03:41:11.154   450   450 I EntropyMixer: Writing entropy...
+2024-04-29 04:00:00.009   450   538 I ProcessStatsService: Prepared write state in 9ms
+2024-04-29 04:00:00.159   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-28-00-35-00.bin
+2024-04-29 04:10:53.460   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 04:10:53.460   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 04:10:53.466   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 04:11:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 31476
+2024-04-29 04:12:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 3818
+2024-04-29 04:30:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 04:40:53.455   450   550 W ProcessCpuTracker: Skipping unknown process pid 30560
+2024-04-29 04:40:53.456   450   550 W ProcessCpuTracker: Skipping unknown process pid 30561
+2024-04-29 04:40:53.457   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 04:40:53.457   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 04:40:53.462   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 04:41:00.017   450   550 W ProcessCpuTracker: Skipping unknown process pid 31050
+2024-04-29 05:00:01.002   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-29 05:10:53.500   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 05:10:53.500   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 05:10:53.504   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 05:27:01.503   450   538 W ProcessCpuTracker: Skipping unknown process pid 3289
+2024-04-29 05:27:01.504   450   538 W ProcessCpuTracker: Skipping unknown process pid 3290
+2024-04-29 05:31:00.004   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 05:31:00.007   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 05:40:53.508   450   550 W ProcessCpuTracker: Skipping unknown process pid 30517
+2024-04-29 05:40:53.509   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 05:40:53.510   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 05:40:53.515   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 05:41:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 30963
+2024-04-29 05:41:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 30964
+2024-04-29 05:42:00.010   450   550 W ProcessCpuTracker: Skipping unknown process pid 3161
+2024-04-29 06:01:00.001   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-29 06:10:53.514   450   550 W ProcessCpuTracker: Skipping unknown process pid 30870
+2024-04-29 06:10:53.514   450   550 W ProcessCpuTracker: Skipping unknown process pid 30871
+2024-04-29 06:10:53.516   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 06:10:53.516   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 06:10:53.521   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 06:32:00.003   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-29 06:32:00.004   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-29 06:40:53.564   450   550 W ProcessCpuTracker: Skipping unknown process pid 30762
+2024-04-29 06:40:53.565   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 06:40:53.565   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 06:40:53.571   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 06:41:11.349   450   450 I EntropyMixer: Writing entropy...
+2024-04-29 06:57:01.589   450   538 W ProcessCpuTracker: Skipping unknown process pid 3425
+2024-04-29 07:02:00.026   450   538 I ProcessStatsService: Prepared write state in 9ms
+2024-04-29 07:02:00.132   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-28-03-39-00.bin
+2024-04-29 07:10:53.588   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 07:10:53.588   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 07:10:53.593   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 07:11:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 31016
+2024-04-29 07:27:01.601   450   538 W ProcessCpuTracker: Skipping unknown process pid 3781
+2024-04-29 07:32:00.020   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 07:40:53.584   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 07:40:53.584   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 07:40:53.588   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 08:03:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 08:05:32.518   450 29620 I ActivityManager: Start proc 8336:android.process.media/u0a8 for broadcast com.android.providers.media/.MtpReceiver
+2024-04-29 08:05:32.651   450 29620 I ActivityManager: Killing 9849:com.svox.pico/u0a45 (adj 906): empty for 492907s
+2024-04-29 08:10:53.638   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 08:10:53.638   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 08:10:53.643   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 08:11:00.010   450   550 W ProcessCpuTracker: Skipping unknown process pid 31880
+2024-04-29 08:33:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 08:40:53.617   450   550 W ProcessCpuTracker: Skipping unknown process pid 30766
+2024-04-29 08:40:53.617   450   550 W ProcessCpuTracker: Skipping unknown process pid 30767
+2024-04-29 08:40:53.618   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 08:40:53.618   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 08:40:53.623   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 08:41:00.015   450   550 W ProcessCpuTracker: Skipping unknown process pid 31220
+2024-04-29 09:04:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 09:10:53.671   450   550 W ProcessCpuTracker: Skipping unknown process pid 31040
+2024-04-29 09:10:53.672   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 09:10:53.672   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 09:10:53.677   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 09:11:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 31501
+2024-04-29 09:11:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 31502
+2024-04-29 09:34:00.002   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-29 09:40:53.672   450   550 W ProcessCpuTracker: Skipping unknown process pid 31736
+2024-04-29 09:40:53.673   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 09:40:53.673   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 09:40:53.678   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 09:41:11.512   450   450 I EntropyMixer: Writing entropy...
+2024-04-29 09:49:00.000   450   537 I UsageStatsService: User[0] Rolling over usage stats
+2024-04-29 09:49:00.000   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-29 09:49:00.149   450   537 I UsageStatsService: User[0] Rollover scheduled @ 2024-04-30 09:48:59(1714438139634)
+2024-04-29 09:49:00.149   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-29 09:49:00.289   450   537 I UsageStatsService: User[0] Rolling over usage stats complete. Took 288 milliseconds
+2024-04-29 10:04:00.013   450   538 I ProcessStatsService: Prepared write state in 7ms
+2024-04-29 10:04:00.063   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-28-06-41-00.bin
+2024-04-29 10:09:00.086   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-29 10:10:53.687   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 10:10:53.687   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 10:10:53.692   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 10:12:00.017   450   550 W ProcessCpuTracker: Skipping unknown process pid 4381
+2024-04-29 10:27:01.779   450   538 W ProcessCpuTracker: Skipping unknown process pid 5328
+2024-04-29 10:27:01.779   450   538 W ProcessCpuTracker: Skipping unknown process pid 5329
+2024-04-29 10:34:00.028   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 10:40:53.716   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 10:40:53.716   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 10:40:53.721   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 10:41:00.009   450   550 W ProcessCpuTracker: Skipping unknown process pid 861
+2024-04-29 10:57:01.837   450   538 W ProcessCpuTracker: Skipping unknown process pid 5711
+2024-04-29 11:05:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 11:10:53.764   450   550 W ProcessCpuTracker: Skipping unknown process pid 687
+2024-04-29 11:10:53.772   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 11:10:53.772   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 11:10:53.779   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 11:11:00.009   450   550 W ProcessCpuTracker: Skipping unknown process pid 1271
+2024-04-29 11:35:00.014   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 11:40:53.787   450   550 W ProcessCpuTracker: Skipping unknown process pid 606
+2024-04-29 11:40:53.793   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 11:40:53.793   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 11:40:53.798   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 11:41:00.010   450   550 W ProcessCpuTracker: Skipping unknown process pid 1292
+2024-04-29 12:05:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 12:10:53.778   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 12:10:53.778   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 12:10:53.784   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 12:36:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 12:40:53.813   450   550 W ProcessCpuTracker: Skipping unknown process pid 1221
+2024-04-29 12:40:53.818   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 12:40:53.818   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 12:40:53.822   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 12:41:11.687   450   450 I EntropyMixer: Writing entropy...
+2024-04-29 12:42:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 6173
+2024-04-29 12:57:01.953   450   538 W ProcessCpuTracker: Skipping unknown process pid 6590
+2024-04-29 13:06:00.032   450   538 I ProcessStatsService: Prepared write state in 11ms
+2024-04-29 13:06:00.094   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-28-09-45-00.bin
+2024-04-29 13:10:53.847   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 13:10:53.847   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 13:10:53.851   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 13:11:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 2408
+2024-04-29 13:27:01.974   450   538 W ProcessCpuTracker: Skipping unknown process pid 6355
+2024-04-29 13:27:01.975   450   538 W ProcessCpuTracker: Skipping unknown process pid 6356
+2024-04-29 13:37:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 13:40:53.855   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 13:40:53.855   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 13:40:53.861   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 13:42:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 6445
+2024-04-29 14:07:00.020   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 14:10:53.880   450   550 W ProcessCpuTracker: Skipping unknown process pid 1463
+2024-04-29 14:10:53.884   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 14:10:53.884   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 14:10:53.890   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 14:11:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 1956
+2024-04-29 14:12:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 6106
+2024-04-29 14:12:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 6108
+2024-04-29 14:38:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 14:40:53.904   450   550 W ProcessCpuTracker: Skipping unknown process pid 1570
+2024-04-29 14:40:53.908   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 14:40:53.908   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 14:40:53.913   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 14:41:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 2060
+2024-04-29 15:08:00.017   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 15:10:53.924   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 15:10:53.924   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 15:10:53.929   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 15:39:00.003   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 15:40:53.963   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 15:40:53.963   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 15:40:53.970   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 15:41:11.867   450   450 I EntropyMixer: Writing entropy...
+2024-04-29 16:01:00.074   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-29 16:09:00.025   450   538 I ProcessStatsService: Prepared write state in 10ms
+2024-04-29 16:09:00.144   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-28-12-47-00.bin
+2024-04-29 16:10:53.988   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 16:10:53.988   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 16:10:53.994   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 16:40:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 16:40:53.990   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 16:40:53.990   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 16:40:53.995   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 16:57:02.191   450   538 W ProcessCpuTracker: Skipping unknown process pid 6447
+2024-04-29 17:10:00.027   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 17:10:54.018   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 17:10:54.018   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 17:10:54.023   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 17:11:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 2048
+2024-04-29 17:12:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 6312
+2024-04-29 17:40:49.885   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 17:40:54.044   450   550 W ProcessCpuTracker: Skipping unknown process pid 2349
+2024-04-29 17:40:54.048   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 17:40:54.048   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 17:40:54.053   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 18:10:54.095   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 18:10:54.095   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 18:10:54.100   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 18:11:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 18:40:54.091   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 18:40:54.091   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 18:40:54.096   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 18:41:00.008   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 18:41:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 3391
+2024-04-29 18:41:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 3392
+2024-04-29 18:41:12.043   450   450 I EntropyMixer: Writing entropy...
+2024-04-29 18:42:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 7621
+2024-04-29 18:57:02.296   450   538 W ProcessCpuTracker: Skipping unknown process pid 8073
+2024-04-29 19:10:54.110   450   550 W ProcessCpuTracker: Skipping unknown process pid 3475
+2024-04-29 19:10:54.114   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 19:10:54.114   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 19:10:54.119   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 19:11:00.019   450   550 W ProcessCpuTracker: Skipping unknown process pid 3918
+2024-04-29 19:11:00.035   450   538 I ProcessStatsService: Prepared write state in 20ms
+2024-04-29 19:11:00.125   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-28-15-49-00.bin
+2024-04-29 19:12:00.020   450   550 W ProcessCpuTracker: Skipping unknown process pid 8289
+2024-04-29 19:40:54.140   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 19:40:54.141   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 19:40:54.147   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 19:41:00.010   450   550 W ProcessCpuTracker: Skipping unknown process pid 4170
+2024-04-29 19:41:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 4171
+2024-04-29 19:42:00.006   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 19:42:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 8407
+2024-04-29 19:57:02.389   450   538 W ProcessCpuTracker: Skipping unknown process pid 8780
+2024-04-29 20:10:54.198   450   550 W ProcessCpuTracker: Skipping unknown process pid 4196
+2024-04-29 20:10:54.201   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 20:10:54.201   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 20:10:54.206   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 20:12:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 8999
+2024-04-29 20:12:59.977   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 20:27:02.383   450   538 W ProcessCpuTracker: Skipping unknown process pid 9211
+2024-04-29 20:40:54.196   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 20:40:54.196   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 20:40:54.202   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 20:41:00.018   450   550 W ProcessCpuTracker: Skipping unknown process pid 4578
+2024-04-29 20:43:00.036   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 20:57:02.435   450   538 W ProcessCpuTracker: Skipping unknown process pid 9385
+2024-04-29 21:10:54.239   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 21:10:54.239   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 21:10:54.243   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 21:11:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 4646
+2024-04-29 21:13:04.988   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 21:40:54.239   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 21:40:54.239   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 21:40:54.245   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 21:41:12.225   450   450 I EntropyMixer: Writing entropy...
+2024-04-29 21:42:00.010   450   550 W ProcessCpuTracker: Skipping unknown process pid 10178
+2024-04-29 21:44:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 22:10:54.307   450   550 W ProcessCpuTracker: Skipping unknown process pid 5612
+2024-04-29 22:10:54.311   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 22:10:54.311   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 22:10:54.316   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 22:14:00.023   450   538 I ProcessStatsService: Prepared write state in 21ms
+2024-04-29 22:14:00.080   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-28-18-52-00.bin
+2024-04-29 22:40:54.252   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 22:40:54.252   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 22:40:54.258   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 22:42:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 10874
+2024-04-29 22:42:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 10875
+2024-04-29 22:45:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-29 22:57:02.523   450   538 W ProcessCpuTracker: Skipping unknown process pid 10961
+2024-04-29 23:10:54.314   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 23:10:54.314   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 23:10:54.318   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 23:12:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 10705
+2024-04-29 23:15:01.002   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-29 23:40:54.364   450   550 W ProcessCpuTracker: Skipping unknown process pid 6125
+2024-04-29 23:40:54.364   450   550 W ProcessCpuTracker: Skipping unknown process pid 6127
+2024-04-29 23:40:54.367   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 23:40:54.367   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-29 23:40:54.371   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-29 23:41:00.017   450   550 W ProcessCpuTracker: Skipping unknown process pid 6472
+2024-04-29 23:45:00.984   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-29 23:57:02.595   450   538 W ProcessCpuTracker: Skipping unknown process pid 10882
+2024-04-30 00:10:54.359   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 00:10:54.359   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 00:10:54.364   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 00:11:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 6518
+2024-04-30 00:12:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 10838
+2024-04-30 00:16:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 00:40:54.412   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 00:40:54.412   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 00:40:54.419   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 00:41:00.016   450   550 W ProcessCpuTracker: Skipping unknown process pid 7176
+2024-04-30 00:41:12.417   450   450 I EntropyMixer: Writing entropy...
+2024-04-30 00:46:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 00:57:02.666   450   538 W ProcessCpuTracker: Skipping unknown process pid 11376
+2024-04-30 01:10:54.417   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 01:10:54.417   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 01:10:54.422   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 01:11:00.017   450   550 W ProcessCpuTracker: Skipping unknown process pid 6925
+2024-04-30 01:11:00.017   450   550 W ProcessCpuTracker: Skipping unknown process pid 6926
+2024-04-30 01:12:00.016   450   550 W ProcessCpuTracker: Skipping unknown process pid 11177
+2024-04-30 01:16:00.022   450   538 I ProcessStatsService: Prepared write state in 16ms
+2024-04-30 01:16:00.063   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-28-21-54-00.bin
+2024-04-30 01:40:54.432   450   550 W ProcessCpuTracker: Skipping unknown process pid 6445
+2024-04-30 01:40:54.435   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 01:40:54.435   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 01:40:54.441   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 01:42:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 11246
+2024-04-30 01:47:00.003   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 01:57:02.739   450   538 W ProcessCpuTracker: Skipping unknown process pid 11161
+2024-04-30 02:10:54.464   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 02:10:54.464   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 02:10:54.471   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 02:12:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 11046
+2024-04-30 02:18:00.002   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-30 02:32:31.609   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-30 02:40:54.499   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 02:40:54.499   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 02:40:54.505   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 02:41:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 7439
+2024-04-30 02:48:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 03:10:54.497   450   550 W ProcessCpuTracker: Skipping unknown process pid 6352
+2024-04-30 03:10:54.500   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 03:10:54.500   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 03:10:54.507   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 03:19:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 03:32:30.554   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-30 03:40:54.542   450   550 W ProcessCpuTracker: Skipping unknown process pid 6543
+2024-04-30 03:40:54.542   450   550 W ProcessCpuTracker: Skipping unknown process pid 6544
+2024-04-30 03:40:54.545   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 03:40:54.545   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 03:40:54.551   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 03:41:12.575   450   450 I EntropyMixer: Writing entropy...
+2024-04-30 03:49:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 03:57:02.831   450   538 W ProcessCpuTracker: Skipping unknown process pid 11033
+2024-04-30 04:10:54.533   450   550 W ProcessCpuTracker: Skipping unknown process pid 6657
+2024-04-30 04:10:54.537   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 04:10:54.537   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 04:10:54.542   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 04:12:00.009   450   550 W ProcessCpuTracker: Skipping unknown process pid 11364
+2024-04-30 04:19:00.033   450   538 I ProcessStatsService: Prepared write state in 22ms
+2024-04-30 04:19:00.118   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-29-00-56-00.bin
+2024-04-30 04:27:02.860   450   538 W ProcessCpuTracker: Skipping unknown process pid 11675
+2024-04-30 04:27:02.861   450   538 W ProcessCpuTracker: Skipping unknown process pid 11680
+2024-04-30 04:40:54.542   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 04:40:54.542   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 04:40:54.547   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 04:42:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 11616
+2024-04-30 04:50:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 05:10:54.567   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 05:10:54.567   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 05:10:54.571   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 05:11:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 7720
+2024-04-30 05:20:00.020   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 05:40:54.574   450   550 W ProcessCpuTracker: Skipping unknown process pid 6809
+2024-04-30 05:40:54.574   450   550 W ProcessCpuTracker: Skipping unknown process pid 6810
+2024-04-30 05:40:54.578   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 05:40:54.578   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 05:40:54.583   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 05:41:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 7189
+2024-04-30 05:51:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 05:57:02.978   450   538 W ProcessCpuTracker: Skipping unknown process pid 12089
+2024-04-30 06:10:54.624   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 06:10:54.624   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 06:10:54.629   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 06:11:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 7729
+2024-04-30 06:21:00.019   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 06:27:03.003   450   538 W ProcessCpuTracker: Skipping unknown process pid 12175
+2024-04-30 06:40:54.641   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 06:40:54.641   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 06:40:54.646   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 06:41:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 7896
+2024-04-30 06:41:12.727   450   450 I EntropyMixer: Writing entropy...
+2024-04-30 06:51:00.026   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 07:10:54.657   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 07:10:54.657   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 07:10:54.661   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 07:21:00.043   450   538 I ProcessStatsService: Prepared write state in 16ms
+2024-04-30 07:21:00.083   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-29-04-00-00.bin
+2024-04-30 07:40:54.654   450   550 W ProcessCpuTracker: Skipping unknown process pid 8625
+2024-04-30 07:40:54.657   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 07:40:54.657   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 07:40:54.662   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 07:41:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 9007
+2024-04-30 07:52:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 08:10:54.709   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 08:10:54.709   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 08:10:54.717   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 08:11:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 9711
+2024-04-30 08:12:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 14053
+2024-04-30 08:22:00.001   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-30 08:40:54.709   450   550 W ProcessCpuTracker: Skipping unknown process pid 9390
+2024-04-30 08:40:54.713   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 08:40:54.713   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 08:40:54.719   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 08:41:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 9785
+2024-04-30 08:53:00.003   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 08:57:03.159   450   538 W ProcessCpuTracker: Skipping unknown process pid 14822
+2024-04-30 09:10:54.774   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 09:10:54.774   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 09:10:54.779   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 09:11:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 10513
+2024-04-30 09:12:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 14805
+2024-04-30 09:23:00.001   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-30 09:27:03.155   450   538 W ProcessCpuTracker: Skipping unknown process pid 14883
+2024-04-30 09:40:54.763   450   550 W ProcessCpuTracker: Skipping unknown process pid 9757
+2024-04-30 09:40:54.767   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 09:40:54.767   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 09:40:54.774   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 09:41:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 10106
+2024-04-30 09:41:12.867   450   450 I EntropyMixer: Writing entropy...
+2024-04-30 09:42:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 14379
+2024-04-30 09:42:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 14381
+2024-04-30 09:50:00.001   450   537 I UsageStatsService: User[0] Rolling over usage stats
+2024-04-30 09:50:00.001   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-30 09:50:00.160   450   537 I UsageStatsService: User[0] Rollover scheduled @ 2024-05-01 09:49:59(1714524599174)
+2024-04-30 09:50:00.160   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-30 09:50:00.300   450   537 I UsageStatsService: User[0] Rolling over usage stats complete. Took 298 milliseconds
+2024-04-30 09:53:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 10:10:00.096   450   537 I UsageStatsService: User[0] Flushing usage stats to disk
+2024-04-30 10:10:54.751   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 10:10:54.751   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 10:10:54.756   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 10:12:00.010   450   550 W ProcessCpuTracker: Skipping unknown process pid 14840
+2024-04-30 10:24:00.015   450   538 I ProcessStatsService: Prepared write state in 15ms
+2024-04-30 10:24:00.063   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-29-07-02-00.bin
+2024-04-30 10:40:54.790   450   550 W ProcessCpuTracker: Skipping unknown process pid 10637
+2024-04-30 10:40:54.792   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 10:40:54.792   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 10:40:54.797   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 10:42:00.018   450   550 W ProcessCpuTracker: Skipping unknown process pid 15267
+2024-04-30 10:55:00.003   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 11:10:54.823   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 11:10:54.823   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 11:10:54.827   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 11:11:00.014   450   550 W ProcessCpuTracker: Skipping unknown process pid 10985
+2024-04-30 11:25:00.001   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-30 11:40:54.823   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 11:40:54.823   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 11:40:54.828   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 11:56:00.001   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-30 12:10:54.867   450   550 W ProcessCpuTracker: Skipping unknown process pid 11359
+2024-04-30 12:10:54.869   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 12:10:54.869   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 12:10:54.873   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 12:26:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 12:40:54.867   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 12:40:54.867   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 12:40:54.872   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 12:41:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 12626
+2024-04-30 12:41:13.019   450   450 I EntropyMixer: Writing entropy...
+2024-04-30 12:57:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 12:57:03.386   450   538 W ProcessCpuTracker: Skipping unknown process pid 16898
+2024-04-30 13:10:54.909   450   550 W ProcessCpuTracker: Skipping unknown process pid 11724
+2024-04-30 13:10:54.911   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 13:10:54.911   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 13:10:54.917   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 13:12:00.013   450   550 W ProcessCpuTracker: Skipping unknown process pid 16449
+2024-04-30 13:27:00.020   450   538 I ProcessStatsService: Prepared write state in 18ms
+2024-04-30 13:27:00.065   450   537 I ProcessStatsService: Pruning old procstats: /data/system/procstats/state-2024-04-29-10-04-00.bin
+2024-04-30 13:40:54.913   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 13:40:54.913   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 13:40:54.920   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 13:42:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 16264
+2024-04-30 13:42:00.011   450   550 W ProcessCpuTracker: Skipping unknown process pid 16267
+2024-04-30 13:57:03.426   450   538 W ProcessCpuTracker: Skipping unknown process pid 16573
+2024-04-30 13:58:00.001   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 14:10:54.943   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 14:10:54.943   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 14:10:54.949   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 14:27:03.485   450   538 W ProcessCpuTracker: Skipping unknown process pid 16252
+2024-04-30 14:29:00.003   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-30 14:29:00.004   450   538 I ProcessStatsService: Prepared write state in 0ms
+2024-04-30 14:40:54.992   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 14:40:54.992   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 14:40:55.001   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 14:42:00.012   450   550 W ProcessCpuTracker: Skipping unknown process pid 16607
+2024-04-30 14:59:00.002   450   538 I ProcessStatsService: Prepared write state in 1ms
+2024-04-30 15:00:23.688   450 29620 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 31456
+2024-04-30 15:00:24.648   450 29620 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 31538
+2024-04-30 15:00:31.446   450   554 I PackageManager: Package com.example.kiosk_electric_charger_pole codePath changed from /data/app/com.example.kiosk_electric_charger_pole-1 to /data/app/com.example.kiosk_electric_charger_pole-2; Retaining data and using new
+2024-04-30 15:00:31.446   450   554 W PackageManager: Code path for com.example.kiosk_electric_charger_pole changing from /data/app/com.example.kiosk_electric_charger_pole-1 to /data/app/com.example.kiosk_electric_charger_pole-2
+2024-04-30 15:00:31.447   450   554 W PackageManager: Resource path for com.example.kiosk_electric_charger_pole changing from /data/app/com.example.kiosk_electric_charger_pole-1 to /data/app/com.example.kiosk_electric_charger_pole-2
+2024-04-30 15:00:31.582   450   554 I PackageManager: Un-granting permission android.permission.WRITE_MEDIA_STORAGE from package android.rockchip.update.service (protectionLevel=18 flags=0x3888be45)
+2024-04-30 15:00:31.586   450   554 I PackageManager: Un-granting permission android.permission.REBOOT from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:00:31.586   450   554 I PackageManager: Un-granting permission android.permission.WRITE_SETTINGS from package com.ztl.helper (protectionLevel=1218 flags=0x38c83e44)
+2024-04-30 15:00:31.586   450   554 I PackageManager: Un-granting permission android.permission.SET_PREFERRED_APPLICATIONS from package com.ztl.helper (protectionLevel=2 flags=0x38c83e44)
+2024-04-30 15:00:31.586   450   554 I PackageManager: Un-granting permission android.permission.OVERRIDE_WIFI_CONFIG from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:00:31.586   450   554 I PackageManager: Un-granting permission android.permission.INTERACT_ACROSS_USERS_FULL from package com.ztl.helper (protectionLevel=258 flags=0x38c83e44)
+2024-04-30 15:00:31.586   450   554 I PackageManager: Un-granting permission android.permission.SHUTDOWN from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:00:31.586   450   554 I PackageManager: Un-granting permission android.permission.STATUS_BAR from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:00:31.587   450   554 W PackageManager: Not granting permission android.permission.REBOOT to package com.example.kiosk_electric_charger_pole (protectionLevel=18 flags=0x2858bf46)
+2024-04-30 15:00:31.587   450   554 W PackageManager: Not granting permission android.permission.INSTALL_PACKAGES to package com.example.kiosk_electric_charger_pole (protectionLevel=18 flags=0x2858bf46)
+2024-04-30 15:00:31.587   450   554 W PackageManager: Not granting permission android.permission.BIND_DEVICE_ADMIN to package com.example.kiosk_electric_charger_pole (protectionLevel=2 flags=0x2858bf46)
+2024-04-30 15:00:31.587   450   554 W PackageManager: Not granting permission android.permission.READ_LOGS to package com.example.kiosk_electric_charger_pole (protectionLevel=50 flags=0x2858bf46)
+2024-04-30 15:00:31.809   450   538 I ActivityManager: Start proc 32159:com.android.gallery3d/1000 for broadcast com.android.gallery3d/.app.PackagesMonitor
+2024-04-30 15:00:31.970   450   537 W VoiceInteractionManagerService: no available voice recognition services found for user 0
+2024-04-30 15:00:32.066 32159 32159 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.gallery3d.app.PackagesMonitor.onReceive:40 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:00:32.080   450  2399 I ActivityManager: Start proc 32196:com.android.keychain/1000 for broadcast com.android.keychain/.KeyChainBroadcastReceiver
+2024-04-30 15:00:32.158 32196 32196 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.keychain.KeyChainBroadcastReceiver.onReceive:12 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:00:32.170 32159 32159 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.gallery3d.app.PackagesMonitor.onReceive:40 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:00:32.207   450  2399 I ActivityManager: Start proc 32224:com.svox.pico/u0a45 for broadcast com.svox.pico/.VoiceDataInstallerReceiver
+2024-04-30 15:00:32.395   450 25032 I ActivityManager: Killing 8336:android.process.media/u0a8 (adj 906): empty for 111277s
+2024-04-30 15:00:32.696   450 25127 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 32165
+2024-04-30 15:00:33.569   450 25127 I ActivityManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.kiosk_electric_charger_pole/.SplashActivity} from uid 0 on display 0
+2024-04-30 15:00:33.580   450   549 I WindowManager: Sending new config to window Window{80635b4 u0 Starting com.example.kiosk_electric_charger_pole}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:00:33.580   450   549 I WindowManager: createSurface WindowStateAnimator{c39e5dd Starting com.example.kiosk_electric_charger_pole}: mDrawState=DRAW_PENDING
+2024-04-30 15:00:33.587   450 25032 I ActivityManager: Start proc 32361:com.example.kiosk_electric_charger_pole/1000 for activity com.example.kiosk_electric_charger_pole/.SplashActivity
+2024-04-30 15:00:34.014   450 25032 I WindowManager: Sending new config to window Window{f954caa u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:00:34.015   450 25032 I WindowManager: createSurface WindowStateAnimator{569a09b com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:00:34.029   450 25032 I WindowManager: Resizing Window{f954caa u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity} WITH DRAW PENDING
+2024-04-30 15:00:34.045   450 25032 I WindowManager: Sending new config to window Window{ee23411 u0 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:00:34.045   450 25032 I WindowManager: createSurface WindowStateAnimator{8538976 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:00:34.056   450 25032 I WindowManager: Resizing Window{ee23411 u0 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity} WITH DRAW PENDING
+2024-04-30 15:00:36.982   450 25127 I ActivityManager: Killing 18093:com.android.calendar/u0a27 (adj 906): empty for 42486s
+2024-04-30 15:00:37.656   450 23881 I ActivityManager: Killing 18128:com.android.providers.calendar/u0a2 (adj 906): empty for 42481s
+2024-04-30 15:00:43.494   450 25127 I ActivityManager: START u0 {cmp=com.example.kiosk_electric_charger_pole/.CenterActivity} from uid 1000 on display 0
+2024-04-30 15:00:44.504   450   594 I WindowManager: Sending new config to window Window{4f05b7c u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:00:44.504   450   594 I WindowManager: createSurface WindowStateAnimator{41eec05 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:00:44.513   450   594 I WindowManager: Resizing Window{4f05b7c u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity} WITH DRAW PENDING
+2024-04-30 15:10:47.708   450   482 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 11767
+2024-04-30 15:10:47.708   450   482 I ActivityManager: Killing 32361:com.example.kiosk_electric_charger_pole/1000 (adj 0): stop com.example.kiosk_electric_charger_pole
+2024-04-30 15:10:47.709   450   482 W ActivityManager: Force removing ActivityRecord{27eea50 u0 com.example.kiosk_electric_charger_pole/.CenterActivity t1826}: app died, no saved state
+2024-04-30 15:10:47.715   450   540 I libprocessgroup: Killing pid 13318 in uid 1000 as part of process group 32361
+2024-04-30 15:10:47.742   450 19040 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 11769
+2024-04-30 15:10:47.748   450 17504 I WindowManager: createSurface WindowStateAnimator{a97ca5e com.android.launcher3/com.android.launcher3.Launcher}: mDrawState=DRAW_PENDING
+2024-04-30 15:10:47.751   450 17504 I WindowManager: Resizing Window{ecbde9d u0 com.android.launcher3/com.android.launcher3.Launcher} WITH DRAW PENDING
+2024-04-30 15:10:47.807   450   482 W InputMethodManagerService: Got RemoteException sending setActive(false) notification to pid 32361 uid 1000
+2024-04-30 15:10:48.850   450 14742 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 11871
+2024-04-30 15:10:48.875   450 14742 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 11874
+2024-04-30 15:10:54.991   450   550 W ProcessCpuTracker: Skipping unknown process pid 12355
+2024-04-30 15:10:54.995   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 15:10:54.995   450   541 E BatteryStatsService: no controller energy info supplied
+2024-04-30 15:10:55.000   450   541 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+2024-04-30 15:10:55.498   450   554 I PackageManager: Package com.example.kiosk_electric_charger_pole codePath changed from /data/app/com.example.kiosk_electric_charger_pole-2 to /data/app/com.example.kiosk_electric_charger_pole-1; Retaining data and using new
+2024-04-30 15:10:55.499   450   554 W PackageManager: Code path for com.example.kiosk_electric_charger_pole changing from /data/app/com.example.kiosk_electric_charger_pole-2 to /data/app/com.example.kiosk_electric_charger_pole-1
+2024-04-30 15:10:55.499   450   554 W PackageManager: Resource path for com.example.kiosk_electric_charger_pole changing from /data/app/com.example.kiosk_electric_charger_pole-2 to /data/app/com.example.kiosk_electric_charger_pole-1
+2024-04-30 15:10:55.631   450   554 I PackageManager: Un-granting permission android.permission.WRITE_MEDIA_STORAGE from package android.rockchip.update.service (protectionLevel=18 flags=0x3888be45)
+2024-04-30 15:10:55.635   450   554 I PackageManager: Un-granting permission android.permission.REBOOT from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:10:55.635   450   554 I PackageManager: Un-granting permission android.permission.WRITE_SETTINGS from package com.ztl.helper (protectionLevel=1218 flags=0x38c83e44)
+2024-04-30 15:10:55.636   450   554 I PackageManager: Un-granting permission android.permission.SET_PREFERRED_APPLICATIONS from package com.ztl.helper (protectionLevel=2 flags=0x38c83e44)
+2024-04-30 15:10:55.636   450   554 I PackageManager: Un-granting permission android.permission.OVERRIDE_WIFI_CONFIG from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:10:55.636   450   554 I PackageManager: Un-granting permission android.permission.INTERACT_ACROSS_USERS_FULL from package com.ztl.helper (protectionLevel=258 flags=0x38c83e44)
+2024-04-30 15:10:55.636   450   554 I PackageManager: Un-granting permission android.permission.SHUTDOWN from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:10:55.636   450   554 I PackageManager: Un-granting permission android.permission.STATUS_BAR from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:10:55.637   450   554 W PackageManager: Not granting permission android.permission.REBOOT to package com.example.kiosk_electric_charger_pole (protectionLevel=18 flags=0x2858bf46)
+2024-04-30 15:10:55.637   450   554 W PackageManager: Not granting permission android.permission.INSTALL_PACKAGES to package com.example.kiosk_electric_charger_pole (protectionLevel=18 flags=0x2858bf46)
+2024-04-30 15:10:55.637   450   554 W PackageManager: Not granting permission android.permission.BIND_DEVICE_ADMIN to package com.example.kiosk_electric_charger_pole (protectionLevel=2 flags=0x2858bf46)
+2024-04-30 15:10:55.637   450   554 W PackageManager: Not granting permission android.permission.READ_LOGS to package com.example.kiosk_electric_charger_pole (protectionLevel=50 flags=0x2858bf46)
+2024-04-30 15:10:55.874 32159 32159 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.gallery3d.app.PackagesMonitor.onReceive:40 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:10:55.889 32196 32196 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.keychain.KeyChainBroadcastReceiver.onReceive:12 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:10:55.980 32159 32159 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.gallery3d.app.PackagesMonitor.onReceive:40 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:10:56.065   450   537 W VoiceInteractionManagerService: no available voice recognition services found for user 0
+2024-04-30 15:10:56.715   450 29093 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 12420
+2024-04-30 15:10:57.596   450 29093 I ActivityManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.kiosk_electric_charger_pole/.SplashActivity} from uid 0 on display 0
+2024-04-30 15:10:57.612   450   549 I WindowManager: Sending new config to window Window{eb684be u0 Starting com.example.kiosk_electric_charger_pole}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:10:57.613   450   549 I WindowManager: createSurface WindowStateAnimator{91c991f Starting com.example.kiosk_electric_charger_pole}: mDrawState=DRAW_PENDING
+2024-04-30 15:10:57.614   450 29620 I ActivityManager: Start proc 12566:com.example.kiosk_electric_charger_pole/1000 for activity com.example.kiosk_electric_charger_pole/.SplashActivity
+2024-04-30 15:10:58.036   450 23881 I WindowManager: Sending new config to window Window{c0d4504 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:10:58.037   450 23881 I WindowManager: createSurface WindowStateAnimator{1c5caed com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:10:58.063   450 23881 I WindowManager: Resizing Window{c0d4504 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity} WITH DRAW PENDING
+2024-04-30 15:10:58.077   450 23881 I WindowManager: Sending new config to window Window{e08e3b3 u0 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:10:58.077   450 23881 I WindowManager: createSurface WindowStateAnimator{e9bad70 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:10:58.100   450 23881 I WindowManager: Resizing Window{e08e3b3 u0 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity} WITH DRAW PENDING
+2024-04-30 15:11:07.546   450 16871 I ActivityManager: START u0 {cmp=com.example.kiosk_electric_charger_pole/.CenterActivity} from uid 1000 on display 0
+2024-04-30 15:11:07.575   450   550 W ProcessCpuTracker: Skipping unknown process pid 13219
+2024-04-30 15:11:07.575   450   550 W ProcessCpuTracker: Skipping unknown process pid 13221
+2024-04-30 15:11:08.572   450 16871 I WindowManager: Sending new config to window Window{8baea07 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:11:08.573   450 16871 I WindowManager: createSurface WindowStateAnimator{34df734 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:11:08.578   450 16871 I WindowManager: Resizing Window{8baea07 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity} WITH DRAW PENDING
+2024-04-30 15:12:49.913   450 11860 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 20322
+2024-04-30 15:12:49.913   450 11860 I ActivityManager: Killing 12566:com.example.kiosk_electric_charger_pole/1000 (adj 0): stop com.example.kiosk_electric_charger_pole
+2024-04-30 15:12:49.914   450 11860 W ActivityManager: Force removing ActivityRecord{923162b u0 com.example.kiosk_electric_charger_pole/.CenterActivity t1827}: app died, no saved state
+2024-04-30 15:12:49.949   450 11436 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 20324
+2024-04-30 15:12:49.959   450 11860 I WindowManager: createSurface WindowStateAnimator{a97ca5e com.android.launcher3/com.android.launcher3.Launcher}: mDrawState=DRAW_PENDING
+2024-04-30 15:12:49.964   450 11860 I WindowManager: Resizing Window{ecbde9d u0 com.android.launcher3/com.android.launcher3.Launcher} WITH DRAW PENDING
+2024-04-30 15:12:50.027   450 11860 W InputMethodManagerService: Got RemoteException sending setActive(false) notification to pid 12566 uid 1000
+2024-04-30 15:12:51.004   450 14742 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 20411
+2024-04-30 15:12:51.080   450 14742 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 20413
+2024-04-30 15:12:57.827   450   554 I PackageManager: Package com.example.kiosk_electric_charger_pole codePath changed from /data/app/com.example.kiosk_electric_charger_pole-1 to /data/app/com.example.kiosk_electric_charger_pole-2; Retaining data and using new
+2024-04-30 15:12:57.828   450   554 W PackageManager: Code path for com.example.kiosk_electric_charger_pole changing from /data/app/com.example.kiosk_electric_charger_pole-1 to /data/app/com.example.kiosk_electric_charger_pole-2
+2024-04-30 15:12:57.828   450   554 W PackageManager: Resource path for com.example.kiosk_electric_charger_pole changing from /data/app/com.example.kiosk_electric_charger_pole-1 to /data/app/com.example.kiosk_electric_charger_pole-2
+2024-04-30 15:12:57.964   450   554 I PackageManager: Un-granting permission android.permission.WRITE_MEDIA_STORAGE from package android.rockchip.update.service (protectionLevel=18 flags=0x3888be45)
+2024-04-30 15:12:57.969   450   554 I PackageManager: Un-granting permission android.permission.REBOOT from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:12:57.969   450   554 I PackageManager: Un-granting permission android.permission.WRITE_SETTINGS from package com.ztl.helper (protectionLevel=1218 flags=0x38c83e44)
+2024-04-30 15:12:57.969   450   554 I PackageManager: Un-granting permission android.permission.SET_PREFERRED_APPLICATIONS from package com.ztl.helper (protectionLevel=2 flags=0x38c83e44)
+2024-04-30 15:12:57.969   450   554 I PackageManager: Un-granting permission android.permission.OVERRIDE_WIFI_CONFIG from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:12:57.969   450   554 I PackageManager: Un-granting permission android.permission.INTERACT_ACROSS_USERS_FULL from package com.ztl.helper (protectionLevel=258 flags=0x38c83e44)
+2024-04-30 15:12:57.969   450   554 I PackageManager: Un-granting permission android.permission.SHUTDOWN from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:12:57.969   450   554 I PackageManager: Un-granting permission android.permission.STATUS_BAR from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:12:57.971   450   554 W PackageManager: Not granting permission android.permission.REBOOT to package com.example.kiosk_electric_charger_pole (protectionLevel=18 flags=0x2858bf46)
+2024-04-30 15:12:57.971   450   554 W PackageManager: Not granting permission android.permission.INSTALL_PACKAGES to package com.example.kiosk_electric_charger_pole (protectionLevel=18 flags=0x2858bf46)
+2024-04-30 15:12:57.971   450   554 W PackageManager: Not granting permission android.permission.BIND_DEVICE_ADMIN to package com.example.kiosk_electric_charger_pole (protectionLevel=2 flags=0x2858bf46)
+2024-04-30 15:12:57.971   450   554 W PackageManager: Not granting permission android.permission.READ_LOGS to package com.example.kiosk_electric_charger_pole (protectionLevel=50 flags=0x2858bf46)
+2024-04-30 15:12:58.186 20644 20652 F libc    : Fatal signal 11 (SIGSEGV), code 1, fault addr 0xa8 in tid 20652 (Binder:20644_2)
+2024-04-30 15:12:58.221 32159 32159 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.gallery3d.app.PackagesMonitor.onReceive:40 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:12:58.235 32196 32196 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.keychain.KeyChainBroadcastReceiver.onReceive:12 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:12:58.290 32159 32159 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.gallery3d.app.PackagesMonitor.onReceive:40 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:12:58.345   450   537 W VoiceInteractionManagerService: no available voice recognition services found for user 0
+2024-04-30 15:12:59.044   450   485 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 21025
+2024-04-30 15:12:59.911   450   485 I ActivityManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.kiosk_electric_charger_pole/.SplashActivity} from uid 0 on display 0
+2024-04-30 15:12:59.925   450   549 I WindowManager: Sending new config to window Window{f869f60 u0 Starting com.example.kiosk_electric_charger_pole}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:12:59.925   450   549 I WindowManager: createSurface WindowStateAnimator{5214c19 Starting com.example.kiosk_electric_charger_pole}: mDrawState=DRAW_PENDING
+2024-04-30 15:12:59.928   450 11436 I ActivityManager: Start proc 21164:com.example.kiosk_electric_charger_pole/1000 for activity com.example.kiosk_electric_charger_pole/.SplashActivity
+2024-04-30 15:13:00.017   450 11436 W ActivityManager: Slow operation: 62ms so far, now at attachApplicationLocked: after mServices.attachApplicationLocked
+2024-04-30 15:13:00.380   450 11436 I WindowManager: Sending new config to window Window{ceb01b6 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:13:00.381   450 11436 I WindowManager: createSurface WindowStateAnimator{3595eb7 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:13:00.408   450 11436 I WindowManager: Resizing Window{ceb01b6 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity} WITH DRAW PENDING
+2024-04-30 15:13:00.420   450 11436 I WindowManager: Sending new config to window Window{44c058d u0 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:13:00.420   450 11436 I WindowManager: createSurface WindowStateAnimator{61d8342 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:13:00.446   450 11436 I WindowManager: Resizing Window{44c058d u0 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity} WITH DRAW PENDING
+2024-04-30 15:13:09.898   450 12107 I ActivityManager: START u0 {cmp=com.example.kiosk_electric_charger_pole/.CenterActivity} from uid 1000 on display 0
+--------- beginning of main
+2024-04-30 15:13:10.401 21164 21255 I SQLiteConnectionPool: The connection pool for /data/user/0/com.example.kiosk_electric_charger_pole/databases/mytestgo.db has been closed but there are still 1 connections in use.  They will be closed as they are released back to the pool.
+2024-04-30 15:13:10.741 21164 21169 I art     : Do partial code cache collection, code=22KB, data=31KB
+2024-04-30 15:13:10.742 21164 21169 I art     : After code cache collection, code=22KB, data=31KB
+2024-04-30 15:13:10.742 21164 21169 I art     : Increasing code cache capacity to 128KB
+2024-04-30 15:13:10.819 21164 21169 I art     : Do partial code cache collection, code=41KB, data=59KB
+2024-04-30 15:13:10.820 21164 21169 I art     : After code cache collection, code=38KB, data=58KB
+2024-04-30 15:13:10.820 21164 21169 I art     : Increasing code cache capacity to 256KB
+2024-04-30 15:13:10.923   450 12107 I WindowManager: Sending new config to window Window{5b44c1 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:13:10.924   450 12107 I WindowManager: createSurface WindowStateAnimator{4154466 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:13:10.942 21164 21164 I RenderThread: type=1400 audit(0.0:12012): avc: denied { transfer } for scontext=u:r:zygote:s0 tcontext=u:r:surfaceflinger:s0 tclass=binder permissive=1
+2024-04-30 15:13:10.940   450 12107 I WindowManager: Resizing Window{5b44c1 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity} WITH DRAW PENDING
+2024-04-30 15:13:11.347   450   549 I ActivityManager: Displayed com.example.kiosk_electric_charger_pole/.CenterActivity: +1s440ms
+2024-04-30 15:13:11.420   238 21223 I FFIDecoder: waiting on end of decoder thread
+2024-04-30 15:13:11.420   238 21223 E FFMpegThread: DecoderVideo,wait
+2024-04-30 15:13:11.420   238 21223 E TraceThread:     DecoderVideo(tid = 2661808416)--> [UID=550998b2] pthread_join begin
+2024-04-30 15:13:11.421   238 21223 E TraceThread:     DecoderVideo(tid = 2661808416)--> [UID=550998b2] pthread_join end
+2024-04-30 15:13:11.421   238 21223 E FFMpegThread: DecoderVideo:wait ok mThreadStatus=-1
+2024-04-30 15:13:11.421   238 21223 E RockFFPlayerBase: FFMPlayerBase::flushRenderQueue in
+2024-04-30 15:13:11.421   238 21223 E RockFFPlayerBase: FFMPlayerBase::flushRenderQueue out
+2024-04-30 15:13:11.421   238 21223 E TraceThread:    RkFrameManage(tid = 2666002720)--> [UID=550998b2] pthread_join begin
+2024-04-30 15:13:11.427   238 21223 E TraceThread:    RkFrameManage(tid = 2666002720)--> [UID=550998b2] pthread_join end
+2024-04-30 15:13:11.427   238 21223 E RenderShared: ~RkRenderer in
+2024-04-30 15:13:11.440   238 21223 I RenderBase: renderBlackFrame, set buffer black, bitDepth: 8, format: 21
+2024-04-30 15:13:11.441   238 21223 E RenderShared: ~RkRenderer out
+2024-04-30 15:13:11.453   238 21972 I FrameManage: RkFrameManage::~RkFrameManage end!
+2024-04-30 15:13:11.509   238 21972 I H264_DEBUG: deinit DONE
+2024-04-30 15:13:11.509   238 21972 I vpu_api : org vpu_close_context ok
+2024-04-30 15:13:11.518   238 21972 E RockFFPlayerBase: closeContext : in
+2024-04-30 15:13:11.518   238 21972 E RockFFPlayerBase: closeContext : out
+2024-04-30 15:13:11.544   238   238 E FFPlayer: ~FFPlayer
+2024-04-30 15:13:11.544   238   238 E TraceThread:     VsyncReciver(tid = 2693269792)--> [UID=550998b2] pthread_join begin-->player = 0xa0b93400
+2024-04-30 15:13:11.546   238   238 E TraceThread:     VsyncReciver(tid = 2693269792)--> [UID=550998b2] pthread_join   end-->player = 0xa0b93400
+2024-04-30 15:13:11.629   238   238 E TraceThread:     RockFFPlayer(tid = 2769532212)--> [UID=550998b2] ~FFMPlayer Destruction; object=0xa0b93400
+2024-04-30 15:13:11.632   450 12107 I MediaFocusControl:  AudioFocus  abandonAudioFocus() from uid/pid 1000/21164 clientId=android.media.AudioManager@f7d8ddd
+2024-04-30 15:13:11.674   217   217 W SurfaceFlinger: couldn't log to binary event log: overflow.
+2024-04-30 15:13:11.724   217   217 W SurfaceFlinger: couldn't log to binary event log: overflow.
+2024-04-30 15:13:15.462 21164 21172 I art     : Debugger is no longer active
+2024-04-30 15:13:15.462 21164 21172 I art     : Starting a blocking GC Instrumentation
+2024-04-30 15:13:22.068 21164 21164 I com.example.kiosk_electric_charger_pole: type=1400 audit(0.0:12014): avc: denied { read write } for comm=50726F66696C65205361766572 name="primary.prof" dev="mmcblk2p15" ino=147197 scontext=u:r:zygote:s0 tcontext=u:object_r:user_profile_data_file:s0 tclass=file permissive=1
+2024-04-30 15:13:22.068 21164 21164 I com.example.kiosk_electric_charger_pole: type=1400 audit(0.0:12015): avc: denied { open } for comm=50726F66696C65205361766572 path="/data/misc/profiles/cur/0/com.example.kiosk_electric_charger_pole/primary.prof" dev="mmcblk2p15" ino=147197 scontext=u:r:zygote:s0 tcontext=u:object_r:user_profile_data_file:s0 tclass=file permissive=1
+2024-04-30 15:13:22.068 21164 21164 I com.example.kiosk_electric_charger_pole: type=1400 audit(0.0:12016): avc: denied { lock } for comm=50726F66696C65205361766572 path="/data/misc/profiles/cur/0/com.example.kiosk_electric_charger_pole/primary.prof" dev="mmcblk2p15" ino=147197 scontext=u:r:zygote:s0 tcontext=u:object_r:user_profile_data_file:s0 tclass=file permissive=1
+2024-04-30 15:16:52.395 21164 21164 I com.example.kiosk_electric_charger_pole: type=1400 audit(0.0:12017): avc: denied { execmem } for comm=4A69742074687265616420706F6F6C scontext=u:r:zygote:s0 tcontext=u:r:zygote:s0 tclass=process permissive=1
+2024-04-30 15:16:52.765  5551  5551 I vpu_api : dlopen vpu lib success
+2024-04-30 15:16:52.765  5544  5544 I vpu_api : dlopen vpu lib success
+2024-04-30 15:16:52.765  5547  5547 I vpu_api : dlopen vpu lib success
+2024-04-30 15:16:52.902  5544  5544 E memtrack: Couldn't load memtrack module (No such file or directory)
+2024-04-30 15:16:52.902  5544  5544 E android.os.Debug: failed to load memtrack module: -2
+2024-04-30 15:16:52.904  5544  5544 I Radio-JNI: register_android_hardware_Radio DONE
+2024-04-30 15:16:52.907  5551  5551 E memtrack: Couldn't load memtrack module (No such file or directory)
+2024-04-30 15:16:52.907  5551  5551 E android.os.Debug: failed to load memtrack module: -2
+2024-04-30 15:16:52.908  5547  5547 E memtrack: Couldn't load memtrack module (No such file or directory)
+2024-04-30 15:16:52.908  5547  5547 E android.os.Debug: failed to load memtrack module: -2
+2024-04-30 15:16:52.908  5551  5551 I Radio-JNI: register_android_hardware_Radio DONE
+2024-04-30 15:16:52.909  5547  5547 I Radio-JNI: register_android_hardware_Radio DONE
+2024-04-30 15:16:52.928   450  2399 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 5551
+2024-04-30 15:16:52.929   450  2399 I ActivityManager: Killing 21164:com.example.kiosk_electric_charger_pole/1000 (adj 0): stop com.example.kiosk_electric_charger_pole
+2024-04-30 15:16:52.929   450  2399 W ActivityManager: Force removing ActivityRecord{1795945 u0 com.example.kiosk_electric_charger_pole/.CenterActivity t1828}: app died, no saved state
+2024-04-30 15:16:52.941   217   217 W SurfaceFlinger: couldn't log to binary event log: overflow.
+2024-04-30 15:16:52.944  5544  5544 I vpu_api : dlclose vpu lib
+2024-04-30 15:16:52.957   450 13655 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 5547
+2024-04-30 15:16:52.964   637   637 E PhoneInterfaceManager: [PhoneIntfMgr] getCarrierPackageNamesForIntent: No UICC
+2024-04-30 15:16:52.964   637   637 E PhoneInterfaceManager: [PhoneIntfMgr] getCarrierPackageNamesForIntent: No UICC
+2024-04-30 15:16:52.976   450  2399 I WindowManager: createSurface WindowStateAnimator{a97ca5e com.android.launcher3/com.android.launcher3.Launcher}: mDrawState=DRAW_PENDING
+2024-04-30 15:16:52.979   450  2399 I WindowManager: Resizing Window{ecbde9d u0 com.android.launcher3/com.android.launcher3.Launcher} WITH DRAW PENDING
+2024-04-30 15:16:52.984  5547  5547 I vpu_api : dlclose vpu lib
+2024-04-30 15:16:52.995  5551  5551 I vpu_api : dlclose vpu lib
+2024-04-30 15:16:53.034   450  2399 W InputMethodManagerService: Got RemoteException sending setActive(false) notification to pid 21164 uid 1000
+2024-04-30 15:16:53.558  2151  2210 W OpenGLRenderer: Incorrectly called buildLayer on View: ShortcutAndWidgetContainer, destroying layer...
+2024-04-30 15:16:53.935  5655  5655 I vpu_api : dlopen vpu lib success
+2024-04-30 15:16:53.935  5653  5653 I vpu_api : dlopen vpu lib success
+2024-04-30 15:16:54.046  5655  5655 W art     : Failed to stat, will retry: /data/dalvik-cache/arm/system@framework@am.jar@classes.dex.flock: No such file or directory
+2024-04-30 15:16:54.064  5653  5653 E memtrack: Couldn't load memtrack module (No such file or directory)
+2024-04-30 15:16:54.064  5653  5653 E android.os.Debug: failed to load memtrack module: -2
+2024-04-30 15:16:54.065  5653  5653 I Radio-JNI: register_android_hardware_Radio DONE
+2024-04-30 15:16:54.065  5655  5655 E memtrack: Couldn't load memtrack module (No such file or directory)
+2024-04-30 15:16:54.066  5655  5655 E android.os.Debug: failed to load memtrack module: -2
+2024-04-30 15:16:54.067  5655  5655 I Radio-JNI: register_android_hardware_Radio DONE
+2024-04-30 15:16:54.087   450 13655 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 5655
+2024-04-30 15:16:54.089   450 11860 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 5653
+2024-04-30 15:16:54.093   637   637 E PhoneInterfaceManager: [PhoneIntfMgr] getCarrierPackageNamesForIntent: No UICC
+2024-04-30 15:16:54.094   637   637 E PhoneInterfaceManager: [PhoneIntfMgr] getCarrierPackageNamesForIntent: No UICC
+2024-04-30 15:16:54.109  5655  5655 I vpu_api : dlclose vpu lib
+2024-04-30 15:16:54.113  5653  5653 I vpu_api : dlclose vpu lib
+2024-04-30 15:16:54.128 31617 31617 I studio.deploy: Received request 'dump'
+2024-04-30 15:16:54.146 31617 31617 E studio.deploy: Could not get package user id: run-as: Package 'com.example.kiosk_electric_charger_pole' is not an application
+2024-04-30 15:16:54.252 31617 31617 I studio.deploy: Received request 'deltainstall'
+2024-04-30 15:16:54.321   233   233 I         : free_cache(90106289) avail 26991038464
+2024-04-30 15:16:55.045  5735  5735 I vpu_api : dlopen vpu lib success
+2024-04-30 15:16:55.980  5735  5735 E memtrack: Couldn't load memtrack module (No such file or directory)
+2024-04-30 15:16:55.980  5735  5735 E android.os.Debug: failed to load memtrack module: -2
+2024-04-30 15:16:55.984  5735  5735 I Radio-JNI: register_android_hardware_Radio DONE
+2024-04-30 15:16:56.029  5735  5735 I vpu_api : dlclose vpu lib
+2024-04-30 15:16:56.918   450   554 W System.err: java.io.FileNotFoundException: /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor (No such file or directory)
+2024-04-30 15:16:56.918   450   554 W System.err: 	at java.io.FileInputStream.open(Native Method)
+2024-04-30 15:16:56.918   450   554 W System.err: 	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+2024-04-30 15:16:56.918   450   554 W System.err: 	at java.io.FileReader.<init>(FileReader.java:72)
+2024-04-30 15:16:56.918   450   554 W System.err: 	at com.android.server.pm.PackageManagerService.getCurrentPerformance(PackageManagerService.java:21459)
+2024-04-30 15:16:56.918   450   554 W System.err: 	at com.android.server.pm.PackageManagerService$PackageHandler.doHandleMessage(PackageManagerService.java:1256)
+2024-04-30 15:16:56.918   450   554 W System.err: 	at com.android.server.pm.PackageManagerService$PackageHandler.handleMessage(PackageManagerService.java:1209)
+2024-04-30 15:16:56.918   450   554 W System.err: 	at android.os.Handler.dispatchMessage(Handler.java:102)
+2024-04-30 15:16:56.918   450   554 W System.err: 	at android.os.Looper.loop(Looper.java:154)
+2024-04-30 15:16:56.918   450   554 W System.err: 	at android.os.HandlerThread.run(HandlerThread.java:61)
+2024-04-30 15:16:56.918   450   554 W System.err: 	at com.android.server.ServiceThread.run(ServiceThread.java:46)
+2024-04-30 15:16:56.935   450   554 I PackageManager.DexOptimizer: Running dexopt (dex2oat) on: /data/app/vmdl1599047138.tmp/base.apk pkg=com.example.kiosk_electric_charger_pole isa=arm vmSafeMode=false debuggable=true target-filter=interpret-only oatDir = /data/app/vmdl1599047138.tmp/oat sharedLibraries=null
+2024-04-30 15:16:56.969  5924  5924 I dex2oat : /system/bin/dex2oat --compiler-filter=interpret-only --debuggable
+2024-04-30 15:16:58.562  5924  6022 W dex2oat : Before Android 4.1, method int androidx.appcompat.widget.DropDownListView.lookForSelectablePosition(int, boolean) would have incorrectly overridden the package-private method in android.widget.ListView
+2024-04-30 15:16:58.620  5924  6024 W dex2oat : Before Android 4.1, method android.graphics.drawable.Drawable com.google.android.material.progressindicator.BaseProgressIndicator.getCurrentDrawable() would have incorrectly overridden the package-private method in android.widget.ProgressBar
+2024-04-30 15:16:58.657  5924  6023 W dex2oat : Before Android 4.1, method int androidx.appcompat.widget.MenuPopupWindow$MenuDropDownListView.lookForSelectablePosition(int, boolean) would have incorrectly overridden the package-private method in android.widget.ListView
+2024-04-30 15:16:58.703  5924  6023 W dex2oat : Before Android 4.1, method android.graphics.PorterDuffColorFilter androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.updateTintFilter(android.graphics.PorterDuffColorFilter, android.content.res.ColorStateList, android.graphics.PorterDuff$Mode) would have incorrectly overridden the package-private method in android.graphics.drawable.Drawable
+2024-04-30 15:16:59.789  5924  5924 W dex2oat : Before Android 4.1, method double java.util.concurrent.ThreadLocalRandom.internalNextDouble(double, double) would have incorrectly overridden the package-private method in java.util.Random
+2024-04-30 15:16:59.789  5924  5924 W dex2oat : Before Android 4.1, method int java.util.concurrent.ThreadLocalRandom.internalNextInt(int, int) would have incorrectly overridden the package-private method in java.util.Random
+2024-04-30 15:16:59.789  5924  5924 W dex2oat : Before Android 4.1, method long java.util.concurrent.ThreadLocalRandom.internalNextLong(long, long) would have incorrectly overridden the package-private method in java.util.Random
+2024-04-30 15:16:59.998   215   215 I lmkd    : type=1400 audit(0.0:12018): avc: denied { search } for name="18884" dev="proc" ino=2506894850 scontext=u:r:lmkd:s0 tcontext=u:r:zygote:s0 tclass=dir permissive=1
+2024-04-30 15:17:00.722  5924  5924 I dex2oat : dex2oat took 3.753s (threads: 4) arena alloc=256KB (262184B) java alloc=7MB (7543416B) native alloc=17MB (18020120B) free=4MB (4786408B)
+2024-04-30 15:17:00.886   450   554 I PackageManager: Package com.example.kiosk_electric_charger_pole codePath changed from /data/app/com.example.kiosk_electric_charger_pole-2 to /data/app/com.example.kiosk_electric_charger_pole-1; Retaining data and using new
+2024-04-30 15:17:00.887   450   554 W PackageManager: Code path for com.example.kiosk_electric_charger_pole changing from /data/app/com.example.kiosk_electric_charger_pole-2 to /data/app/com.example.kiosk_electric_charger_pole-1
+2024-04-30 15:17:00.887   450   554 W PackageManager: Resource path for com.example.kiosk_electric_charger_pole changing from /data/app/com.example.kiosk_electric_charger_pole-2 to /data/app/com.example.kiosk_electric_charger_pole-1
+2024-04-30 15:17:01.033   450   554 I PackageManager: Un-granting permission android.permission.WRITE_MEDIA_STORAGE from package android.rockchip.update.service (protectionLevel=18 flags=0x3888be45)
+2024-04-30 15:17:01.037   450   554 I PackageManager: Un-granting permission android.permission.REBOOT from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:17:01.038   450   554 I PackageManager: Un-granting permission android.permission.WRITE_SETTINGS from package com.ztl.helper (protectionLevel=1218 flags=0x38c83e44)
+2024-04-30 15:17:01.038   450   554 I PackageManager: Un-granting permission android.permission.SET_PREFERRED_APPLICATIONS from package com.ztl.helper (protectionLevel=2 flags=0x38c83e44)
+2024-04-30 15:17:01.038   450   554 I PackageManager: Un-granting permission android.permission.OVERRIDE_WIFI_CONFIG from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:17:01.038   450   554 I PackageManager: Un-granting permission android.permission.INTERACT_ACROSS_USERS_FULL from package com.ztl.helper (protectionLevel=258 flags=0x38c83e44)
+2024-04-30 15:17:01.038   450   554 I PackageManager: Un-granting permission android.permission.SHUTDOWN from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:17:01.038   450   554 I PackageManager: Un-granting permission android.permission.STATUS_BAR from package com.ztl.helper (protectionLevel=18 flags=0x38c83e44)
+2024-04-30 15:17:01.039   450   554 W PackageManager: Not granting permission android.permission.REBOOT to package com.example.kiosk_electric_charger_pole (protectionLevel=18 flags=0x2858bf46)
+2024-04-30 15:17:01.039   450   554 W PackageManager: Not granting permission android.permission.INSTALL_PACKAGES to package com.example.kiosk_electric_charger_pole (protectionLevel=18 flags=0x2858bf46)
+2024-04-30 15:17:01.039   450   554 W PackageManager: Not granting permission android.permission.BIND_DEVICE_ADMIN to package com.example.kiosk_electric_charger_pole (protectionLevel=2 flags=0x2858bf46)
+2024-04-30 15:17:01.039   450   554 W PackageManager: Not granting permission android.permission.READ_LOGS to package com.example.kiosk_electric_charger_pole (protectionLevel=50 flags=0x2858bf46)
+2024-04-30 15:17:01.193   450   554 I art     : Starting a blocking GC Explicit
+2024-04-30 15:17:01.243   450   554 I art     : Explicit concurrent mark sweep GC freed 14762(833KB) AllocSpace objects, 4(80KB) LOS objects, 33% free, 7MB/11MB, paused 1.206ms total 49.616ms
+2024-04-30 15:17:01.258   233   233 E         : Couldn't opendir /data/app/vmdl1599047138.tmp: No such file or directory
+2024-04-30 15:17:01.258   450   450 I PackageManager: type=1400 audit(0.0:12019): avc: denied { call } for scontext=u:r:system_server:s0 tcontext=u:r:zygote:s0 tclass=binder permissive=1
+2024-04-30 15:17:01.284   450   587 I InputReader: Reconfiguring input devices.  changes=0x00000010
+2024-04-30 15:17:01.291   450   587 I InputReader: Reconfiguring input devices.  changes=0x00000010
+2024-04-30 15:17:01.291  1048  1048 I com.ztl.appservice.BasicService: [com.example.kiosk_electric_charger_pole] install ok.
+2024-04-30 15:17:01.315   450   587 I InputReader: Reconfiguring input devices.  changes=0x00000010
+2024-04-30 15:17:01.268   450   450 I ActivityManager: type=1400 audit(0.0:12020): avc: denied { transfer } for scontext=u:r:system_server:s0 tcontext=u:r:zygote:s0 tclass=binder permissive=1
+2024-04-30 15:17:01.340 32159 32159 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.gallery3d.app.PackagesMonitor.onReceive:40 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:17:01.348 32196 32196 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.keychain.KeyChainBroadcastReceiver.onReceive:12 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:17:01.358   215   215 I lmkd    : type=1400 audit(0.0:12021): avc: denied { write } for name="oom_score_adj" dev="proc" ino=2507137159 scontext=u:r:lmkd:s0 tcontext=u:r:zygote:s0 tclass=file permissive=1
+2024-04-30 15:17:01.358   215   215 I lmkd    : type=1400 audit(0.0:12022): avc: denied { open } for path="/proc/18884/oom_score_adj" dev="proc" ino=2507137159 scontext=u:r:lmkd:s0 tcontext=u:r:zygote:s0 tclass=file permissive=1
+2024-04-30 15:17:01.386   637   637 E PhoneInterfaceManager: [PhoneIntfMgr] getCarrierPackageNamesForIntent: No UICC
+2024-04-30 15:17:01.386   637   637 E PhoneInterfaceManager: [PhoneIntfMgr] getCarrierPackageNamesForIntent: No UICC
+2024-04-30 15:17:01.394 32159 32159 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.gallery3d.app.PackagesMonitor.onReceive:40 android.app.ActivityThread.handleReceiver:3046 
+2024-04-30 15:17:01.460   450   537 W VoiceInteractionManagerService: no available voice recognition services found for user 0
+2024-04-30 15:17:01.518  1048  1048 I Thread-2: type=1400 audit(0.0:12023): avc: denied { call } for scontext=u:r:zygote:s0 tcontext=u:r:system_server:s0 tclass=binder permissive=1
+2024-04-30 15:17:01.575  6248  6248 I Thread-10: type=1400 audit(0.0:12024): avc: denied { execute } for name="sh" dev="mmcblk2p10" ino=389 scontext=u:r:zygote:s0 tcontext=u:object_r:shell_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:01.575  6248  6248 I Thread-10: type=1400 audit(0.0:12025): avc: denied { read open } for path="/system/bin/sh" dev="mmcblk2p10" ino=389 scontext=u:r:zygote:s0 tcontext=u:object_r:shell_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:01.575  6248  6248 I Thread-10: type=1400 audit(0.0:12026): avc: denied { execute_no_trans } for path="/system/bin/sh" dev="mmcblk2p10" ino=389 scontext=u:r:zygote:s0 tcontext=u:object_r:shell_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:01.575  6248  6248 I sh      : type=1400 audit(0.0:12027): avc: denied { getattr } for path="/system/bin/sh" dev="mmcblk2p10" ino=389 scontext=u:r:zygote:s0 tcontext=u:object_r:shell_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:02.054  6228  6228 I vpu_api : dlopen vpu lib success
+2024-04-30 15:17:02.179  6228  6228 E memtrack: Couldn't load memtrack module (No such file or directory)
+2024-04-30 15:17:02.179  6228  6228 E android.os.Debug: failed to load memtrack module: -2
+2024-04-30 15:17:02.181  6228  6228 I Radio-JNI: register_android_hardware_Radio DONE
+2024-04-30 15:17:02.200   450 19040 I ActivityManager: Force stopping com.example.kiosk_electric_charger_pole appid=1000 user=0: from pid 6228
+2024-04-30 15:17:02.203   637   637 E PhoneInterfaceManager: [PhoneIntfMgr] getCarrierPackageNamesForIntent: No UICC
+2024-04-30 15:17:02.218  6228  6228 I vpu_api : dlclose vpu lib
+2024-04-30 15:17:02.979  6302  6302 I vpu_api : dlopen vpu lib success
+2024-04-30 15:17:03.095  6302  6302 E memtrack: Couldn't load memtrack module (No such file or directory)
+2024-04-30 15:17:03.095  6302  6302 E android.os.Debug: failed to load memtrack module: -2
+2024-04-30 15:17:03.097  6302  6302 I Radio-JNI: register_android_hardware_Radio DONE
+2024-04-30 15:17:03.116   450 29620 I ActivityManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.kiosk_electric_charger_pole/.SplashActivity} from uid 0 on display 0
+2024-04-30 15:17:03.133   450 29093 I ActivityManager: Start proc 6374:com.example.kiosk_electric_charger_pole/1000 for activity com.example.kiosk_electric_charger_pole/.SplashActivity
+2024-04-30 15:17:03.134  6374  6374 E SELinux : seapp_context_lookup:  No match for app with uid 1000, seinfo default, name com.example.kiosk_electric_charger_pole
+2024-04-30 15:17:03.134  6374  6374 I art     : Late-enabling -Xcheck:jni
+2024-04-30 15:17:03.132  6374  6374 I ic_charger_pol: type=1400 audit(0.0:12030): avc: denied { execute } for path="/dev/ashmem" dev="tmpfs" ino=11395 scontext=u:r:zygote:s0 tcontext=u:object_r:ashmem_device:s0 tclass=chr_file permissive=1
+2024-04-30 15:17:03.141  6302  6302 I vpu_api : dlclose vpu lib
+2024-04-30 15:17:03.142   450   549 I WindowManager: Sending new config to window Window{4ceba80 u0 Starting com.example.kiosk_electric_charger_pole}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:17:03.142   450   549 I WindowManager: createSurface WindowStateAnimator{7d898b9 Starting com.example.kiosk_electric_charger_pole}: mDrawState=DRAW_PENDING
+2024-04-30 15:17:03.152   216   216 I servicemanager: type=1400 audit(0.0:12031): avc: denied { search } for name="6374" dev="proc" ino=629496494 scontext=u:r:servicemanager:s0 tcontext=u:r:zygote:s0 tclass=dir permissive=1
+2024-04-30 15:17:03.152   216   216 I servicemanager: type=1400 audit(0.0:12032): avc: denied { read } for name="current" dev="proc" ino=628909056 scontext=u:r:servicemanager:s0 tcontext=u:r:zygote:s0 tclass=file permissive=1
+2024-04-30 15:17:03.152   216   216 I servicemanager: type=1400 audit(0.0:12033): avc: denied { open } for path="/proc/6374/attr/current" dev="proc" ino=628909056 scontext=u:r:servicemanager:s0 tcontext=u:r:zygote:s0 tclass=file permissive=1
+2024-04-30 15:17:03.152   216   216 I servicemanager: type=1400 audit(0.0:12034): avc: denied { getattr } for scontext=u:r:servicemanager:s0 tcontext=u:r:zygote:s0 tclass=process permissive=1
+2024-04-30 15:17:03.152  6374  6374 I re-initialized>: type=1400 audit(0.0:12035): avc: denied { transfer } for scontext=u:r:zygote:s0 tcontext=u:r:system_server:s0 tclass=binder permissive=1
+2024-04-30 15:17:03.158   450   549 I WindowManager: Resizing Window{4ceba80 u0 Starting com.example.kiosk_electric_charger_pole} WITH DRAW PENDING
+2024-04-30 15:17:03.165   450   450 I Binder:450_F: type=1400 audit(0.0:12036): avc: denied { setsched } for scontext=u:r:system_server:s0 tcontext=u:r:zygote:s0 tclass=process permissive=1
+2024-04-30 15:17:03.165   450   450 I Binder:450_F: type=1400 audit(0.0:12037): avc: denied { write } for name="timerslack_ns" dev="proc" ino=629496495 scontext=u:r:system_server:s0 tcontext=u:r:zygote:s0 tclass=file permissive=1
+2024-04-30 15:17:03.208  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12038): avc: denied { getattr } for path="/mnt/expand" dev="tmpfs" ino=7737 scontext=u:r:zygote:s0 tcontext=u:object_r:mnt_expand_file:s0 tclass=dir permissive=1
+2024-04-30 15:17:03.208  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12039): avc: denied { getattr } for path="/data/misc/profiles/cur/0/com.example.kiosk_electric_charger_pole/primary.prof" dev="mmcblk2p15" ino=147197 scontext=u:r:zygote:s0 tcontext=u:object_r:user_profile_data_file:s0 tclass=file permissive=1
+2024-04-30 15:17:03.245  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12040): avc: denied { getattr } for path="/storage" dev="tmpfs" ino=7740 scontext=u:r:zygote:s0 tcontext=u:object_r:storage_file:s0 tclass=dir permissive=1
+2024-04-30 15:17:03.245  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12041): avc: denied { getattr } for path="/data/media" dev="mmcblk2p15" ino=163201 scontext=u:r:zygote:s0 tcontext=u:object_r:media_rw_data_file:s0 tclass=dir permissive=1
+2024-04-30 15:17:03.365  6374  6374 W art     : Before Android 4.1, method android.graphics.PorterDuffColorFilter androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.updateTintFilter(android.graphics.PorterDuffColorFilter, android.content.res.ColorStateList, android.graphics.PorterDuff$Mode) would have incorrectly overridden the package-private method in android.graphics.drawable.Drawable
+2024-04-30 15:17:03.428  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12042): avc: denied { call } for scontext=u:r:zygote:s0 tcontext=u:r:mediaserver:s0 tclass=binder permissive=1
+2024-04-30 15:17:03.428   238   238 I mediaserver: type=1400 audit(0.0:12043): avc: denied { transfer } for scontext=u:r:mediaserver:s0 tcontext=u:r:zygote:s0 tclass=binder permissive=1
+2024-04-30 15:17:03.436   238   238 E FFPlayerHelper: isBDDirectory() ,path = /data/app/com.example.kiosk_electric_charger_pole-1/base.apk
+2024-04-30 15:17:03.436   238   238 E FFPlayerHelper: isBDDirectory(): no BDMV
+2024-04-30 15:17:03.465   217   217 I Binder:217_4: type=1400 audit(0.0:12044): avc: denied { use } for path="socket:[629828324]" dev="sockfs" ino=629828324 scontext=u:r:zygote:s0 tcontext=u:r:surfaceflinger:s0 tclass=fd permissive=1
+2024-04-30 15:17:03.475  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12045): avc: denied { read write } for name="renderD128" dev="tmpfs" ino=11479 scontext=u:r:zygote:s0 tcontext=u:object_r:gpu_device:s0 tclass=chr_file permissive=1
+2024-04-30 15:17:03.475  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12046): avc: denied { open } for path="/dev/dri/renderD128" dev="tmpfs" ino=11479 scontext=u:r:zygote:s0 tcontext=u:object_r:gpu_device:s0 tclass=chr_file permissive=1
+2024-04-30 15:17:03.475  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12047): avc: denied { ioctl } for path="/dev/dri/renderD128" dev="tmpfs" ino=11479 ioctlcmd=6400 scontext=u:r:zygote:s0 tcontext=u:object_r:gpu_device:s0 tclass=chr_file permissive=1
+2024-04-30 15:17:03.485   450   450 I Binder:450_10: type=1400 audit(0.0:12048): avc: denied { read write } for path="socket:[629828329]" dev="sockfs" ino=629828329 scontext=u:r:zygote:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+2024-04-30 15:17:03.525   450 29620 I WindowManager: Sending new config to window Window{1f745d6 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:17:03.525   450 29620 I WindowManager: createSurface WindowStateAnimator{7142057 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:17:03.545  6374  6374 I RenderThread: type=1400 audit(0.0:12049): avc: denied { getattr } for path="/dev/mali0" dev="tmpfs" ino=11451 scontext=u:r:zygote:s0 tcontext=u:object_r:gpu_device:s0 tclass=chr_file permissive=1
+2024-04-30 15:17:03.541   450 29620 I WindowManager: Resizing Window{1f745d6 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity} WITH DRAW PENDING
+2024-04-30 15:17:03.548  6374  6406 I mali_so : [File] : hardware/arm/maliT760/driver/product/base/src/mali_base_kbase.c; [Line] : 876; [Func] : base_context_deal_with_version_affairs_rk_ext;
+2024-04-30 15:17:03.548  6374  6406 I mali_so : arm_release_ver of this mali_so is 'r18p0-01rel0', rk_so_ver is '4@0'.
+2024-04-30 15:17:03.556  6374  6406 I OpenGLRenderer: Initialized EGL, version 1.4
+2024-04-30 15:17:03.561   450 29620 I WindowManager: Sending new config to window Window{b9fb02d u0 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:17:03.562   450 29620 I WindowManager: createSurface WindowStateAnimator{a79e962 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:17:03.569   450 29620 I WindowManager: Resizing Window{b9fb02d u0 SurfaceView - com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.SplashActivity} WITH DRAW PENDING
+2024-04-30 15:17:03.573   450 29620 I MediaFocusControl:  AudioFocus  requestAudioFocus() from uid/pid 1000/6374 clientId=android.media.AudioManager@f9ced52 req=1 flags=0x0
+2024-04-30 15:17:03.578  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12050): avc: denied { call } for scontext=u:r:zygote:s0 tcontext=u:r:audioserver:s0 tclass=binder permissive=1
+2024-04-30 15:17:03.578  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12051): avc: denied { transfer } for scontext=u:r:zygote:s0 tcontext=u:r:audioserver:s0 tclass=binder permissive=1
+2024-04-30 15:17:03.584   238   325 I MediaPlayerService: processName cmdline:/proc/6374/cmdline
+2024-04-30 15:17:03.585   238   238 I MediaPlayerFactory:  createFFPlayer
+2024-04-30 15:17:03.585   238   238 E FFPlayer: isBluray(), extension = .apk
+2024-04-30 15:17:03.585   238   238 E FFPlayerHelper: isBDDirectory() ,path = /data/app/com.example.kiosk_electric_charger_pole-1/base.apk
+2024-04-30 15:17:03.585   238   238 E FFPlayerHelper: isBDDirectory(): no BDMV
+2024-04-30 15:17:03.585   238   238 E RockFFPlayerBase: FFMPlayerBase:eDisplayIdMain
+2024-04-30 15:17:03.586   238   238 E RkExtensionPlayer: createDirectory(), path = /tmp/rk_ext_subtitle/
+2024-04-30 15:17:03.586   238   238 E RkExtensionPlayer: createDirectory(), create directory = /tmp/rk_ext_subtitle/ fail,reson = No such file or directory
+2024-04-30 15:17:03.586   238   238 E RkExtensionPlayer: createDirectory(), path = /data/rk_ext_subtitle/
+2024-04-30 15:17:03.586   238   238 E RkExtensionPlayer: createDirectory(), path = /data/rk_ext_subtitle/a29d20c0/
+2024-04-30 15:17:03.578   230   230 I AudioOut_D: type=1400 audit(0.0:12052): avc: denied { call } for scontext=u:r:audioserver:s0 tcontext=u:r:zygote:s0 tclass=binder permissive=1
+2024-04-30 15:17:03.582  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12053): avc: denied { transfer } for scontext=u:r:zygote:s0 tcontext=u:r:mediaserver:s0 tclass=binder permissive=1
+2024-04-30 15:17:03.589   238   238 E TraceThread: TraceThread::randomUID() --> [UID=3f0d045a]
+2024-04-30 15:17:03.589   238  6422 E TraceThread:     VsyncReciver(tid = 2693269792)--> [UID=3f0d045a] VsyncReciver::startthread
+2024-04-30 15:17:03.589   238   238 E TraceThread:     RockFFPlayer(tid = 2769532212)--> [UID=3f0d045a] FFMPlayer Construction; object=0xa0b93400
+2024-04-30 15:17:03.582   238   238 I mediaserver: type=1400 audit(0.0:12054): avc: denied { create } for name="rk_ext_subtitle" scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+2024-04-30 15:17:03.582   238   238 I mediaserver: type=1400 audit(0.0:12055): avc: denied { setattr } for name="rk_ext_subtitle" dev="mmcblk2p15" ino=881281 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+2024-04-30 15:17:03.595   238  6425 I FFPlayer_Version: ******************************************
+2024-04-30 15:17:03.595   238  6425 I FFPlayer_Version: 
+2024-04-30 15:17:03.595   238  6425 I FFPlayer_Version: starting main player: v2.1 2018-08-13-14:03:10.299ffd14.shi
+2024-04-30 15:17:03.595   238  6425 I FFPlayer_Version: ffplayer running on: rk3288
+2024-04-30 15:17:03.595   238  6425 I FFPlayer_Version: 
+2024-04-30 15:17:03.595   238  6425 I FFPlayer_Version: ******************************************
+2024-04-30 15:17:03.595   238  6425 E RockFFPlayerBase: openContext : in
+2024-04-30 15:17:03.597   238  6425 E RkExtensionPlayer: autoDetect(): path = /data/app/com.example.kiosk_electric_charger_pole-1/base.apk
+2024-04-30 15:17:03.597   238  6425 E FFPlayerHelper: isNetWorkUrl: url = /data/app/com.example.kiosk_electric_charger_pole-1/base.apk
+2024-04-30 15:17:03.597   238  6425 E FFPlayerHelper: isBDDirectory() ,path = /data/app/com.example.kiosk_electric_charger_pole-1
+2024-04-30 15:17:03.597   238  6425 E FFPlayerHelper: isBDDirectory(): no BDMV
+2024-04-30 15:17:03.597   238  6425 E RockFFPlayerBase: openContext : out,ret = 0
+2024-04-30 15:17:03.598   238   238 I RkMsgQueue: type=1400 audit(0.0:12056): avc: denied { write } for name="system_status" dev="sysfs" ino=18861 scontext=u:r:mediaserver:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+2024-04-30 15:17:03.602   238  6424 E CrFeatureHelper:  cr_property_get --> Fail to dlopen(libavtone.so), Cause:dlopen failed: library "libavtone.so" not found
+2024-04-30 15:17:03.602   238  6424 E RenderBase: power control open /dev/video_state fd fail
+2024-04-30 15:17:03.671   238  6424 E FFExtensionSource: ~FFExtensionSource in
+2024-04-30 15:17:03.671   238  6424 E FFExtensionSource: ~FFExtensionSource out
+2024-04-30 15:17:03.668   238   238 I RkMsgQueue: type=1400 audit(0.0:12057): avc: denied { read } for name="a29d20c0" dev="mmcblk2p15" ino=881282 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+2024-04-30 15:17:03.668   238   238 I RkMsgQueue: type=1400 audit(0.0:12058): avc: denied { open } for path="/data/rk_ext_subtitle/a29d20c0" dev="mmcblk2p15" ino=881282 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+2024-04-30 15:17:03.671   238  6424 E RkExtensionPlayer: deleteAllFileInDirectory(),/tmp/rk_ext_subtitle/ is not exist
+2024-04-30 15:17:03.671   238  6424 E RkExtensionPlayer: deleteAllFileInDirectory(),/data/media/0/rk_ext_subtitle/ is not exist
+2024-04-30 15:17:03.672   238  6424 E PtsProcess: setFrameRate():mFrameRate = 29.970030
+2024-04-30 15:17:03.672   238  6424 E TraceThread: TraceThread::dumpTrace() FileName:/data/trace_thread.log
+2024-04-30 15:17:03.724   450   549 I ActivityManager: Displayed com.example.kiosk_electric_charger_pole/.SplashActivity: +602ms
+2024-04-30 15:17:04.023   238  6424 E FrameManage: Priority scheduling not supported
+2024-04-30 15:17:04.024   238  6446 E TraceThread:    RkFrameManage(tid = 2666002720)--> [UID=3f0d045a] RkFrameManage::Threadproc
+2024-04-30 15:17:04.026   238  6447 I H264_DEBUG: init done status 0, ts_en = 3 debug 0
+2024-04-30 15:17:04.074  6374  6449 E connecnt err: ConnectOpened
+2024-04-30 15:17:04.084   238  6447 E TraceThread:     DecoderVideo(tid = 2661808416)--> [UID=3f0d045a] DecoderVideo::decode
+2024-04-30 15:17:04.084   238  6447 E DecodeVideo: send first picture data!
+2024-04-30 15:17:04.084   238  6447 E DecodeVideo: RkMark DecoderVideo ctx->no_thread send ts stream first time!
+2024-04-30 15:17:04.086   238  6448 I H264_DEBUG: decoded width 1088  decoded height 1920
+2024-04-30 15:17:04.086   238  6448 I H264_DEBUG: display width 1080, display height 1920
+2024-04-30 15:17:04.122   238  6446 E RockFFPlayerBase: ********************* printKeyPerformanceIndicator *********************
+2024-04-30 15:17:04.122   238  6446 E RockFFPlayerBase: ************************************************************************
+2024-04-30 15:17:04.122  6374  6433 W MediaPlayer: info/warning (3, 0)
+2024-04-30 15:17:06.752  6617  6617 I sh      : type=1400 audit(0.0:12084): avc: denied { getattr } for path="/system/bin/toybox" dev="mmcblk2p10" ino=422 scontext=u:r:zygote:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:06.752  6617  6617 I sh      : type=1400 audit(0.0:12085): avc: denied { execute } for name="toybox" dev="mmcblk2p10" ino=422 scontext=u:r:zygote:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:06.752  6617  6617 I sh      : type=1400 audit(0.0:12086): avc: denied { read open } for path="/system/bin/toybox" dev="mmcblk2p10" ino=422 scontext=u:r:zygote:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:06.752  6617  6617 I sh      : type=1400 audit(0.0:12087): avc: denied { execute_no_trans } for path="/system/bin/toybox" dev="mmcblk2p10" ino=422 scontext=u:r:zygote:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:13.024   450   482 I ActivityManager: START u0 {cmp=com.example.kiosk_electric_charger_pole/.CenterActivity} from uid 1000 on display 0
+2024-04-30 15:17:13.491  6374  6374 I 버전  : 1.0.0
+2024-04-30 15:17:13.515  6374  6374 I 06.155:4465/...: type=1400 audit(0.0:12088): avc: denied { write } for name="fwmarkd" dev="tmpfs" ino=2502 scontext=u:r:zygote:s0 tcontext=u:object_r:fwmarkd_socket:s0 tclass=sock_file permissive=1
+2024-04-30 15:17:13.856  6374  6379 I art     : Do partial code cache collection, code=22KB, data=31KB
+2024-04-30 15:17:13.857  6374  6379 I art     : After code cache collection, code=22KB, data=31KB
+2024-04-30 15:17:13.857  6374  6379 I art     : Increasing code cache capacity to 128KB
+2024-04-30 15:17:13.948  6374  6379 I art     : Do partial code cache collection, code=42KB, data=61KB
+2024-04-30 15:17:13.948  6374  6379 I art     : After code cache collection, code=36KB, data=57KB
+2024-04-30 15:17:13.948  6374  6379 I art     : Increasing code cache capacity to 256KB
+2024-04-30 15:17:14.039   450 29620 I WindowManager: Sending new config to window Window{53ced61 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity}:  / mergedConfig={1.0 dualscreenflag=DISABLE ?mcc?mnc [ko_KR] ldltr sw540dp w540dp h888dp 320dpi lrg long port finger -keyb/v/h dpad/v s.4}
+2024-04-30 15:17:14.039   450 29620 I WindowManager: createSurface WindowStateAnimator{54ad086 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity}: mDrawState=DRAW_PENDING
+2024-04-30 15:17:14.057   450 29620 I WindowManager: Resizing Window{53ced61 u0 com.example.kiosk_electric_charger_pole/com.example.kiosk_electric_charger_pole.CenterActivity} WITH DRAW PENDING
+2024-04-30 15:17:14.480   450   549 I ActivityManager: Displayed com.example.kiosk_electric_charger_pole/.CenterActivity: +1s445ms
+2024-04-30 15:17:14.549   238  6424 I FFIDecoder: waiting on end of decoder thread
+2024-04-30 15:17:14.549   238  6424 E FFMpegThread: DecoderVideo,wait
+2024-04-30 15:17:14.549   238  6424 E TraceThread:     DecoderVideo(tid = 2661808416)--> [UID=3f0d045a] pthread_join begin
+2024-04-30 15:17:14.550   238  6424 E TraceThread:     DecoderVideo(tid = 2661808416)--> [UID=3f0d045a] pthread_join end
+2024-04-30 15:17:14.550   238  6424 E FFMpegThread: DecoderVideo:wait ok mThreadStatus=-1
+2024-04-30 15:17:14.550   238  6424 E RockFFPlayerBase: FFMPlayerBase::flushRenderQueue in
+2024-04-30 15:17:14.550   238  6424 E RockFFPlayerBase: FFMPlayerBase::flushRenderQueue out
+2024-04-30 15:17:14.550   238  6424 E TraceThread:    RkFrameManage(tid = 2666002720)--> [UID=3f0d045a] pthread_join begin
+2024-04-30 15:17:14.553   238  6424 E TraceThread:    RkFrameManage(tid = 2666002720)--> [UID=3f0d045a] pthread_join end
+2024-04-30 15:17:14.553   238  6424 E RenderShared: ~RkRenderer in
+2024-04-30 15:17:14.564   238  6424 I RenderBase: renderBlackFrame, set buffer black, bitDepth: 8, format: 21
+2024-04-30 15:17:14.565   238  6424 E RenderShared: ~RkRenderer out
+2024-04-30 15:17:14.575   238  7178 I FrameManage: RkFrameManage::~RkFrameManage end!
+2024-04-30 15:17:14.629   238  7178 I H264_DEBUG: deinit DONE
+2024-04-30 15:17:14.629   238  7178 I vpu_api : org vpu_close_context ok
+2024-04-30 15:17:14.637   238  7178 E RockFFPlayerBase: closeContext : in
+2024-04-30 15:17:14.638   238  7178 E RockFFPlayerBase: closeContext : out
+2024-04-30 15:17:14.669   238   238 E FFPlayer: ~FFPlayer
+2024-04-30 15:17:14.669   238   238 E TraceThread:     VsyncReciver(tid = 2693269792)--> [UID=3f0d045a] pthread_join begin-->player = 0xa0b93400
+2024-04-30 15:17:14.679   238   238 E TraceThread:     VsyncReciver(tid = 2693269792)--> [UID=3f0d045a] pthread_join   end-->player = 0xa0b93400
+2024-04-30 15:17:14.758   238   238 E TraceThread:     RockFFPlayer(tid = 2769532212)--> [UID=3f0d045a] ~FFMPlayer Destruction; object=0xa0b93400
+2024-04-30 15:17:14.761   450 29620 I MediaFocusControl:  AudioFocus  abandonAudioFocus() from uid/pid 1000/6374 clientId=android.media.AudioManager@f9ced52
+2024-04-30 15:17:14.807   217   217 W SurfaceFlinger: couldn't log to binary event log: overflow.
+2024-04-30 15:17:14.840   217   217 W SurfaceFlinger: couldn't log to binary event log: overflow.
+2024-04-30 15:17:18.147  6374  6381 I art     : Debugger is no longer active
+2024-04-30 15:17:18.147  6374  6381 I art     : Starting a blocking GC Instrumentation
+2024-04-30 15:17:25.222  6374  6374 I com.example.kiosk_electric_charger_pole: type=1400 audit(0.0:12090): avc: denied { read write } for comm=50726F66696C65205361766572 name="primary.prof" dev="mmcblk2p15" ino=147197 scontext=u:r:zygote:s0 tcontext=u:object_r:user_profile_data_file:s0 tclass=file permissive=1
+2024-04-30 15:17:25.222  6374  6374 I com.example.kiosk_electric_charger_pole: type=1400 audit(0.0:12091): avc: denied { open } for comm=50726F66696C65205361766572 path="/data/misc/profiles/cur/0/com.example.kiosk_electric_charger_pole/primary.prof" dev="mmcblk2p15" ino=147197 scontext=u:r:zygote:s0 tcontext=u:object_r:user_profile_data_file:s0 tclass=file permissive=1
+2024-04-30 15:17:25.222  6374  6374 I com.example.kiosk_electric_charger_pole: type=1400 audit(0.0:12092): avc: denied { lock } for comm=50726F66696C65205361766572 path="/data/misc/profiles/cur/0/com.example.kiosk_electric_charger_pole/primary.prof" dev="mmcblk2p15" ino=147197 scontext=u:r:zygote:s0 tcontext=u:object_r:user_profile_data_file:s0 tclass=file permissive=1
+2024-04-30 15:17:46.565  9415  9415 I WebSocketConnec: type=1400 audit(0.0:12093): avc: denied { execute } for name="logcat" dev="mmcblk2p10" ino=283 scontext=u:r:zygote:s0 tcontext=u:object_r:logcat_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:46.565  9415  9415 I WebSocketConnec: type=1400 audit(0.0:12094): avc: denied { read open } for path="/system/bin/logcat" dev="mmcblk2p10" ino=283 scontext=u:r:zygote:s0 tcontext=u:object_r:logcat_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:46.565  9415  9415 I WebSocketConnec: type=1400 audit(0.0:12095): avc: denied { execute_no_trans } for path="/system/bin/logcat" dev="mmcblk2p10" ino=283 scontext=u:r:zygote:s0 tcontext=u:object_r:logcat_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:46.565  9415  9415 I logcat  : type=1400 audit(0.0:12096): avc: denied { getattr } for path="/system/bin/logcat" dev="mmcblk2p10" ino=283 scontext=u:r:zygote:s0 tcontext=u:object_r:logcat_exec:s0 tclass=file permissive=1
+2024-04-30 15:17:46.578  9415  9415 I logcat  : type=1400 audit(0.0:12097): avc: denied { write } for name="logdr" dev="tmpfs" ino=7795 scontext=u:r:zygote:s0 tcontext=u:object_r:logdr_socket:s0 tclass=sock_file permissive=1
+2024-04-30 15:17:46.578  9415  9415 I logcat  : type=1400 audit(0.0:12098): avc: denied { connectto } for path="/dev/socket/logdr" scontext=u:r:zygote:s0 tcontext=u:r:logd:s0 tclass=unix_stream_socket permissive=1
+2024-04-30 15:17:46.680  6374  6379 I art     : Do full code cache collection, code=112KB, data=125KB
+2024-04-30 15:17:46.680  6374  6379 I art     : Starting a blocking GC JitCodeCache
+2024-04-30 15:17:46.681  6374  6379 I art     : After code cache collection, code=92KB, data=96KB
+2024-04-30 15:17:47.045  6374  6374 I WebSocketConnec: type=1400 audit(0.0:12099): avc: denied { search } for name="Download" dev="mmcblk2p15" ino=163211 scontext=u:r:zygote:s0 tcontext=u:object_r:media_rw_data_file:s0:c512,c768 tclass=dir permissive=1
+2024-04-30 15:17:47.045  6374  6374 I WebSocketConnec: type=1400 audit(0.0:12100): avc: denied { read open } for path="/data/media/0/Download" dev="mmcblk2p15" ino=163211 scontext=u:r:zygote:s0 tcontext=u:object_r:media_rw_data_file:s0:c512,c768 tclass=dir permissive=1
+2024-04-30 15:17:47.045  6374  6374 I WebSocketConnec: type=1400 audit(0.0:12101): avc: denied { write } for name="Download" dev="sdcardfs" ino=163211 scontext=u:r:zygote:s0 tcontext=u:object_r:sdcardfs:s0 tclass=dir permissive=1
+2024-04-30 15:17:47.045  6374  6374 I WebSocketConnec: type=1400 audit(0.0:12102): avc: denied { add_name } for name="Log.txt" scontext=u:r:zygote:s0 tcontext=u:object_r:sdcardfs:s0 tclass=dir permissive=1
+2024-04-30 15:17:47.045  6374  6374 I WebSocketConnec: type=1400 audit(0.0:12103): avc: denied { create } for name="Log.txt" scontext=u:r:zygote:s0 tcontext=u:object_r:sdcardfs:s0 tclass=file permissive=1
+2024-04-30 15:17:47.045  6374  6374 I WebSocketConnec: type=1400 audit(0.0:12104): avc: denied { write } for name="Download" dev="mmcblk2p15" ino=163211 scontext=u:r:zygote:s0 tcontext=u:object_r:media_rw_data_file:s0:c512,c768 tclass=dir permissive=1
+2024-04-30 15:17:47.045  6374  6374 I WebSocketConnec: type=1400 audit(0.0:12105): avc: denied { add_name } for name="Log.txt" scontext=u:r:zygote:s0 tcontext=u:object_r:media_rw_data_file:s0:c512,c768 tclass=dir permissive=1
+2024-04-30 15:17:47.045  6374  6374 I WebSocketConnec: type=1400 audit(0.0:12106): avc: denied { create } for name="Log.txt" scontext=u:r:zygote:s0 tcontext=u:object_r:media_rw_data_file:s0 tclass=file permissive=1
+2024-04-30 15:17:47.045  6374  6374 I WebSocketConnec: type=1400 audit(0.0:12107): avc: denied { write } for path="/storage/emulated/0/Download/Log.txt" dev="sdcardfs" ino=163234 scontext=u:r:zygote:s0 tcontext=u:object_r:sdcardfs:s0 tclass=file permissive=1
+2024-04-30 15:17:47.045  6374  6374 I WebSocketConnec: type=1400 audit(0.0:12108): avc: denied { write } for path="/data/media/0/Download/Log.txt" dev="mmcblk2p15" ino=163234 scontext=u:r:zygote:s0 tcontext=u:object_r:media_rw_data_file:s0 tclass=file permissive=1
+2024-04-30 15:17:47.068   239   239 I netd    : type=1400 audit(0.0:12109): avc: denied { use } for path="socket:[629983781]" dev="sockfs" ino=629983781 scontext=u:r:netd:s0 tcontext=u:r:zygote:s0 tclass=fd permissive=1
+2024-04-30 15:17:47.072  6374  6374 I 68.0.7:5005/...: type=1400 audit(0.0:12110): avc: denied { read } for name="Log.txt" dev="sdcardfs" ino=163234 scontext=u:r:zygote:s0 tcontext=u:object_r:sdcardfs:s0 tclass=file permissive=1
+2024-04-30 15:17:47.072  6374  6374 I 68.0.7:5005/...: type=1400 audit(0.0:12111): avc: denied { read } for path="/data/media/0/Download/Log.txt" dev="mmcblk2p15" ino=163234 scontext=u:r:zygote:s0 tcontext=u:object_r:media_rw_data_file:s0 tclass=file permissive=1
+2024-04-30 15:17:47.085  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12112): avc: denied { remove_name } for name="Log.txt" dev="sdcardfs" ino=163234 scontext=u:r:zygote:s0 tcontext=u:object_r:sdcardfs:s0 tclass=dir permissive=1
+2024-04-30 15:17:47.085  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12113): avc: denied { unlink } for name="Log.txt" dev="sdcardfs" ino=163234 scontext=u:r:zygote:s0 tcontext=u:object_r:sdcardfs:s0 tclass=file permissive=1
+2024-04-30 15:17:47.085  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12114): avc: denied { remove_name } for name="Log.txt" dev="mmcblk2p15" ino=163234 scontext=u:r:zygote:s0 tcontext=u:object_r:media_rw_data_file:s0:c512,c768 tclass=dir permissive=1
+2024-04-30 15:17:47.085  6374  6374 I ic_charger_pole: type=1400 audit(0.0:12115): avc: denied { unlink } for name="Log.txt" dev="mmcblk2p15" ino=163234 scontext=u:r:zygote:s0 tcontext=u:object_r:media_rw_data_file:s0 tclass=file permissive=1
+2024-04-30 15:17:47.088  6374  6374 I logfile upload sucess: logfile delete : true
+2024-04-30 15:19:11.315  6374  6374 I logfile upload sucess: logfile delete : true

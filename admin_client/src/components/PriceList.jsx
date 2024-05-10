@@ -135,16 +135,16 @@ const PriceList = ({ isDashboard = false , Data, setMounted , TablePaginationFun
 
       fetchPost("/price/remove",deviceid)
       .then((json) => {           
-        if(json.isRemoved===true){
+        if(json?.isRemoved===true){
           
           closeRemoveDialog();
 
           setMounted()
         }
         else {
-          alert(json.errorMessage)
+          alert(json?.errorMessage)
         }
-      });
+      }).catch((err)=>{});
 
 
     },

@@ -37,11 +37,13 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
   const [UpdateDialog,setUpdateDialog] = useState(false);
   const [RemoveDialog,setRemoveDialog] = useState(false);
 
-  const [SelectedItemId,setSelectedItemId] = useState({id:"",latitude:"",longitude:"",addr:"",s_version:"",h_c_m:"",h_p_m:"",h_b_m:"",h_w_m:"",enabled:""});
+  const [SelectedItemId,setSelectedItemId] = useState({id:"",latitude:"",longitude:"",addr:"",model:"",s_version:"",h_c_m:"",h_p_m:"",h_b_m:"",h_w_m:"",enabled:""});
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  
+  const [Latitude,setLatitude] = useState("");
+  const [Longitude,setLongitude] = useState("");
+  const [S_Version,setS_Version] = useState("");
 
   const columns = [
     { 
@@ -68,6 +70,13 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
     {
       field: "addr",
       headerName: "주소",
+      headerAlign: "center",
+      align: "center",
+      flex: 1,
+    },
+    {
+      field: "model",
+      headerName: "모델",
       headerAlign: "center",
       align: "center",
       flex: 1,
@@ -201,6 +210,9 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
 
   const openPositionMenu = (event,id) => {
     setSelectedItemId(id);
+    setLatitude(id.latitude)
+    setLongitude(id.longitude)
+    setS_Version(id.s_version)
     setAnchorEl(event.currentTarget);
   };
   const closePositionMenu = () => {
@@ -227,6 +239,29 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
     // setSelectedItemId(null)
   }
 
+  const handleLatitude = (event) => {
+    const value = event.target.value;
+    const regex = /^[0-9]*\.?[0-9]*$/;
+    if(regex.test(value)){
+      setLatitude(value)
+    }
+  }
+
+  const handleLongitude = (event) => {
+    const value = event.target.value;
+    const regex = /^[0-9]*\.?[0-9]*$/;
+    if(regex.test(value)){
+      setLongitude(value)
+    }
+  }
+
+  const handleS_Version = (event) => {
+    const value = event.target.value;
+    const regex = /^[0-9]*\.?[0-9]*$/;
+    if(regex.test(value)){
+      setS_Version(value)
+    }
+  }
 
   const updateProps = 
   {
@@ -254,16 +289,16 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
       
       fetchPost("/device/update",formJson)
       .then((json) => {           
-        if(json.isUpdated===true){
+        if(json?.isUpdated===true){
           
           closeUpdateDialog();
 
           setMounted();
         }
         else {
-          alert(json.errorMessage)
+          alert(json?.errorMessage)
         }
-      });
+      }).catch((err)=>{});;
 
     },
   }
@@ -310,6 +345,15 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
           columns={isDashboard? columns.slice(0,-1):columns}  
           hideFooter={isDashboard}
           components={IsSearch?{Toolbar: CustomToolBar}:{ Toolbar: isDashboard? null:CustomToolBar , Pagination : isDashboard? null:TablePaginationFunc}} 
+          // componentsProps={{
+          //   panel: {
+          //     sx: {
+          //       '& .MuiDataGrid-columnsPanelRow:last-child': {
+          //         display: 'none', 
+          //       },
+          //     },
+          //   },
+          // }}  // 마지막 컬럼 안보이게 하기 (rowmenu)
           disableColumnMenu
           disableColumnFilter
           // initialState={{
@@ -358,12 +402,12 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
             // autoFocus
             required
             margin="dense"
-            label="기기명"
+            label="기기명 - 수정이 불가능 합니다."
             name="id"
             fullWidth
-            color="success"
+            color="warning"
             variant="standard"
-            disabled={true}
+            inputProps={{readOnly:true,}}
             defaultValue={SelectedItemId.id}
           />
           <TextField
@@ -373,10 +417,10 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
             label="위도"
             name="latitude"
             fullWidth
-            type={"number"}
+            value={Latitude}
+            onChange={handleLatitude}
             color="success"
             variant="standard"
-            defaultValue={SelectedItemId.latitude}
           />
           <TextField
             // autoFocus
@@ -385,10 +429,10 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
             label="경도"
             name="longitude"
             fullWidth
-            type={"number"}
+            value={Longitude}
+            onChange={handleLongitude}
             color="success"
-            variant="standard"
-            defaultValue={SelectedItemId.longitude}
+            variant="standard"  
           />
           <TextField
             // autoFocus
@@ -402,15 +446,23 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
             defaultValue={SelectedItemId.addr}
           />
           <TextField
-            // autoFocus
-            required
+            margin="dense"
+            label="모델"
+            name="model"
+            fullWidth
+            color="success"
+            variant="standard"
+            defaultValue={SelectedItemId.model}
+          />
+          <TextField
             margin="dense"
             label="소프트웨어버전"
             name="s_version"
             fullWidth
+            value={S_Version}
+            onChange={handleS_Version}
             color="success"
             variant="standard"
-            defaultValue={SelectedItemId.s_version}
           />
           <TextField
             // autoFocus
@@ -496,16 +548,16 @@ function DeviceList({ isDashboard = false , Data, setMounted ,TablePaginationFun
 
             fetchPost("/device/remove",deviceid)
             .then((json) => {           
-              if(json.isRemoved===true){
+              if(json?.isRemoved===true){
                 
                 closeRemoveDialog();
 
                 setMounted()
               }
               else {
-                alert(json.errorMessage)
+                alert(json?.errorMessage)
               }
-            });
+            }).catch((err)=>{});
 
 
           },

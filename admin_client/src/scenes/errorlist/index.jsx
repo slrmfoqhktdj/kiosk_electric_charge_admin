@@ -88,7 +88,7 @@ const ErrorList = () => {
       .then((data) => {      
         setData(data?.item)
         setDataCount(data?.count)
-      });
+      }).catch((err)=>{});
   },[page,rowsPerPage])
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const ErrorList = () => {
       .then((data) => {        
           setData(data?.item)
           setDataCount(data?.item?.length)
-      });
+      }).catch((err)=>{});
     }
     
   }

@@ -76,6 +76,7 @@ const Team = () => {
       align: "center",
       sortable:false,             // 컬럼 정렬
       disableColumnMenu:true,     // 컬럼 메뉴
+      filterable:false,           // 필터 메뉴 포함 거절
       flex: 0.5,
       toolbar:false,
       renderCell:(params) =>{
@@ -102,7 +103,7 @@ const Team = () => {
     fetchGet("/loglistpage",{credentials: 'include'})
     .then((data) => {       
       setData(data)
-    });
+    }).catch((err)=>{});
     
     
   }, [Mounted]);
@@ -183,10 +184,10 @@ const Team = () => {
 
         setMounted(Mounted+1)
 
-        if(!json.isRemoved&&json.errorMessage){
-          alert(json.errorMessage)
+        if(!json?.isRemoved&&json?.errorMessage){
+          alert(json?.errorMessage)
         }
-      });
+      }).catch((err)=>{});
 
 
     },
@@ -228,7 +229,7 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid  rows={Data&&Data.length? Data:[]} columns={columns}  components={{ Toolbar: GridToolbar } }/>
+        <DataGrid  rows={Data&&Data?.length? Data:[]} columns={columns}  components={{ Toolbar: GridToolbar } }/>
       </Box>
 
       

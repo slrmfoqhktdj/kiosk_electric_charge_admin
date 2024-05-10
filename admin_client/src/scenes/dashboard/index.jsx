@@ -12,7 +12,7 @@ import PriceList from "../../components/PriceList";
 import ChargeDaily from "../../components/ChargeDaily";
 
 import {useNavigate} from 'react-router-dom'
-import {fetchGet} from '../../communication/handlefetch'
+import {fetchMainGet} from '../../communication/handlefetch'
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -23,10 +23,10 @@ const Dashboard = () => {
   const navigate = useNavigate()
 
   useEffect(() => { 
-    fetchGet("/dashboarddata",{credentials: 'include'})
+    fetchMainGet("/dashboarddata",{credentials: 'include'})
     .then((data) => {        
       setData(data)
-    });
+    }).catch((err)=>{});
   }, []);
 
 
@@ -74,7 +74,7 @@ const Dashboard = () => {
            
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <DeviceList isDashboard={true} Data={Data.list}/>
+            <DeviceList isDashboard={true} Data={Data?.list}/>
           </Box>
         </Box>
         {/* <Box
@@ -181,7 +181,7 @@ const Dashboard = () => {
            
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <DeviceStateList isDashboard={true} Data={Data.state}/>
+            <DeviceStateList isDashboard={true} Data={Data?.state}/>
           </Box>
         </Box>
 
@@ -211,7 +211,7 @@ const Dashboard = () => {
            
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <PriceList isDashboard={true} Data={Data.price}/>
+            <PriceList isDashboard={true} Data={Data?.price}/>
           </Box>
         </Box>
         {/* <Box
@@ -295,7 +295,7 @@ const Dashboard = () => {
 
           </Box>
           <Box height="250px" mt="-20px">
-            <ChargeDaily isDashboard={true} Data={Data.daily}/>
+            <ChargeDaily isDashboard={true} Data={Data?.daily}/>
           </Box>
         </Box>
 
@@ -325,7 +325,7 @@ const Dashboard = () => {
             </div>
           </Box>
           <Box height="250px" mt="-20px">
-            <ChargeBarChart isDashboard={true} Data = {Data.graph}/>
+            <ChargeBarChart isDashboard={true} Data = {Data?.graph}/>
           </Box>
         </Box>
         <Box
@@ -356,7 +356,7 @@ const Dashboard = () => {
             </div>
           </Box>
           <Box height="250px" mt="-20px" p="30px">
-            <DeviceMap isDashboard={true} Data = {Data.maps}/>
+            <DeviceMap isDashboard={true} Data = {Data?.maps}/>
           </Box>
         </Box>
       </Box>

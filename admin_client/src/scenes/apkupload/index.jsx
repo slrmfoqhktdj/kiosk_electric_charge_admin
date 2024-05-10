@@ -84,9 +84,9 @@ const Team = () => {
     
     fetchGet("/apkfilelist")
       .then((data) => {    
-        setPoleData(data.pole)   
-        setTwinData(data.twin)
-      });
+        setPoleData(data?.pole)   
+        setTwinData(data?.twin)
+      }).catch((err)=>{});
   }, [Mounted]);
 
   const poleProps = {
@@ -106,18 +106,16 @@ const Team = () => {
       .then((data) =>{
 
         
-        if(data.isUploaded===true){
+        if(data?.isUploaded===true){
           
           closePoleDialog();
 
           setMounted(Mounted+1)
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      }).catch((err) => {
-          console.error(err);
-      });
+      }).catch((err) => {});
 
 
     },
@@ -138,18 +136,16 @@ const Team = () => {
 
       fetchFile('/upload/twin', formData)
       .then((data) =>{
-        if(data.isUploaded===true){
+        if(data?.isUploaded===true){
           
           closeTwinDialog();
 
           setMounted(Mounted+1)
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      }).catch((err) => {
-          console.error(err);
-      });
+      }).catch((err) => {});
 
 
     },

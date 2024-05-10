@@ -321,6 +321,7 @@ const insertdevice = async (request, response, next) =>{
     const latitude = request.body.latitude
     const longitude = request.body.longitude
     const addr = request.body.addr
+    const model = request.body.model
     const s_version = request.body.s_version
     const h_c_m = request.body.h_c_m
     const h_p_m = request.body.h_p_m
@@ -333,7 +334,7 @@ const insertdevice = async (request, response, next) =>{
         errorMessage :""
     };
 
-    if(id && latitude && longitude && addr && s_version && h_c_m && h_p_m && h_b_m && h_w_m && enabled){
+    if(id && latitude && longitude && addr &&  h_c_m && h_p_m && h_b_m && h_w_m && enabled){
         let comfirm;            /// ocpp 연결 여부 
 
         try{
@@ -346,6 +347,7 @@ const insertdevice = async (request, response, next) =>{
                     latitude: latitude,
                     longitude:longitude,
                     addr:addr,
+                    model:model,
                     s_version:s_version,
                     h_c_m:h_c_m,
                     h_p_m:h_p_m,
@@ -403,6 +405,7 @@ const updatedevice = async (request, response, next) =>{
     const latitude = request.body.latitude
     const longitude = request.body.longitude
     const addr = request.body.addr
+    const model = request.body.model
     const s_version = request.body.s_version
     const h_c_m = request.body.h_c_m
     const h_p_m = request.body.h_p_m
@@ -415,7 +418,7 @@ const updatedevice = async (request, response, next) =>{
         errorMessage :""
     };
 
-    if(id && latitude && longitude && addr && s_version && h_c_m && h_p_m && h_b_m && h_w_m && enabled){
+    if(id && latitude && longitude && addr &&  h_c_m && h_p_m && h_b_m && h_w_m && enabled){
 
         try{
             comfirm = await axios({
@@ -427,6 +430,7 @@ const updatedevice = async (request, response, next) =>{
                     latitude: latitude,
                     longitude:longitude,
                     addr:addr,
+                    model:model,
                     s_version:s_version,
                     h_c_m:h_c_m,
                     h_p_m:h_p_m,
@@ -650,9 +654,12 @@ const updatesettings = async (request, response, next) =>{
             }else if(getData == "Rejected"){
                 sendupdatesettingsResultData.isUpdated = false
                 sendupdatesettingsResultData.errorMessage = "설정변경에 실패했습니다. "
-            }else{
+            }else if(getData == "RebootRequired"){
                 sendupdatesettingsResultData.isUpdated = false
                 sendupdatesettingsResultData.errorMessage = "적용하려면 기기를 재부팅해야합니다. "
+            }else{
+                sendupdatesettingsResultData.isUpdated = false
+                sendupdatesettingsResultData.errorMessage = "해당 기기가 서버와 연결이 되어 있질 않습니다. "
             }
 
             response.send(sendupdatesettingsResultData)
@@ -725,6 +732,9 @@ const remoteStartTransaction = async (request, response, next) =>{
             }else if(getData == "Rejected"){
                 sendupdatesettingsResultData.isStarted = false
                 sendupdatesettingsResultData.errorMessage = "원격충전이 거절당했습니다. 해당 커넥터가 사용가능한지 다시 확인해주세요."
+            }else{
+                sendupdatesettingsResultData.isStarted = false
+                sendupdatesettingsResultData.errorMessage = "해당 기기가 서버와 연결이 되어 있질 않습니다. "
             }
 
             response.send(sendupdatesettingsResultData)
@@ -791,6 +801,9 @@ const cacheClear = async (request, response, next) =>{
             }else if(getData == "Rejected"){
                 sendResultData.isCleared = false
                 sendResultData.errorMessage = "인증캐쉬삭제가 거절당했습니다. "
+            }else{
+                sendResultData.isCleared  = false
+                sendResultData.errorMessage = "해당 기기가 서버와 연결이 되어 있질 않습니다. "
             }
 
             response.send(sendResultData)
@@ -861,12 +874,16 @@ const Reset = async (request, response, next) =>{
             }else if(getData == "Rejected"){
                 sendResultData.isReseted = false
                 sendResultData.errorMessage = "재시작 명령이 거절당했습니다. "
+            }else{
+                sendResultData.isReseted = false
+                sendResultData.errorMessage = "해당 기기가 서버와 연결이 되어 있질 않습니다. "
             }
 
             response.send(sendResultData)
 
             
         }catch(e){
+
             if(e.response?.status==401){
                 request.session.destroy()
                 response.send(401)
@@ -946,6 +963,9 @@ const nvcatSettings = async (request, response, next) =>{
             }else if(getData == "UnknownMessageId"){
                 sendResultData.isSetting = false
                 sendResultData.errorMessage = "알 수 없는 메시지유형입니다. "
+            }else{
+                sendResultData.isSetting  = false
+                sendResultData.errorMessage = "해당 기기가 서버와 연결이 되어 있질 않습니다. "
             }
 
             response.send(sendResultData)
@@ -1025,6 +1045,9 @@ const nvcatRestart = async (request, response, next) =>{
             }else if(getData == "UnknownMessageId"){
                 sendResultData.isReseted = false
                 sendResultData.errorMessage = "알 수 없는 메시지유형입니다. "
+            }else{
+                sendResultData.isReseted  = false
+                sendResultData.errorMessage = "해당 기기가 서버와 연결이 되어 있질 않습니다. "
             }
 
 
@@ -1101,6 +1124,9 @@ const connectorEnabled = async (request, response, next) =>{
             }else if(getData == "Scheduled"){
                 sendResultData.isEnabled = false
                 sendResultData.errorMessage = "요청이 수락되었으며 진행 중인 트랜잭션이 완료되면 실행됩니다. "
+            }else{
+                sendResultData.isEnabled  = false
+                sendResultData.errorMessage = "해당 기기가 서버와 연결이 되어 있질 않습니다. "
             }
 
 
@@ -1182,6 +1208,9 @@ const triggerMessage = async (request, response, next) =>{
             }else if(getData == "Scheduled"){
                 sendResultData.isReceived = false
                 sendResultData.errorMessage = "요청이 수락되었으며 진행 중인 트랜잭션이 완료되면 실행됩니다. "
+            }else{
+                sendResultData.isReceived  = false
+                sendResultData.errorMessage = "해당 기기가 서버와 연결이 되어 있질 않습니다. "
             }
 
 

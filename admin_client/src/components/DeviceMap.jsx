@@ -2,7 +2,6 @@ import React from 'react'
 import { GoogleMap, LoadScript , InfoWindow , Marker} from '@react-google-maps/api';
 import { useState } from "react";
 
-
 const APIKEY = process.env.REACT_APP_GOOGLE_MAP_API_KEY
 const containerStyle = {
     width: '100%',

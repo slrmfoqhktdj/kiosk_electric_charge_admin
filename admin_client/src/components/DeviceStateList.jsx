@@ -351,16 +351,16 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
 
         fetchPost("/cmd/updatesettings",formJson)
         .then((data) =>{
-          if(data.isUpdated===true){
+          if(data?.isUpdated===true){
             
             closeShowSettingsDialog();
   
             setMounted()
           }
           else {
-            alert(data.errorMessage)
+            alert(data?.errorMessage)
           }
-        })
+        }).catch((err)=>{});
       }else{
         const formData = new FormData(event.currentTarget);
         formData.append("device_id",SelectedItemId.id)
@@ -370,16 +370,16 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
         
         fetchPost("/cmd/updatesettings",formJson)
         .then((data) =>{
-          if(data.isUpdated===true){
+          if(data?.isUpdated===true){
             
             closeShowSettingsDialog();
   
             setMounted()
           }
           else {
-            alert(data.errorMessage)
+            alert(data?.errorMessage)
           }
-        })
+        }).catch((err)=>{});
 
       }
     },
@@ -398,7 +398,7 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
 
         fetchPost("/cmd/rmstt",formJson)
         .then((data) =>{
-          if(data.isStarted===true){
+          if(data?.isStarted===true){
             
             closeTransactionDialog();
 
@@ -407,9 +407,9 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
             alert(`실행한 충전승인번호 :  ${formJson.idTag}`)
           }
           else {
-            alert(data.errorMessage)
+            alert(data?.errorMessage)
           }
-        })
+        }).catch((err)=>{});
 
 
       },
@@ -427,14 +427,14 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
 
       fetchPost("/cmd/cc",formJson)
       .then((data) =>{
-        if(data.isCleared===true){
+        if(data?.isCleared===true){
           
           closeCacheDeleteDialog();
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      })
+      }).catch((err)=>{});
 
 
     },
@@ -454,16 +454,16 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
 
       fetchPost("/cmd/rs",formJson)
       .then((data) =>{
-        if(data.isReseted===true){
+        if(data?.isReseted===true){
           
           closeRestartDialog();
 
           setMounted()
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      })
+      }).catch((err)=>{});
 
 
     },
@@ -481,16 +481,16 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
 
       fetchPost("/cmd/ncs",formJson)
       .then((data) =>{
-        if(data.isSetting===true){
+        if(data?.isSetting===true){
           
           closeNVCatSettingsDialog();
 
           setMounted()
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      })
+      }).catch((err)=>{});
 
 
     },
@@ -509,16 +509,16 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
 
       fetchPost("/cmd/ncrs",formJson)
       .then((data) =>{
-        if(data.isReseted===true){
+        if(data?.isReseted===true){
           
           closeNVCatRestartDialog();
 
           setMounted()
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      })
+      }).catch((err)=>{});
 
 
     },
@@ -536,16 +536,16 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
 
       fetchPost("/cmd/cgab",formJson)
       .then((data) =>{
-        if(data.isEnabled===true){
+        if(data?.isEnabled===true){
           
           closeConnectorEnabledDialog();
 
           setMounted()
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      })
+      }).catch((err)=>{});
 
 
     },
@@ -564,16 +564,16 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
 
       fetchPost("/cmd/tgmg",formJson)
       .then((data) =>{
-        if(data.isReceived===true){
+        if(data?.isReceived===true){
           
           closeTriggerDialog();
 
           setMounted()
         }
         else {
-          alert(data.errorMessage)
+          alert(data?.errorMessage)
         }
-      })
+      }).catch((err)=>{});
 
 
     },
@@ -634,13 +634,13 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
         }}
       >
  
-        <MenuItem onClick={()=>{closePositionMenu(); openRestartDialog()}}>충전기재시작</MenuItem>
-        <MenuItem onClick={()=>{closePositionMenu(); openConnectorEnabledDialog()}}>충전기커넥터사용설정</MenuItem>
-        <MenuItem onClick={()=>{closePositionMenu(); openNVCatSettingsDialog()}}>결제기재설정</MenuItem>
-        <MenuItem onClick={()=>{closePositionMenu(); openNVCatRestartDialog()}}>결제기재시작</MenuItem>
-        <MenuItem onClick={()=>{closePositionMenu(); openCacheDeleteDialog()}}>인증캐쉬삭제</MenuItem>
-        <MenuItem onClick={()=>{closePositionMenu(); openStartTransactionDialog()}}>원격충전시작</MenuItem>
-        <MenuItem onClick={()=>{closePositionMenu(); openTriggerDialog()}}>충전기보고요청</MenuItem>
+        <MenuItem onClick={()=>{closePositionMenu(); openRestartDialog()}}>충전기 재시작</MenuItem>
+        <MenuItem onClick={()=>{closePositionMenu(); openConnectorEnabledDialog()}}>충전기 커넥터사용설정</MenuItem>
+        <MenuItem onClick={()=>{closePositionMenu(); openTriggerDialog()}}>충전기 보고요청</MenuItem>
+        <MenuItem onClick={()=>{closePositionMenu(); openStartTransactionDialog()}}>충전기 원격충전시작</MenuItem>
+        <MenuItem onClick={()=>{closePositionMenu(); openNVCatSettingsDialog()}}>결제기 재설정</MenuItem>
+        <MenuItem onClick={()=>{closePositionMenu(); openNVCatRestartDialog()}}>결제기 재시작</MenuItem>
+        <MenuItem onClick={()=>{closePositionMenu(); openCacheDeleteDialog()}}>인증캐쉬 삭제</MenuItem>
         <MenuItem onClick={()=>{      /// 설정가지고오기 메뉴
           if(SelectedItemId.conn === true){
             const formJson = {
@@ -649,16 +649,16 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
             
             fetchPost("/cmd/showsettings",formJson)
             .then((data) =>{
-              if(data.isShow===true){
+              if(data?.isShow===true){
                 
                 setShowSettingsData(data.data)
                 closePositionMenu();
                 openShowSettingsDialog();
               }
               else {
-                alert(data.errorMessage)
+                alert(data?.errorMessage)
               }
-            })
+            }).catch((err)=>{});
           }else{
             closePositionMenu();
             alert("해당 기기가 서버에 연결되지 않아 해당 항목을 가져올 수 없습니다.")
@@ -834,7 +834,7 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
               <Box width="50vw">
                 <DataGrid rows={ShowSettingsData} columns={settingscolumns} getRowId={(row)=> row.key} hideFooter={true} rowSelection="single" onRowSelectionModelChange={(newSelection)=>{
                     ShowSettingsData.forEach((data)=>{
-                      if(data.key === newSelection[0]){
+                      if(data?.key === newSelection[0]){
                         setSelectedSettings(data)
                       }
                     })
@@ -938,7 +938,12 @@ const DeviceStateList = ({ isDashboard = false , Data, setMounted,TablePaginatio
         <DialogTitle>충전기 재시작</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            {SelectedItemId.id}을 재시작합니다.
+            {SelectedItemId.id}을 재시작합니다. 
+          </DialogContentText>
+          <DialogContentText color={colors.redAccent[100]}>
+          {
+              SelectedItemId.state === "Charging" ? "현재 해당 기기는 충전중입니다. 재시작시 진행중인 충전은 중지됩니다.":null
+          }
           </DialogContentText>
           
 

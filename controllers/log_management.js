@@ -172,11 +172,11 @@ const commandUploadLog = async (request, response, next) => {
             }
         })
 
-        if(comfirm.data.fileName == ""){
+        if(comfirm.data.fileName == "" || comfirm.data.fileName == null){
             console.log("not found log")
     
             result.isUploaded = false
-            result.errorMessage = "해당로그를 찾을 수 없습니다."
+            result.errorMessage = "기기가 서버와의 연결이 되질 않았거나 해당 로그를 찾을 수 없습니다."
         }
         // else{
         //     console.log(comfirm.data.fileName);
