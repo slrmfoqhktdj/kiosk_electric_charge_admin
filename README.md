@@ -28,3 +28,6 @@
 [데이터 흐름]
  React(관리자) → Node(세션 검증) → axios → Go 서버(JWT) → MySQL/충전기
  충전기 상태/이력 → Go → Node → React 테이블·차트 렌더링
+
+
+<img width="1843" height="965" alt="관리자페이지2" src="https://github.com/user-attachments/assets/42d6e8f1-d1d0-4d4f-a07d-195f61a48a84" />
